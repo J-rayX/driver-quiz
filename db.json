@@ -4,6 +4,7 @@
             "name": "transmission",
             "desc": "Q-1: which Transmission?",
             "type": "doubleOption",
+            "id": "1",
             "step": 1,
             "score": 0,
 
