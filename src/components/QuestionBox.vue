@@ -1,7 +1,37 @@
 <template>
-  <div>
+  <div>      
+      <div v-for="question in questions" :key="question.step"> 
+        <!-- <div v-if="question.type === 'quadOption'">
+          <h4 >The quad Option is {{ question.desc }}</h4><br /><br />
+        </div>  
+
+        <div v-if="question.type === 'doubleOption'">
+          <h4 >The double Option is {{ question.desc }}</h4>
+        </div>       -->
       
-      <h4 >{{ questions.desc  }}</h4>
+      <div v-if="question.type === 'doubleOption'">
+        <h4>The double-Option Question is {{ question.desc }}</h4>
+        
+        <div class="">
+        <!-- <div v-for="(doubleAnswer,index) in question.options" :key="index">
+            input type="radio" :id="'answer'+index" name="" v-model="option" :value="doubleAnswer">
+            <label :for="'answer'+index">{{ doubleAnswer.desc }}</label><br/> -->
+        
+        <ul>
+          <li class="option-select" v-for="(doubleAnswer,index) in question.options" :key="index" >
+            <input type="radio" :id="'option'+index" name="options" v-model="option" :value="doubleAnswer"/>
+              <label :for="'doubleAnswer'+index">{{ doubleAnswer.desc }}</label>
+              <div class="check"></div>
+            </li>
+        </ul>
+        </div>
+
+        <button @click="addScore(option)">Answer</button>
+
+      </div>
+      
+       <!-- Double Options question -->
+    
     <!-- <ul>
       <li class="option-select" v-for="(answer, index) in question.answers" :key="index">
         <input type="radio" id="option" name="" />
@@ -10,49 +40,37 @@
       </li> 
      </ul>
      -->
-
-      <!-- 
-      <li class="option-select" v-for="(answer, index) in question.answers" :key="index">
-        <input type="radio" id="option" name="" />
-            <label for="(answer, index) in question.answers">Answer: {{ answer.option }} </label>    
-        <div class="check"></div>
-      </li> 
-      -->
-   
+    </div>
   </div>
 </template>
 
 <script>
 // import OptionSelect from '@/components/OptionSelect.vue';
-import axios from 'axios';
+// import axios from 'axios';
 
 export default {
-data() {
+  data() {
     return {
-      questions: [],
-     
-      /* question: {
-        desc: 'What trasnmission do you want?',
-        answers: [
-          { option: 'Manual' },
-          { option: 'Auto' }, 
-          { option: 'Hybrid' }
-        ] */
+      option: {}
     }
   },
 
-  components: {
-    //OptionSelect
+  props: {
+    questions: { },
+    
   },
-    created() {
-    axios
-      .get('http://localhost:3000/questions')
-      .then(response => {
-          this.questions = response.data 
-      })
-      .catch(error => {
-        console.log("There was an error: " + error.response)
-      });
+
+  components: {
+      //OptionSelect
+  },
+
+  methods: {
+    addScore() {
+      this.$emit('option', this.option)
+      console.log('the child option is ' + {option: this.option})
+      //this.option = null
+    }
+
   }
 };
 </script>
@@ -103,8 +121,7 @@ input[type=radio] {
   visibility: hidden;
 }
 
-
-ul li label{
+ul li label {
   display: block;
   position: relative;
   font-weight: 300;
@@ -117,11 +134,11 @@ ul li label{
   -webkit-transition: all 0.25s linear;
 }
 
-ul li:hover label{
+ul li:hover label {
 	color: rgb(3, 47, 129);
 }
 
-ul li .check{
+ul li .check {
   display: block;
   position: absolute;
   border: 5px solid #AAAAAA;
@@ -138,7 +155,6 @@ ul li .check{
 ul li:hover .check {
   border: 5px solid rgb(3, 47, 129);
   background-color: rgb(132, 189, 255);
-  
 }
 
 ul li .check::before {
@@ -159,11 +175,11 @@ input[type=radio]:checked ~ .check {
   border: 5px solid  rgb(3, 47, 129);
 }
 
-input[type=radio]:checked ~ .check::before{
+input[type=radio]:checked ~ .check::before {
   background: rgb(3, 47, 129);
 }
 
-input[type=radio]:checked ~ label{
+input[type=radio]:checked ~ label {
   color: rgb(3, 47, 129);
 }
 
