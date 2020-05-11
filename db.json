@@ -4,7 +4,7 @@
             "name": "transmission",
             "desc": "Q-1: which Transmission?",
             "type": "doubleOption",
-            "id": "1",
+            "id": 1,
             "step": 1,
             "score": 0,
 
@@ -12,12 +12,15 @@
             {
                 "desc": "Manual",
                 "score": 0,
-                "transType": "transManual"
+                "transType": "transManual",
+                "id": 2 
+
             },
             {
                 "desc": "Automatic",
                 "score": 0,
-                "transType": "transAuto"
+                "transType": "transAuto",
+                "id": 2
             }
             ]
         }, 
@@ -26,6 +29,7 @@
             "name": "theoryTest",
             "desc": "Q-2: Do you possess a Valid Theory Test",
             "type": "doubleOption",
+            "id": 3,
             "step": 2,
             "score": 0,
 
