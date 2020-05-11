@@ -1,65 +1,84 @@
 <template>
-<div>
-  <div class="introStage">
-    <h1>{{ introText }}</h1>
-    <p>
-      We could help you find a suitable driving course for you
-    </p>
-    <!-- <a href="#" @click="startQuiz">START!</a> <br /> -->
-  </div>
+  <div>
+    <div class="introStage">
+      <h1>{{ introText }}</h1>
+      <p>
+        We could help you find a suitable driving course for you
+      </p>
+      <!-- <a href="#" @click="startQuiz">START!</a> <br /> -->
+    </div>
 
-  <div class="questionBox">
-    <QuestionBox :questions="questions" @handle-answer="handleAnswer"></QuestionBox>
+    <div class="questionBox">
+      <!-- <QuestionBox
+        v-for="question in questions" :key="question.id"
+        :question="question"
+       >
+      </QuestionBox> -->
+
+      <QuestionBox
+        :question="questions[currentQuestion]"
+        v-on:option="handleOption"
+        :question-number="currentQuestion+1"
+      >
+      </QuestionBox>
+      <span></span>
+    </div>
   </div>
-</div>
 </template>
 
 <script>
 import QuestionBox from '@/components/QuestionBox.vue';
-import axios from 'axios'; 
+import axios from 'axios';
+
+// v-for="question in questions"
+// :key="question.index"
+// :questions="questions"
+// v-on:optionChosen="handleOption"
+// :question-number="currentQuestion + 1"
+
 
 export default {
   name: "Quiz",
-  data() {
-    return {
-      questions: [],
-      optionChosen: []
-       //option: [],
-      //total: 0
-    }
-  },
-
-  props: {
+    props: {
     introText: String
   },
 
   components: {
     QuestionBox
   },
+  data() {
+    return {
+      questions: [],
+      optionChosen: [],
+      option: [],
+      currentQuestion: 0
+      //option: [],
+      //total: 0
+    }
+  },
 
   created() {
-      axios
-        .get('http://localhost:3000/questions')
-        .then(response => {
-            this.questions = response.data 
-        })
-        .catch(error => {
-          console.log("There was an error: " + error.response)
-        })
+    axios
+      .get('http://localhost:3000/questions')
+      .then(response => {
+        this.questions = response.data
+      })
+      .catch(error => {
+        console.log("There was an error: " + error.response)
+      })
   },
   methods: {
-    handleAnswer(e){
-      console.log('I just entered the parent component now')
-      console.log('option', e)
-      this.optionChosen = e.option
-      console.log('parent option are ' + this.optionChosen)
-
-      //this.optionChosen.push(e);
-      this.total = this.optionChosen.length
-      console.log('number of asnwers is ' + this.total)
+    handleOption(e){
+      //console.log(this.questions)
+      console.log('answer event ftw', e)
+      this.option[this.currentQuestion] = e.option
+      if((this.currentQuestion+1) === this.questions.length) {
+        console.log("Done Finally")
+      }else{
+        this.currentQuestion++
+      }
     }
   }
-  
 };
 </script>
 
