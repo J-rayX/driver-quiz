@@ -23,21 +23,6 @@
     </div> 
     -->
 
-    <!-- Quad Options question -->
-    <!-- <div class="question-box" v-if="question.type === 'quad'">
-      <div v-for="(quadOption, index) in question.options" :key="index">
-        <input type="radio" name="" v-model="option" value="quad" />
-        <label :for="'quadOption'"> {{ quadOption.desc }}</label><br />
-      </div>
-    </div>-->
-
-    <!-- Five Options question -->
-    <!-- <div class="question-box" v-if="question.type === 'five'">
-      <div v-for="(fiveOption, index) in question.options" :key="index">
-        <input type="radio" name="" v-model="option" value="five" />
-        <label :for="'fiveOption'"> {{ fiveOption.desc }}</label><br />
-      </div>
-    </div> -->
   </div>
 </template>
 
