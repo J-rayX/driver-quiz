@@ -4,7 +4,7 @@
     <div class="introStage">
       <h1>{{ introText }}</h1>
       <p>
-        Take Honourabel Quizto become an Expert
+        Take Quiz to become an Expert
       </p>
       <!-- <a href="#" @click="startQuiz">START!</a> <br /> -->
     </div>
