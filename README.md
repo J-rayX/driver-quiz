@@ -1,4 +1,4 @@
-# course-recommender
+# driver-quiz
 
 ## Project setup
 ```
