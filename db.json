@@ -13,14 +13,14 @@
                 "desc": "Manual",
                 "score": 0,
                 "transType": "transManual",
-                "id": 2 
+                "id": 1.1 
 
             },
             {
                 "desc": "Automatic",
                 "score": 0,
                 "transType": "transAuto",
-                "id": 2
+                "id": 1.2
             }
             ]
         }, 
@@ -29,7 +29,7 @@
             "name": "theoryTest",
             "desc": "Q-2: Do you possess a Valid Theory Test",
             "type": "doubleOption",
-            "id": 3,
+            "id": 2,
             "step": 2,
             "score": 0,
 
@@ -50,6 +50,7 @@
             "name": "ageGroup",
             "desc": "Q-3: Which age group do you fall into?",
             "type": "quadOption",
+            "id": 3,
             "step": 3,
             "score": 0,
         
@@ -81,8 +82,9 @@
         
         {
             "name": "describeAbility",
-            "desc": "Q-4: Describe yourself as a driver",
+            "desc": "Q-4: Describe ability",
             "type": "sixOption",
+            "id": 4,
             "step": 4,
             "score": 0,
             
@@ -90,7 +92,6 @@
                 {
                     "name": "alpha1",
                     "desc": "0 - Not a driver",
-                    
                     "step": 5,
                     "score": 0,
                     "options": {
@@ -101,15 +102,15 @@
                         "score": 0,
                         
                         "options": [
-                        {
-                            "name": "yes",
-                            "desc": "Yes",
-                            "score": 5
-                        },
-                        {
-                            "desc": "No",
-                            "score": 0
-                        }
+                            {
+                                "name": "yes",
+                                "desc": "Yes",
+                                "score": 5
+                            },
+                            {
+                                "desc": "No",
+                                "score": 0
+                            }
                         ]
                     }
                 },
