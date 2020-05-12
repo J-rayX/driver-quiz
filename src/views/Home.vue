@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <!-- <img alt="Vue logo" src="../assets/logo.png" /> -->
-    <Quiz introText="Driving Quiz" />
+    <Quiz introText="Driving -  Quiz" />
      
   </div>
 </template>

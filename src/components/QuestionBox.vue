@@ -45,13 +45,11 @@
 
         </div>
       </div>
-
       <!-- <div v-if="question.options.type = []">
         <div  v-for="(option,index) in question.options.options" :key="index">
           {{ option.desc }}
         </div>
       </div> -->
-
       <button type="submit">Next</button>
       <!-- <button @click="submitAnswer">Answer</button> -->
     </div>
