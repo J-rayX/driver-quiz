@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <!-- <img alt="Vue logo" src="../assets/logo.png" /> -->
-    <Quiz introText="Welcome to our Course Recommender" />
+    <Quiz introText="Driving -  Quiz" />
      
   </div>
 </template>
