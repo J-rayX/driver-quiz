@@ -1,9 +1,10 @@
 <template>
+
   <div>
     <div class="introStage">
       <h1>{{ introText }}</h1>
       <p>
-        We could help you find a suitable driving course for you
+        Take Honourabel Quizto become an Expert
       </p>
       <!-- <a href="#" @click="startQuiz">START!</a> <br /> -->
     </div>
@@ -50,9 +51,8 @@ export default {
     return {
       questions: [],
       optionChosen: [],
-      option: [],
-      currentQuestion: 0
-      //option: [],
+      currentQuestion: 0,
+      options: [],
       //total: 0
     }
   },
@@ -68,10 +68,16 @@ export default {
       })
   },
   methods: {
+   
     handleOption(e){
       //console.log(this.questions)
       console.log('answer event ftw', e)
-      this.option[this.currentQuestion] = e.option
+      this.options[this.currentQuestion] = e.option
+      //this.questionIterator(this.questions)
+
+      //check if option chosen has a type:doubleOption
+      //display as question
+
       if((this.currentQuestion+1) === this.questions.length) {
         console.log("Done Finally")
       }else{
@@ -99,3 +105,6 @@ a {
   color: #42b983;
 }
 </style>
+
+
+
