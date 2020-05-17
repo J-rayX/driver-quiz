@@ -13,7 +13,6 @@ import Quiz from "@/components/Quiz.vue";
 export default {
   data() {
     return {
-      
     }
   },
 
