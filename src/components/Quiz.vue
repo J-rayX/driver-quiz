@@ -1,11 +1,8 @@
 <template>
-
   <div>
     <div class="introStage">
       <h1>{{ introText }}</h1>
-      <p>
-        Take Quiz to become an Expert!
-      </p>
+      <p>Take Quiz to become an Expert!</p>
       <!-- <a href="#" @click="startQuiz">START!</a> <br /> -->
     </div>
 
@@ -14,33 +11,30 @@
         v-for="question in questions" :key="question.id"
         :question="question"
        >
-      </QuestionBox> -->
+      </QuestionBox>-->
 
       <QuestionBox
         :question="questions[currentQuestion]"
         v-on:option="handleOption"
-        :question-number="currentQuestion+1"
-      >
-      </QuestionBox>
+        :question-number="currentQuestion + 1"
+      ></QuestionBox>
       <span></span>
     </div>
   </div>
 </template>
 
 <script>
-import QuestionBox from '@/components/QuestionBox.vue';
-import axios from 'axios';
-
+import QuestionBox from '@/components/QuestionBox.vue'
+import QuestionService from '@/services/QuestionService.js'
 // v-for="question in questions"
 // :key="question.index"
 // :questions="questions"
 // v-on:optionChosen="handleOption"
 // :question-number="currentQuestion + 1"
 
-
 export default {
-  name: "Quiz",
-    props: {
+  name: 'Quiz',
+  props: {
     introText: String
   },
 
@@ -53,39 +47,45 @@ export default {
       optionChosen: [],
       currentQuestion: 0,
       options: [],
+      totalScore: 0
       //total: 0
     }
   },
 
   created() {
-    axios
-      .get('http://localhost:3000/questions')
+    QuestionService.getQuestions()
       .then(response => {
         this.questions = response.data
       })
       .catch(error => {
-        console.log("There was an error: " + error.response)
+        console.log('There was an error: ' + error.response)
       })
   },
   methods: {
-   
-    handleOption(e){
+    handleOption(e) {
       //console.log(this.questions)
       console.log('answer event ftw', e)
       this.options[this.currentQuestion] = e.option
       //this.questionIterator(this.questions)
+      this.totalScore = this.totalScore + e.option.score
 
       //check if option chosen has a type:doubleOption
       //display as question
 
-      if((this.currentQuestion+1) === this.questions.length) {
-        console.log("Done Finally")
-      }else{
+      if (
+        this.currentQuestion + 1 === this.questions.length ||
+        e.option.endpoint === true
+      ) {
+        console.log('Done Finally, total score is ' + this.totalScore)
+
+        return
+      } else {
         this.currentQuestion++
       }
+      return
     }
   }
-};
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -105,6 +105,3 @@ a {
   color: #42b983;
 }
 </style>
-
-
-

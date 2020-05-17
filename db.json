@@ -1,710 +1,309 @@
-{    
-    "questions" : [
+{
+  "questions": [
+    {
+      "name": "transmission",
+      "desc": "Q-1: which Transmission?",
+      "type": "doubleOption",
+      "id": 1,
+      "step": 1,
+
+      "options": [
         {
-            "name": "transmission",
-            "desc": "Q-1: which Transmission?",
-            "type": "doubleOption",
-            "id": 1,
-            "step": 1,
-            "score": 0,
-
-            "options": [
-            {
-                "desc": "Manual",
-                "score": 0,
-                "transType": "transManual",
-                "id": 1.1 
-
-            },
-            {
-                "desc": "Automatic",
-                "score": 0,
-                "transType": "transAuto",
-                "id": 1.2
-            }
-            ]
-        }, 
-        
-        {
-            "name": "theoryTest",
-            "desc": "Q-2: Do you possess a Valid Theory Test",
-            "type": "doubleOption",
-            "id": 2,
-            "step": 2,
-            "score": 0,
-
-            "options": [
-                {
-                    "name": "yes",
-                    "desc": "Yes",
-                    "score": 10
-                },
-                {
-                    "desc": "No",
-                    "score": 0
-                }
-            ]
+          "desc": "Manual",
+          "score": 0,
+          "transType": "transManual",
+          "id": 1.1,
+          "endpoint": false
         },
-        
         {
-            "name": "ageGroup",
-            "desc": "Q-3: Which age group do you fall into?",
-            "type": "quadOption",
-            "id": 3,
-            "step": 3,
-            "score": 0,
-        
-            "options": [
-            {
-                "name": "yes",
-                "desc": "Less than 17 years old",
-                "score": 5
-            },
-            {
-                "name": "yes",
-                "desc": "18 - 29 years old",
-                "score": 20
-            },
-            {
-                "name": "yes",
-                "desc": "30 - 39 years old",
-                "score": 15
-            },
-            {
-                "name": "yes",
-                "desc": "40 years old and above",
-                "score": 100
-            }
-            
-            
-            ]
-        },
-        
-        {
-            "name": "describeAbility",
-            "desc": "Q-4: Describe ability",
-            "type": "sixOption",
-            "id": 4,
-            "step": 4,
-            "score": 0,
-            
-            "options" :[
-                {
-                    "name": "alpha1",
-                    "desc": "0 - Not a driver",
-                    "step": 5,
-                    "score": 0,
-                    "options": {
-                        "name": "yes",
-                        "desc": "Have you had a previous driving lessons?",
-                        "type": "doubleOption",
-                        "step": 6,  
-                        "score": 0,
-                        
-                        "options": [
-                            {
-                                "name": "yes",
-                                "desc": "Yes",
-                                "score": 5
-                            },
-                            {
-                                "desc": "No",
-                                "score": 0
-                            }
-                        ]
-                    }
-                },
-                {
-                    "name": "alpha2",
-                    "desc": "1 - Little Driving Experience",
-                    
-                    "step": 5,
-                    "score": 1,
-                    
-                    "options":{
-                        "name": "yes",
-                        "desc": "Can you drve along a straight?",
-                        "score": 1,
-                        
-                        "options": [
-                            {
-                            "name": "yes",
-                            "desc": "Yes",
-                            "score": 10
-                            },
-                            {
-                            "desc": "No",
-                            "score": 0
-                            }
-                        ]
-                    }
-                },
-                {
-                    "name": "alpha3",
-                    "desc": "2 - Not so good a driver",
-                    
-                    "step": 5,
-                    "score": 2,
-                
-                    "options" : [
-                        {
-                            "name": "beta1",
-                            "desc": "Stopping and Moving",
-                            "score": 0,
-                            
-                            "options": [
-                                {
-                                "name": "level1",
-                                "desc": "1",
-                                "score": 1
-                                },
-                                {
-                                "name": "level2",
-                                "desc": "2",
-                                "score": 2
-                                },
-                                {
-                                "name": "level3",
-                                "desc": "3",
-                                "score": 3
-                                },
-                                {
-                                "name": "level4",
-                                "desc": "4",
-                                "score": 4
-                                },
-                                {
-                                "name": "level5",
-                                "desc": "5",
-                                "score": 5
-                                }
-                            ]
-                        },
-                        {
-                            "name": "beta2",
-                            "desc": "Junction",
-                            "score": 0,
-                            
-                            "options": [
-                                {
-                                "name": "level1",
-                                "desc": "1",
-                                "score": 1
-                                },
-                                {
-                                "name": "level2",
-                                "desc": "2",
-                                "score": 2
-                                },
-                                {
-                                "name": "level3",
-                                "desc": "3",
-                                "score": 3
-                                },
-                                {
-                                "name": "level4",
-                                "desc": "4",
-                                "score": 4
-                                },
-                                {
-                                "name": "level5",
-                                "desc": "5",
-                                "score": 5
-                                }
-                            ]
-                        },
-                        {
-                            "name": "beta3",
-                            "desc": "Roundabouts Turning",
-                            "score": 0,
-                            
-                            "options": [
-                            {
-                            "name": "level1",
-                            "desc": "1",
-                            "score": 1
-                            },
-                            {
-                            "name": "level2",
-                            "desc": "2",
-                            "score": 2
-                            },
-                            {
-                            "name": "level3",
-                            "desc": "3",
-                            "score": 3
-                            },
-                            {
-                            "name": "level4",
-                            "desc": "4",
-                            "score": 4
-                            },
-                            {
-                            "name": "level5",
-                            "desc": "5",
-                            "score": 5
-                            }
-                            ]
-                        },
-                        {
-                            "name": "beta4",
-                            "desc": "Parking",
-                            "score": 0,
-                            
-                            "options": [
-                                {
-                                "name": "level1",
-                                "desc": "1",
-                                "score": 1
-                                },
-                                {
-                                "name": "level2",
-                                "desc": "2",
-                                "score": 2
-                                },
-                                {
-                                "name": "level3",
-                                "desc": "3",
-                                "score": 3
-                                },
-                                {
-                                "name": "level4",
-                                "desc": "4",
-                                "score": 4
-                                },
-                                {
-                                "name": "level5",
-                                "desc": "5",
-                                "score": 5
-                                }
-                            ]
-                        },
-                        {
-                            "name": "beta5",
-                            "desc": "Reversing",
-                            "score": 0,
-                            
-                            "options": [
-                                {
-                                "name": "level1",
-                                "desc": "1",
-                                "score": 1
-                                },
-                                {
-                                "name": "level2",
-                                "desc": "2",
-                                "score": 2
-                                },
-                                {
-                                "name": "level3",
-                                "desc": "3",
-                                "score": 3
-                                },
-                                {
-                                "name": "level4",
-                                "desc": "4",
-                                "score": 4
-                                },
-                                {
-                                "name": "level5",
-                                "desc": "5",
-                                "score": 5
-                                }
-                            ]
-                        }
-                    ]
-                },                
-                {
-                    "name": "alpha4",
-                    "desc": "3 - Fairly good",
-                    
-                    "step": 5,
-                    "score": 3,
-                
-                    "options" : [
-                        {
-                            "name": "beta1",
-                            "desc": "Stopping and Moving",
-                            "score": 0,
-                            
-                            "options": [
-                                {
-                                "name": "level1",
-                                "desc": "1",
-                                "score": 1
-                                },
-                                {
-                                "name": "level2",
-                                "desc": "2",
-                                "score": 2
-                                },
-                                {
-                                "name": "level3",
-                                "desc": "3",
-                                "score": 3
-                                },
-                                {
-                                "name": "level4",
-                                "desc": "4",
-                                "score": 4
-                                },
-                                {
-                                "name": "level5",
-                                "desc": "5",
-                                "score": 5
-                                }
-                            ]
-                        },
-                    
-                        {
-                            "name": "beta2",
-                            "desc": "Junction",
-                            "score": 0,
-                            
-                            "options": [
-                                {
-                                "name": "level1",
-                                "desc": "1",
-                                "score": 1
-                                },
-                                {
-                                "name": "level2",
-                                "desc": "2",
-                                "score": 2
-                                },
-                                {
-                                "name": "level3",
-                                "desc": "3",
-                                "score": 3
-                                },
-                                {
-                                "name": "level4",
-                                "desc": "4",
-                                "score": 4
-                                },
-                                {
-                                "name": "level5",
-                                "desc": "5",
-                                "score": 5
-                                }
-                            ]
-                        },
-                        
-                        {
-                            "name": "beta3",
-                            "desc": "Roundabouts Turning",
-                            "score": 0,
-                            
-                            "options": [
-                                {
-                                "name": "level1",
-                                "desc": "1",
-                                "score": 1
-                                },
-                                {
-                                "name": "level2",
-                                "desc": "2",
-                                "score": 2
-                                },
-                                {
-                                "name": "level3",
-                                "desc": "3",
-                                "score": 3
-                                },
-                                {
-                                "name": "level4",
-                                "desc": "4",
-                                "score": 4
-                                },
-                                {
-                                "name": "level5",
-                                "desc": "5",
-                                "score": 5
-                                }
-                            ]
-                        },
-                        
-                        {
-                            "name": "beta4",
-                            "desc": "Parking",
-                            "score": 0,
-                            
-                            "options": [
-                                {
-                                "name": "level1",
-                                "desc": "1",
-                                "score": 1
-                                },
-                                {
-                                "name": "level2",
-                                "desc": "2",
-                                "score": 2
-                                },
-                                {
-                                "name": "level3",
-                                "desc": "3",
-                                "score": 3
-                                },
-                                {
-                                "name": "level4",
-                                "desc": "4",
-                                "score": 4
-                                },
-                                {
-                                "name": "level5",
-                                "desc": "5",
-                                "score": 5
-                                }
-                            ]
-                        },
-                    
-                        {
-                            "name": "beta5",
-                            "desc": "Reversing",
-                            "score": 0,
-                            
-                            "options": [
-                                {
-                                "name": "level1",
-                                "desc": "1",
-                                "score": 1
-                                },
-                                {
-                                "name": "level2",
-                                "desc": "2",
-                                "score": 2
-                                },
-                                {
-                                "name": "level3",
-                                "desc": "3",
-                                "score": 3
-                                },
-                                {
-                                "name": "level4",
-                                "desc": "4",
-                                "score": 4
-                                },
-                                {
-                                "name": "level5",
-                                "desc": "5",
-                                "score": 5
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "name": "alpha5",
-                    "desc": "4 - Very good",
-                    
-                    "step": 5,
-                    "score": 4,
-                
-                    "options" : [
-                        {
-                            "name": "beta1",
-                            "desc": "Stopping and Moving",
-                            "score": 0,
-                            
-                            "options": [
-                                {
-                                "name": "level1",
-                                "desc": "1",
-                                "score": 1
-                                },
-                                {
-                                "name": "level2",
-                                "desc": "2",
-                                "score": 2
-                                },
-                                {
-                                "name": "level3",
-                                "desc": "3",
-                                "score": 3
-                                },
-                                {
-                                "name": "level4",
-                                "desc": "4",
-                                "score": 4
-                                },
-                                {
-                                "name": "level5",
-                                "desc": "5",
-                                "score": 5
-                                }
-                            ]
-                            },
-                            
-                            {
-                                "name": "beta2",
-                                "desc": "Junction",
-                                "score": 0,
-                                
-                                "options": [
-                                    {
-                                    "name": "level1",
-                                    "desc": "1",
-                                    "score": 1
-                                    },
-                                    {
-                                    "name": "level2",
-                                    "desc": "2",
-                                    "score": 2
-                                    },
-                                    {
-                                    "name": "level3",
-                                    "desc": "3",
-                                    "score": 3
-                                    },
-                                    {
-                                    "name": "level4",
-                                    "desc": "4",
-                                    "score": 4
-                                    },
-                                    {
-                                    "name": "level5",
-                                    "desc": "5",
-                                    "score": 5
-                                    }
-                                ]
-                            },
-                        
-                            {
-                                "name": "beta3",
-                                "desc": "Roundabouts Turning",
-                                "score": 0,
-                                
-                                "options": [
-                                    {
-                                    "name": "level1",
-                                    "desc": "1",
-                                    "score": 1
-                                    },
-                                    {
-                                    "name": "level2",
-                                    "desc": "2",
-                                    "score": 2
-                                    },
-                                    {
-                                    "name": "level3",
-                                    "desc": "3",
-                                    "score": 3
-                                    },
-                                    {
-                                    "name": "level4",
-                                    "desc": "4",
-                                    "score": 4
-                                    },
-                                    {
-                                    "name": "level5",
-                                    "desc": "5",
-                                    "score": 5
-                                    }
-                                ]
-                            },
-                            
-                            {
-                                "name": "beta4",
-                                "desc": "Parking",
-                                "score": 0,
-                                
-                                "options": [
-                                    {
-                                    "name": "level1",
-                                    "desc": "1",
-                                    "score": 1
-                                    },
-                                    {
-                                    "name": "level2",
-                                    "desc": "2",
-                                    "score": 2
-                                    },
-                                    {
-                                    "name": "level3",
-                                    "desc": "3",
-                                    "score": 3
-                                    },
-                                    {
-                                    "name": "level4",
-                                    "desc": "4",
-                                    "score": 4
-                                    },
-                                    {
-                                    "name": "level5",
-                                    "desc": "5",
-                                    "score": 5
-                                    }
-                                ]
-                            },                        
-                            {
-                                "name": "beta5",
-                                "desc": "Reversing",
-                                "score": 0,
-                                
-                                "options": [
-                                    {
-                                    "name": "level1",
-                                    "desc": "1",
-                                    "score": 1
-                                    },
-                                    {
-                                    "name": "level2",
-                                    "desc": "2",
-                                    "score": 2
-                                    },
-                                    {
-                                    "name": "level3",
-                                    "desc": "3",
-                                    "score": 3
-                                    },
-                                    {
-                                    "name": "level4",
-                                    "desc": "4",
-                                    "score": 4
-                                    },
-                                    {
-                                    "name": "level5",
-                                    "desc": "5",
-                                    "score": 5
-                                    }
-                                ]
-                            }
-                    ]
-                },  
-                {
-                    "name": "alpha5",
-                    "desc": "5 - Excellent and Experienced",
-                    
-                    "step": 5,
-                    "score": 5,
-                
-                    "options" : [
-                        {
-                            "name": "beta1",
-                            "desc": "Last Driving Experience",
-                            "score": 0,
-                            
-                            "options": [
-                                {
-                                    "name": "level1",
-                                    "desc": "Within last 2 months",
-                                    "score": 15
-                                },
-                                {
-                                    "name": "level2",
-                                    "desc": "Within last 6 months",
-                                    "score": 10
-                                },
-                                {
-                                    "name": "level3",
-                                    "desc": "More than 6 months ago",
-                                    "score": 15
-                                }
-                            ]
-                        }
-                    ]
-                }
-            ]
+          "desc": "Automatic",
+          "score": 0,
+          "transType": "transAuto",
+          "id": 1.2,
+          "endpoint": false
         }
-    ]
+      ]
+    },
+
+    {
+      "name": "theoryTest",
+      "desc": "Q-2: Do you possess a Valid Theory Test",
+      "type": "doubleOption",
+      "id": 2,
+      "step": 2,
+
+      "options": [
+        {
+          "desc": "Yes",
+          "score": 5,
+          "endpoint": false
+        },
+        {
+          "desc": "No",
+          "score": 0,
+          "endpoint": false
+        }
+      ]
+    },
+
+    {
+      "name": "ageGroup",
+      "desc": "Q-3: Which age group do you fall into?",
+      "type": "quadOption",
+      "id": 3,
+      "step": 3,
+      "score": 0,
+
+      "options": [
+        {
+          "desc": "Less than 17 years old",
+          "score": 4,
+          "endpoint": false
+        },
+        {
+          "desc": "18 - 29 years old",
+          "score": 10,
+          "endpoint": false
+        },
+        {
+          "desc": "30 - 39 years old",
+          "score": 7,
+          "endpoint": false
+        },
+        {
+          "desc": "40 years old and above",
+          "score": 1,
+          "endpoint": false
+        }
+      ]
+    },
+
+    {
+      "name": "pastDrivingExperience",
+      "desc": "Q-4: Have you ever driven before?",
+      "type": "doubleOption",
+      "id": 4,
+      "step": 4,
+
+      "options": [
+        {
+          "desc": "Yes",
+          "score": 5,
+          "endpoint": false
+        },
+        {
+          "desc": "No",
+          "score": 0,
+          "endpoint": true
+        }
+      ]
+    },
+
+    {
+      "name": "pastDrivingExperience",
+      "desc": "Q-5: Can you drive along a straight line?",
+      "type": "doubleOption",
+      "id": 5,
+      "step": 5,
+
+      "options": [
+        {
+          "desc": "Yes",
+          "score": 5,
+          "endpoint": false
+        },
+        {
+          "desc": "No",
+          "score": 0,
+          "endpoint": true
+        }
+      ]
+    },
+
+    {
+      "name": "stoppingAndMoving",
+      "desc": "Q-6: How good are you with stopping and moving?",
+      "type": "fiveOption",
+      "id": 6,
+      "step": 6,
+
+      "options": [
+        {
+          "desc": "1",
+          "score": 0,
+          "endpoint": false
+        },
+        {
+          "name": "level2",
+          "desc": "2",
+          "score": 3,
+          "endpoint": false
+        },
+        {
+          "name": "level3",
+          "desc": "3",
+          "score": 7,
+          "endpoint": false
+        },
+        {
+          "name": "level4",
+          "desc": "4",
+          "score": 11,
+          "endpoint": false
+        },
+        {
+          "name": "level5",
+          "desc": "5",
+          "score": 15,
+          "endpoint": false
+        }
+      ]
+    },
+
+    {
+      "name": "junctions",
+      "desc": "Q-7: How good are you with turning at junctions?",
+      "type": "fiveOption",
+      "id": 7,
+      "step": 7,
+
+      "options": [
+        {
+          "desc": "1",
+          "score": 0,
+          "endpoint": false
+        },
+        {
+          "name": "level2",
+          "desc": "2",
+          "score": 3,
+          "endpoint": false
+        },
+        {
+          "name": "level3",
+          "desc": "3",
+          "score": 7,
+          "endpoint": false
+        },
+        {
+          "name": "level4",
+          "desc": "4",
+          "score": 11,
+          "endpoint": false
+        },
+        {
+          "name": "level5",
+          "desc": "5",
+          "score": 15,
+          "endpoint": false
+        }
+      ]
+    },
+
+    {
+      "name": "parking",
+      "desc": "Q-8: How good are you with parking a car?",
+      "type": "fiveOption",
+      "id": 8,
+      "step": 8,
+
+      "options": [
+        {
+          "desc": "1",
+          "score": 0,
+          "endpoint": false
+        },
+        {
+          "name": "level2",
+          "desc": "2",
+          "score": 3,
+          "endpoint": false
+        },
+        {
+          "name": "level3",
+          "desc": "3",
+          "score": 7,
+          "endpoint": false
+        },
+        {
+          "name": "level4",
+          "desc": "4",
+          "score": 11,
+          "endpoint": false
+        },
+        {
+          "name": "level5",
+          "desc": "5",
+          "score": 15,
+          "endpoint": false
+        }
+      ]
+    },
+
+    {
+      "name": "reversing",
+      "desc": "Q-9: How good are you with reversing?",
+      "type": "fiveOption",
+      "id": 9,
+      "step": 8,
+
+      "options": [
+        {
+          "desc": "1",
+          "score": 0,
+          "endpoint": false
+        },
+        {
+          "name": "level2",
+          "desc": "2",
+          "score": 3,
+          "endpoint": false
+        },
+        {
+          "name": "level3",
+          "desc": "3",
+          "score": 7,
+          "endpoint": false
+        },
+        {
+          "name": "level4",
+          "desc": "4",
+          "score": 11,
+          "endpoint": false
+        },
+        {
+          "name": "level5",
+          "desc": "5",
+          "score": 15,
+          "endpoint": false
+        }
+      ]
+    },
+
+    {
+      "name": "lastDrivingPeriod",
+      "desc": "Q-9: When last did you drive a car",
+      "type": "tripleOption",
+      "id": 10,
+      "step": 10,
+
+      "options": [
+        {
+          "desc": "Within the last 2 months",
+          "score": 15,
+          "endpoint": false
+        },
+        {
+          "desc": "Within the last 5 months",
+          "score": 10,
+          "endpoint": false
+        },
+        {
+          "desc": "More than 5 months ago",
+          "score": 5,
+          "endpoint": false
+        }
+      ]
+    }
+  ]
 }
