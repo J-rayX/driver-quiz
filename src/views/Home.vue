@@ -1,24 +1,22 @@
 <template>
   <div class="home">
     <!-- <img alt="Vue logo" src="../assets/logo.png" /> -->
-    <Quiz introText="Driving -  Quiz" />
-     
+    <!-- <Quiz introText="Driving -  Quiz" /> -->
+    <Quiz />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import Quiz from "@/components/Quiz.vue";
+import Quiz from '@/components/Quiz.vue'
 // import axios from 'axios';
 export default {
   data() {
-    return {
-    }
+    return {}
   },
 
   components: {
     Quiz
-  },
-
-};
+  }
+}
 </script>

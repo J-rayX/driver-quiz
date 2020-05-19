@@ -1,18 +1,21 @@
 <template>
   <div class="container">
-      <li class="option-select">
-        <input type="radio" id="f-option" name="selector">
-        <label for="f-option">This question is <slot></slot></label>
-        <div class="check"></div>
-      </li>
-    
+    <li class="option-select">
+      <input type="radio" id="f-option" name="selector" />
+      <label for="f-option">
+        This question is
+        <slot></slot>
+      </label>
+      <div class="check"></div>
+    </li>
+
     <!-- Double Options question -->
     <!-- <div class="question-box" v-if="question.type === 'double'">
       <div v-for="(doubleOption, index) in question.options" :key="index">
         <input type="radio" name="" v-model="option" value="doubleOption" />
         <label :for="'doubleOption.desc'"> This question is {{ doubleOption.desc }}</label><br />
       </div>
-    </div> -->
+    </div>-->
 
     <!-- Triple Options question -->
     <!-- <div class="question-box" v-if="question.type === 'triple'">
@@ -22,7 +25,6 @@
       </div>
     </div> 
     -->
-
   </div>
 </template>
 
@@ -31,9 +33,9 @@ export default {
   data() {
     return {
       desc: 'What trasnmission do you want?'
-    };
+    }
   }
-};
+}
 </script>
 
 <style scoped>
@@ -64,11 +66,11 @@ ul.option-select {
   list-style: none;
   margin: 0;
   padding: 0;
-	overflow: auto;
+  overflow: auto;
 }
 
-.container ul li{
-  color: #AAAAAA;
+.container ul li {
+  color: #aaaaaa;
   display: block;
   position: relative;
   float: left;
@@ -77,13 +79,12 @@ ul.option-select {
   margin: 4%;
 }
 
-input[type=radio] {
+input[type='radio'] {
   position: absolute;
   visibility: hidden;
 }
 
-
-ul li label{
+ul li label {
   display: block;
   position: relative;
   font-weight: 300;
@@ -96,22 +97,22 @@ ul li label{
   -webkit-transition: all 0.25s linear;
 }
 
-ul li:hover label{
-	color: rgb(3, 47, 129);
+ul li:hover label {
+  color: rgb(3, 47, 129);
 }
 
-ul li .check{
+ul li .check {
   display: block;
   position: absolute;
-  border: 5px solid #AAAAAA;
+  border: 5px solid #aaaaaa;
   border-radius: 100%;
   height: 25px;
   width: 25px;
   top: 30px;
   left: 20px;
-	z-index: 5;
-	transition: border .25s linear;
-	-webkit-transition: border .25s linear;
+  z-index: 5;
+  transition: border 0.25s linear;
+  -webkit-transition: border 0.25s linear;
 }
 
 ul li:hover .check {
@@ -121,30 +122,29 @@ ul li:hover .check {
 ul li .check::before {
   display: block;
   position: absolute;
-	content: '';
+  content: '';
   border-radius: 100%;
   height: 15px;
   width: 15px;
   top: 5px;
-	left: 5px;
+  left: 5px;
   margin: auto;
-	transition: background 0.25s linear;
-	-webkit-transition: background 0.25s linear;
+  transition: background 0.25s linear;
+  -webkit-transition: background 0.25s linear;
 }
 
-input[type=radio]:checked ~ .check {
-  border: 5px solid  rgb(3, 47, 129);
+input[type='radio']:checked ~ .check {
+  border: 5px solid rgb(3, 47, 129);
 }
 
-input[type=radio]:checked ~ .check::before{
-  background:  rgb(3, 47, 129);
+input[type='radio']:checked ~ .check::before {
+  background: rgb(3, 47, 129);
 }
 
-input[type=radio]:checked ~ label{
-  color:  rgb(3, 47, 129);
+input[type='radio']:checked ~ label {
+  color: rgb(3, 47, 129);
 }
 
 /*#0DFF92*/
 /*rgb(9, 72, 167)*/
-
 </style>
