@@ -94,15 +94,8 @@
           </div>
         </div>
 
-        <!-- <div v-if="question.options.type = []">
-        <div  v-for="(option,index) in question.options.options" :key="index">
-          {{ option.desc }}
-        </div>
-      </div>-->
         <!-- <button :disabled="isOptionChosen" @click.prevent="submitAnswer()" type="submit">Next</button> -->
-        <button type="submit" :disabled="selectedIndex === null">
-          Next
-        </button>
+        <button type="submit" :disabled="selectedIndex === null">Next</button>
 
         <!-- <button @click="submitAnswer">Answer</button> -->
       </div>
