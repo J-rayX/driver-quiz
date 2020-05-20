@@ -1,12 +1,19 @@
 <template>
   <div>
-    <div class="introStage">
-      <h1>{{ introText }}</h1>
-      <p>Take Quiz to become an Expert!</p>
-      <!-- <a href="#" @click="startQuiz">START!</a> <br /> -->
+    <div v-if="introStage">
+      <h1>Welcome to the Course Recommender</h1>
+      <p>This is a new offering from 7days</p>
+      <a @click="beginQuiz">Start</a>
     </div>
 
-    <div class="questionBox">
+    <!-- <div class="introStage">
+        <h1>{{ introText }}</h1>
+
+        <a href="#" @click="startQuiz">START!</a>
+        <br />
+    </div>-->
+
+    <div class="questionBox" v-if="questionStage">
       <!-- <QuestionBox
         v-for="question in questions" :key="question.id"
         :question="question"
@@ -18,8 +25,11 @@
         v-on:option="handleOption"
         :question-number="currentQuestion + 1"
       ></QuestionBox>
+
       <span></span>
     </div>
+
+    <!-- <div v-if="finalStage">You are to pay $ {{}} for {{}} course</div> -->
   </div>
 </template>
 
@@ -43,11 +53,15 @@ export default {
   },
   data() {
     return {
-      questions: [],
-      optionChosen: [],
+      introStage: false,
+      questionStage: false,
+      finalStage: false,
+      questions: [], // to hold list of questions fetched from API
       currentQuestion: 0,
-      options: [],
-      totalScore: 0
+      options: [], // to hold user selection option emmitted from Child comp
+      totalScore: 0,
+      fee: 0,
+      courses: [] // to hold list of courses fetched from API
       //total: 0
     }
   },
@@ -56,33 +70,52 @@ export default {
     QuestionService.getQuestions()
       .then(response => {
         this.questions = response.data
+        this.introStage = true
       })
       .catch(error => {
         console.log('There was an error: ' + error.response)
-      })
+      }),
+      QuestionService.getCourses()
+        .then(response => {
+          this.courses = response.data
+        })
+        .catch(error => {
+          console.log('There was an error: ' + error.response)
+        })
   },
   methods: {
+    // Function to show the start of the app
+    beginQuiz() {
+      this.introStage = false
+      this.questionStage = true
+      console.log(
+        'test ' + JSON.stringify(this.questions[this.currentQuestion])
+      )
+    },
+
+    // Function to handle Display questions and options
     handleOption(e) {
-      //console.log(this.questions)
       console.log('answer event ftw', e)
       this.options[this.currentQuestion] = e.option
-      //this.questionIterator(this.questions)
-      this.totalScore = this.totalScore + e.option.score
-
-      //check if option chosen has a type:doubleOption
-      //display as question
-
+      // this.totalScore = this.totalScore + e.option.score
       if (
         this.currentQuestion + 1 === this.questions.length ||
         e.option.endpoint === true
       ) {
         console.log('Done Finally, total score is ' + this.totalScore)
-
-        return
+        this.finishQuiz()
+        this.questionStage = false
+        this.finalStage = true
       } else {
+        this.totalScore = this.totalScore + e.option.score
         this.currentQuestion++
       }
-      return
+    },
+
+    // Function to handle the final results and display of answers
+    finishQuiz() {
+      console.log('The End!')
+      //if(this.totalScore < 10) this.fee =
     }
   }
 }

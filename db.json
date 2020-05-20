@@ -2,7 +2,7 @@
   "questions": [
     {
       "name": "transmission",
-      "desc": "Q-1: which Transmission?",
+      "desc": "Which Transmission do you want to learn with?",
       "type": "doubleOption",
       "id": 1,
       "step": 1,
@@ -27,7 +27,7 @@
 
     {
       "name": "theoryTest",
-      "desc": "Q-2: Do you possess a Valid Theory Test",
+      "desc": "Do you have a valid theory test pass",
       "type": "doubleOption",
       "id": 2,
       "step": 2,
@@ -48,7 +48,7 @@
 
     {
       "name": "ageGroup",
-      "desc": "Q-3: Which age group do you fall into?",
+      "desc": "Which age group do you fall into?",
       "type": "quadOption",
       "id": 3,
       "step": 3,
@@ -80,7 +80,7 @@
 
     {
       "name": "pastDrivingExperience",
-      "desc": "Q-4: Have you ever driven before?",
+      "desc": "Have you ever driven before?",
       "type": "doubleOption",
       "id": 4,
       "step": 4,
@@ -101,7 +101,7 @@
 
     {
       "name": "pastDrivingExperience",
-      "desc": "Q-5: Can you drive along a straight line?",
+      "desc": "Can you drive along a straight line?",
       "type": "doubleOption",
       "id": 5,
       "step": 5,
@@ -122,7 +122,7 @@
 
     {
       "name": "stoppingAndMoving",
-      "desc": "Q-6: How good are you with stopping and moving?",
+      "desc": "How good are you with stopping and moving?",
       "type": "fiveOption",
       "id": 6,
       "step": 6,
@@ -162,7 +162,7 @@
 
     {
       "name": "junctions",
-      "desc": "Q-7: How good are you with turning at junctions?",
+      "desc": "How good are you with turning at junctions?",
       "type": "fiveOption",
       "id": 7,
       "step": 7,
@@ -202,7 +202,7 @@
 
     {
       "name": "parking",
-      "desc": "Q-8: How good are you with parking a car?",
+      "desc": "How good are you with parking a car?",
       "type": "fiveOption",
       "id": 8,
       "step": 8,
@@ -242,10 +242,10 @@
 
     {
       "name": "reversing",
-      "desc": "Q-9: How good are you with reversing?",
+      "desc": "How good are you with reversing?",
       "type": "fiveOption",
       "id": 9,
-      "step": 8,
+      "step": 9,
 
       "options": [
         {
@@ -282,7 +282,7 @@
 
     {
       "name": "lastDrivingPeriod",
-      "desc": "Q-9: When last did you drive a car",
+      "desc": "When last did you drive a car",
       "type": "tripleOption",
       "id": 10,
       "step": 10,
@@ -302,6 +302,151 @@
           "desc": "More than 5 months ago",
           "score": 5,
           "endpoint": false
+        }
+      ]
+    }
+  ],
+  "courses": [
+    {
+      "name": "quickPass",
+      "options": [
+        {
+          "desc": "Quick Pass 5HR (Manual)",
+          "fee": 297,
+          "transType": "transManual",
+          "hours": 5,
+          "days": 1
+        },
+        {
+          "desc": "Quick Pass 5HR (Auto)",
+          "fee": 307,
+          "transType": "transAuto",
+          "hours": 5,
+          "days": 1
+        },
+        {
+          "desc": "Quick Pass 10HR (Manual)",
+          "fee": 431.96,
+          "transType": "transManual",
+          "hours": 10,
+          "days": 2
+        },
+        {
+          "desc": "Quick Pass 10HR (Auto)",
+          "fee": 452,
+          "transType": "transAuto",
+          "hours": 10,
+          "days": 2
+        },
+        {
+          "desc": "Quick Pass 15HR (Manual)",
+          "fee": 567,
+          "transType": "transManual",
+          "hours": 10,
+          "days": 3
+        },
+        {
+          "desc": "Quick Pass 15HR (Auto)",
+          "fee": 597,
+          "transType": "transAuto",
+          "hours": 10,
+          "days": 3
+        }
+      ]
+    },
+
+    {
+      "name": "intensive",
+      "options": [
+        {
+          "desc": "Intensive 20HR (Manual)",
+          "fee": 652,
+          "transType": "transManual",
+          "hours": 20,
+          "days": 4
+        },
+        {
+          "desc": "Intensive 20HR (Auto)",
+          "fee": 692,
+          "transType": "transAuto",
+          "hours": 20,
+          "days": 4
+        },
+        {
+          "desc": "Intensive 25HR (Manual)",
+          "fee": 787,
+          "transType": "transManual",
+          "hours": 25,
+          "days": 5
+        },
+        {
+          "desc": "Intensive 25HR (Auto)",
+          "fee": 837,
+          "transType": "transAuto",
+          "hours": 25,
+          "days": 5
+        }
+      ]
+    },
+
+    {
+      "name": "beginner",
+      "options": [
+        {
+          "desc": "Beginner 30HR (Manual)",
+          "fee": 922,
+          "transType": "transManual",
+          "hours": 30,
+          "days": 6
+        },
+        {
+          "desc": "Beginner 30HR (Auto)",
+          "fee": 982,
+          "transType": "transAuto",
+          "hours": 20,
+          "days": 6
+        },
+        {
+          "desc": "Beginner 35HR (Manual)",
+          "fee": 1057,
+          "transType": "transManual",
+          "hours": 35,
+          "days": 7
+        },
+        {
+          "desc": "Beginner 35HR (Auto)",
+          "fee": 1127,
+          "transType": "transAuto",
+          "hours": 35,
+          "days": 7
+        },
+        {
+          "desc": "Beginner 40HR (Manual)",
+          "fee": 1197,
+          "transType": "transManual",
+          "hours": 40,
+          "days": 8
+        },
+        {
+          "desc": "Beginner 40HR (Auto)",
+          "fee": 1272,
+          "transType": "transAuto",
+          "hours": 40,
+          "days": 8
+        },
+        {
+          "desc": "Beginner 45HR (Manual)",
+          "fee": 1327,
+          "transType": "transManual",
+          "hours": 45,
+          "days": 9
+        },
+        {
+          "desc": "Beginner 45HR (Auto)",
+          "fee": 1417,
+          "transType": "transAuto",
+          "hours": 45,
+          "days": 9
         }
       ]
     }
