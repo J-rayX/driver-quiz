@@ -1,7 +1,7 @@
 <template>
   <ValidationObserver v-slot="{ handleSubmit }">
     <form v-on:submit.prevent="handleSubmit(submitAnswer)">
-      <div class="question-box">
+      <div class="container flex-container question-box">
         <strong>Question {{ question.id }}:</strong>
         <br />
         <strong>{{ question.desc }}</strong>
@@ -143,16 +143,19 @@ export default {
 
 <style scoped>
 .question-box {
-  float: left;
+  text-align: center;
+  margin: 0 auto;
+  float: center;
   border: #2196f3 1px solid;
   border-radius: 8px;
   box-shadow: #ccc;
   height: auto;
+  width: auto;
   padding: 24px;
   box-shadow: 0 4px 8px 0 rgba(184, 184, 184, 0.2),
     0 6px 16px 0 rgba(184, 184, 184, 0.2);
-  text-align: center;
 }
+
 .option {
   display: block;
   position: relative;
