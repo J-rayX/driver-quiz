@@ -1,8 +1,11 @@
-<template>
-  <div>
-    <div v-if="introStage">
-      <h1>Welcome to the Course Recommender</h1>
-      <p>This is a new offering from 7days</p>
+<template class="body">
+  <div class="container">
+    <div class="flex-container intro-stage" v-if="introStage">
+      <h1>We could help you find the best course for you</h1>
+      <p>
+        Our course recommender will suggest the most suitable course based on
+        your skills and preferences
+      </p>
       <a @click="beginQuiz">Start</a>
     </div>
 
@@ -13,23 +16,17 @@
         <br />
     </div>-->
 
-    <div class="questionBox" v-if="questionStage">
-      <!-- <QuestionBox
-        v-for="question in questions" :key="question.id"
-        :question="question"
-       >
-      </QuestionBox>-->
-
+    <div class="flex-container questionBox" v-if="questionStage">
       <QuestionBox
         :question="questions[currentQuestion]"
         v-on:option="handleOption"
         :question-number="currentQuestion + 1"
       ></QuestionBox>
-
-      <span></span>
     </div>
 
-    <!-- <div v-if="finalStage">You are to pay $ {{}} for {{}} course</div> -->
+    <div v-if="finalStage">
+      <span>You are to pay ${{ feeToBePaid }} course</span>
+    </div>
   </div>
 </template>
 
@@ -61,7 +58,8 @@ export default {
       options: [], // to hold user selection option emmitted from Child comp
       totalScore: 0,
       fee: 0,
-      courses: [] // to hold list of courses fetched from API
+      courses: [], // to hold list of courses fetched from API
+      isManual: false
       //total: 0
     }
   },
@@ -83,11 +81,43 @@ export default {
           console.log('There was an error: ' + error.response)
         })
   },
+  computed: {
+    feeToBePaid() {
+      if (this.totalScore <= 10) {
+        // return this.courses[0].options[0].fee
+        console.log(this.isManual)
+        return this.isManual
+          ? this.courses[0].options[0].fee
+          : this.courses[0].options[1].fee
+      } else if (this.totalScore > 10 && this.totalScore <= 20) {
+        return this.courses[0].options[1].fee
+      } else if (this.totalScore > 20 && this.totalScore <= 30) {
+        return this.courses[0].options[1].fee
+      } else if (this.totalScore > 30 && this.totalScore <= 40) {
+        return this.courses[0].options[1].fee
+      } else if (this.totalScore > 40 && this.totalScore <= 50) {
+        return this.courses[0].options[1].fee
+      } else if (this.totalScore > 50 && this.totalScore <= 60) {
+        return this.courses[0].options[1].fee
+      } else if (this.totalScore > 60 && this.totalScore <= 70) {
+        return this.courses[0].options[1].fee
+      } else if (this.totalScore > 70 && this.totalScore <= 80) {
+        return this.courses[0].options[1].fee
+      } else if (this.totalScore > 80 && this.totalScore <= 90) {
+        return this.courses[0].options[1].fee
+      } else if (this.totalScore > 90 && this.totalScore <= 100) {
+        return this.courses[0].options[1].fee
+      } else {
+        return this.courses[0].options[1].fee
+      }
+    }
+  },
   methods: {
     // Function to show the start of the app
     beginQuiz() {
       this.introStage = false
       this.questionStage = true
+
       console.log(
         'test ' + JSON.stringify(this.questions[this.currentQuestion])
       )
@@ -97,7 +127,17 @@ export default {
     handleOption(e) {
       console.log('answer event ftw', e)
       this.options[this.currentQuestion] = e.option
-      // this.totalScore = this.totalScore + e.option.score
+      if (e.option.transType === 'transManual') {
+        this.isManual = true
+      }
+      if (e.option.transType === 'transAuto') {
+        this.isManual = false
+      }
+
+      // e.option.transType === 'transManual'
+      //   ? this.isManual === true
+      //   : this.isManual === false
+
       if (
         this.currentQuestion + 1 === this.questions.length ||
         e.option.endpoint === true
@@ -108,6 +148,7 @@ export default {
         this.finalStage = true
       } else {
         this.totalScore = this.totalScore + e.option.score
+
         this.currentQuestion++
       }
     },
@@ -115,6 +156,13 @@ export default {
     // Function to handle the final results and display of answers
     finishQuiz() {
       console.log('The End!')
+      // if (this.totalScore < 10) {
+      //   console.log(this.courses[1].options[1].fee)
+      //   //return this.courses[1].options[1].fee
+      // } else {
+      //   console.log(this.courses[1].options[4].fee)
+      //   //return this.courses[1].options[4].fee
+      // }
       //if(this.totalScore < 10) this.fee =
     }
   }
@@ -123,6 +171,12 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+h1 {
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 36px;
+  text-align: center;
+}
 h3 {
   margin: 40px 0 0;
 }
@@ -134,7 +188,46 @@ li {
   display: inline-block;
   margin: 0 10px;
 }
+.container {
+  margin-top: 18%;
+  height: auto;
+  display: flex;
+}
+.intro-stage {
+  text-align: center;
+  margin: 0 auto;
+  float: center;
+  border: #2196f3 1px solid;
+  border-radius: 8px;
+  box-shadow: #ccc;
+  height: auto;
+  width: auto;
+  padding: 24px;
+  box-shadow: 0 4px 8px 0 rgba(184, 184, 184, 0.2),
+    0 6px 16px 0 rgba(184, 184, 184, 0.2);
+}
+
 a {
-  color: #42b983;
+  background-color: #0a3592;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  opacity: 0.8;
+  transition: 0.3s;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: rgb(215, 232, 253) 0px 4px 10px 1px;
+}
+a:hover {
+  opacity: 1;
+}
+a:active {
+  background-color: #0a3592;
+  box-shadow: 0 4px rgb(179, 179, 179);
+  transform: translateY(4px);
 }
 </style>

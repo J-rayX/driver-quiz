@@ -308,88 +308,6 @@
   ],
   "courses": [
     {
-      "name": "quickPass",
-      "options": [
-        {
-          "desc": "Quick Pass 5HR (Manual)",
-          "fee": 297,
-          "transType": "transManual",
-          "hours": 5,
-          "days": 1
-        },
-        {
-          "desc": "Quick Pass 5HR (Auto)",
-          "fee": 307,
-          "transType": "transAuto",
-          "hours": 5,
-          "days": 1
-        },
-        {
-          "desc": "Quick Pass 10HR (Manual)",
-          "fee": 431.96,
-          "transType": "transManual",
-          "hours": 10,
-          "days": 2
-        },
-        {
-          "desc": "Quick Pass 10HR (Auto)",
-          "fee": 452,
-          "transType": "transAuto",
-          "hours": 10,
-          "days": 2
-        },
-        {
-          "desc": "Quick Pass 15HR (Manual)",
-          "fee": 567,
-          "transType": "transManual",
-          "hours": 10,
-          "days": 3
-        },
-        {
-          "desc": "Quick Pass 15HR (Auto)",
-          "fee": 597,
-          "transType": "transAuto",
-          "hours": 10,
-          "days": 3
-        }
-      ]
-    },
-
-    {
-      "name": "intensive",
-      "options": [
-        {
-          "desc": "Intensive 20HR (Manual)",
-          "fee": 652,
-          "transType": "transManual",
-          "hours": 20,
-          "days": 4
-        },
-        {
-          "desc": "Intensive 20HR (Auto)",
-          "fee": 692,
-          "transType": "transAuto",
-          "hours": 20,
-          "days": 4
-        },
-        {
-          "desc": "Intensive 25HR (Manual)",
-          "fee": 787,
-          "transType": "transManual",
-          "hours": 25,
-          "days": 5
-        },
-        {
-          "desc": "Intensive 25HR (Auto)",
-          "fee": 837,
-          "transType": "transAuto",
-          "hours": 25,
-          "days": 5
-        }
-      ]
-    },
-
-    {
       "name": "beginner",
       "options": [
         {
@@ -447,6 +365,86 @@
           "transType": "transAuto",
           "hours": 45,
           "days": 9
+        }
+      ]
+    },
+    {
+      "name": "intensive",
+      "options": [
+        {
+          "desc": "Intensive 20HR (Manual)",
+          "fee": 652,
+          "transType": "transManual",
+          "hours": 20,
+          "days": 4
+        },
+        {
+          "desc": "Intensive 20HR (Auto)",
+          "fee": 692,
+          "transType": "transAuto",
+          "hours": 20,
+          "days": 4
+        },
+        {
+          "desc": "Intensive 25HR (Manual)",
+          "fee": 787,
+          "transType": "transManual",
+          "hours": 25,
+          "days": 5
+        },
+        {
+          "desc": "Intensive 25HR (Auto)",
+          "fee": 837,
+          "transType": "transAuto",
+          "hours": 25,
+          "days": 5
+        }
+      ]
+    },
+    {
+      "name": "quickPass",
+      "options": [
+        {
+          "desc": "Quick Pass 5HR (Manual)",
+          "fee": 297,
+          "transType": "transManual",
+          "hours": 5,
+          "days": 1
+        },
+        {
+          "desc": "Quick Pass 5HR (Auto)",
+          "fee": 307,
+          "transType": "transAuto",
+          "hours": 5,
+          "days": 1
+        },
+        {
+          "desc": "Quick Pass 10HR (Manual)",
+          "fee": 431.96,
+          "transType": "transManual",
+          "hours": 10,
+          "days": 2
+        },
+        {
+          "desc": "Quick Pass 10HR (Auto)",
+          "fee": 452,
+          "transType": "transAuto",
+          "hours": 10,
+          "days": 2
+        },
+        {
+          "desc": "Quick Pass 15HR (Manual)",
+          "fee": 567,
+          "transType": "transManual",
+          "hours": 10,
+          "days": 3
+        },
+        {
+          "desc": "Quick Pass 15HR (Auto)",
+          "fee": 597,
+          "transType": "transAuto",
+          "hours": 10,
+          "days": 3
         }
       ]
     }
