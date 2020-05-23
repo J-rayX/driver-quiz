@@ -25,7 +25,27 @@
     </div>
 
     <div v-if="finalStage">
-      <span>You are to pay ${{ feeToBePaid }} course</span>
+      <div class="flex-container final-stage">
+        <span
+          style="font-weight: 600; font-size: 24px; color:  #0a3592;"
+        >Enroll for {{ feeToBePaid.desc }} course</span>
+        <hr />
+        <h5 style="font-weight: bold;">About the Course</h5>
+        <div v-for="(feature, index) in feeToBePaid.features" :key="index">
+          <span>{{ feature }}</span>
+        </div>
+        <hr />
+        <h5 style="font-weight: bold;">Duration</h5>
+        <span>
+          Takes {{ feeToBePaid.days }} and a total of
+          {{ feeToBePaid.hours }}
+        </span>
+        <hr />
+        <h5 style="font-weight: bold;">Cost</h5>
+        <span>&#163;{{ feeToBePaid.fee }}</span>
+        <a>Pay</a>
+        <hr />
+      </div>
     </div>
   </div>
 </template>
@@ -84,31 +104,42 @@ export default {
   computed: {
     feeToBePaid() {
       if (this.totalScore <= 10) {
-        // return this.courses[0].options[0].fee
-        console.log(this.isManual)
+        //console.log(this.isManual)
         return this.isManual
-          ? this.courses[0].options[0].fee
-          : this.courses[0].options[1].fee
+          ? this.courses[0].options[0]
+          : this.courses[0].options[1]
       } else if (this.totalScore > 10 && this.totalScore <= 20) {
-        return this.courses[0].options[1].fee
+        return this.isManual
+          ? this.courses[0].options[2].fee
+          : this.courses[0].options[3].fee
       } else if (this.totalScore > 20 && this.totalScore <= 30) {
-        return this.courses[0].options[1].fee
+        return this.isManual
+          ? this.courses[0].options[4].fee
+          : this.courses[0].options[5].fee
       } else if (this.totalScore > 30 && this.totalScore <= 40) {
-        return this.courses[0].options[1].fee
+        return this.isManual
+          ? this.courses[0].options[6].fee
+          : this.courses[0].options[7].fee
       } else if (this.totalScore > 40 && this.totalScore <= 50) {
-        return this.courses[0].options[1].fee
+        return this.isManual
+          ? this.courses[1].options[0].fee
+          : this.courses[1].options[1].fee
       } else if (this.totalScore > 50 && this.totalScore <= 60) {
-        return this.courses[0].options[1].fee
+        return this.isManual
+          ? this.courses[1].options[2].fee
+          : this.courses[1].options[3].fee
       } else if (this.totalScore > 60 && this.totalScore <= 70) {
-        return this.courses[0].options[1].fee
-      } else if (this.totalScore > 70 && this.totalScore <= 80) {
-        return this.courses[0].options[1].fee
-      } else if (this.totalScore > 80 && this.totalScore <= 90) {
-        return this.courses[0].options[1].fee
-      } else if (this.totalScore > 90 && this.totalScore <= 100) {
-        return this.courses[0].options[1].fee
+        return this.isManual
+          ? this.courses[2].options[0].fee
+          : this.courses[2].options[1].fee
+      } else if (this.totalScore > 70 && this.totalScore <= 85) {
+        return this.isManual
+          ? this.courses[2].options[2].fee
+          : this.courses[2].options[3].fee
       } else {
-        return this.courses[0].options[1].fee
+        return this.isManual
+          ? this.courses[0].options[4].fee
+          : this.courses[0].options[5].fee
       }
     }
   },
@@ -207,6 +238,20 @@ li {
     0 6px 16px 0 rgba(184, 184, 184, 0.2);
 }
 
+.final-stage {
+  text-align: center;
+  margin: 0 auto;
+  float: center;
+  border: #2196f3 1px solid;
+  border-radius: 8px;
+  box-shadow: #ccc;
+  height: auto;
+  width: auto;
+  padding: 24px;
+  box-shadow: 0 4px 8px 0 rgba(184, 184, 184, 0.2),
+    0 6px 16px 0 rgba(184, 184, 184, 0.2);
+}
+
 a {
   background-color: #0a3592;
   border: none;
@@ -229,5 +274,10 @@ a:active {
   background-color: #0a3592;
   box-shadow: 0 4px rgb(179, 179, 179);
   transform: translateY(4px);
+}
+hr {
+  border: 0.5px solid rgb(199, 199, 199);
+  width: 90%;
+  border-radius: 5px;
 }
 </style>

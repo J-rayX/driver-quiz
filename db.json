@@ -311,80 +311,106 @@
       "name": "beginner",
       "options": [
         {
-          "desc": "Beginner 30HR (Manual)",
-          "fee": 922,
-          "transType": "transManual",
-          "hours": 30,
-          "days": 6
-        },
-        {
-          "desc": "Beginner 30HR (Auto)",
-          "fee": 982,
-          "transType": "transAuto",
-          "hours": 20,
-          "days": 6
-        },
-        {
-          "desc": "Beginner 35HR (Manual)",
-          "fee": 1057,
-          "transType": "transManual",
-          "hours": 35,
-          "days": 7
-        },
-        {
-          "desc": "Beginner 35HR (Auto)",
-          "fee": 1127,
-          "transType": "transAuto",
-          "hours": 35,
-          "days": 7
-        },
-        {
-          "desc": "Beginner 40HR (Manual)",
-          "fee": 1197,
-          "transType": "transManual",
-          "hours": 40,
-          "days": 8
-        },
-        {
-          "desc": "Beginner 40HR (Auto)",
-          "fee": 1272,
-          "transType": "transAuto",
-          "hours": 40,
-          "days": 8
-        },
-        {
           "desc": "Beginner 45HR (Manual)",
           "fee": 1327,
           "transType": "transManual",
           "hours": 45,
-          "days": 9
+          "days": 9,
+          "features": [
+            "Includes Theory test",
+            "Includes Practical Test",
+            "Taught by a DVSA-approved instructor"
+          ]
         },
         {
           "desc": "Beginner 45HR (Auto)",
           "fee": 1417,
           "transType": "transAuto",
           "hours": 45,
-          "days": 9
+          "days": 9,
+          "features": [
+            "Includes Theory test",
+            "Includes Practical Test",
+            "Taught by a DVSA-approved instructor"
+          ]
+        },
+        {
+          "desc": "Beginner 40HR (Manual)",
+          "fee": 1197,
+          "transType": "transManual",
+          "hours": 40,
+          "days": 8,
+          "features": [
+            "Includes Theory test",
+            "Includes Practical Test",
+            "Taught by a DVSA-approved instructor"
+          ]
+        },
+        {
+          "desc": "Beginner 40HR (Auto)",
+          "fee": 1272,
+          "transType": "transAuto",
+          "hours": 40,
+          "days": 8,
+          "features": [
+            "Includes Theory test",
+            "Includes Practical Test",
+            "Taught by a DVSA-approved instructor"
+          ]
+        },
+        {
+          "desc": "Beginner 35HR (Manual)",
+          "fee": 1057,
+          "transType": "transManual",
+          "hours": 35,
+          "days": 7,
+          "features": [
+            "Includes Theory test",
+            "Includes Practical Test",
+            "Taught by a DVSA-approved instructor"
+          ]
+        },
+        {
+          "desc": "Beginner 35HR (Auto)",
+          "fee": 1127,
+          "transType": "transAuto",
+          "hours": 35,
+          "days": 7,
+          "features": [
+            "Includes Theory test",
+            "Includes Practical Test",
+            "Taught by a DVSA-approved instructor"
+          ]
+        },
+        {
+          "desc": "Beginner 30HR (Manual)",
+          "fee": 922,
+          "transType": "transManual",
+          "hours": 30,
+          "days": 6,
+          "features": [
+            "Includes Theory test",
+            "Includes Practical Test",
+            "Taught by a DVSA-approved instructor"
+          ]
+        },
+        {
+          "desc": "Beginner 30HR (Auto)",
+          "fee": 982,
+          "transType": "transAuto",
+          "hours": 20,
+          "days": 6,
+          "features": [
+            "Includes Theory test",
+            "Includes Practical Test",
+            "Taught by a DVSA-approved instructor"
+          ]
         }
       ]
     },
     {
       "name": "intensive",
       "options": [
-        {
-          "desc": "Intensive 20HR (Manual)",
-          "fee": 652,
-          "transType": "transManual",
-          "hours": 20,
-          "days": 4
-        },
-        {
-          "desc": "Intensive 20HR (Auto)",
-          "fee": 692,
-          "transType": "transAuto",
-          "hours": 20,
-          "days": 4
-        },
         {
           "desc": "Intensive 25HR (Manual)",
           "fee": 787,
@@ -398,6 +424,20 @@
           "transType": "transAuto",
           "hours": 25,
           "days": 5
+        },
+        {
+          "desc": "Intensive 20HR (Manual)",
+          "fee": 652,
+          "transType": "transManual",
+          "hours": 20,
+          "days": 4
+        },
+        {
+          "desc": "Intensive 20HR (Auto)",
+          "fee": 692,
+          "transType": "transAuto",
+          "hours": 20,
+          "days": 4
         }
       ]
     },
@@ -405,18 +445,18 @@
       "name": "quickPass",
       "options": [
         {
-          "desc": "Quick Pass 5HR (Manual)",
-          "fee": 297,
+          "desc": "Quick Pass 15HR (Manual)",
+          "fee": 567,
           "transType": "transManual",
-          "hours": 5,
-          "days": 1
+          "hours": 10,
+          "days": 3
         },
         {
-          "desc": "Quick Pass 5HR (Auto)",
-          "fee": 307,
+          "desc": "Quick Pass 15HR (Auto)",
+          "fee": 597,
           "transType": "transAuto",
-          "hours": 5,
-          "days": 1
+          "hours": 10,
+          "days": 3
         },
         {
           "desc": "Quick Pass 10HR (Manual)",
@@ -433,18 +473,18 @@
           "days": 2
         },
         {
-          "desc": "Quick Pass 15HR (Manual)",
-          "fee": 567,
+          "desc": "Quick Pass 5HR (Manual)",
+          "fee": 297,
           "transType": "transManual",
-          "hours": 10,
-          "days": 3
+          "hours": 5,
+          "days": 1
         },
         {
-          "desc": "Quick Pass 15HR (Auto)",
-          "fee": 597,
+          "desc": "Quick Pass 5HR (Auto)",
+          "fee": 307,
           "transType": "transAuto",
-          "hours": 10,
-          "days": 3
+          "hours": 5,
+          "days": 1
         }
       ]
     }
