@@ -25,25 +25,25 @@
     </div>
 
     <div v-if="finalStage">
-      <div class="flex-container final-stage">
+     <div class="flex-container final-stage">
         <span
           style="font-weight: 600; font-size: 24px; color:  #0a3592;"
         >Enroll for {{ feeToBePaid.desc }} course</span>
         <hr />
-        <h5 style="font-weight: bold;">About the Course</h5>
+        <h5 style="font-weight: bold; text-align: center;">About the Course</h5>
         <div v-for="(feature, index) in feeToBePaid.features" :key="index">
           <span>{{ feature }}</span>
         </div>
         <hr />
-        <h5 style="font-weight: bold;">Duration</h5>
+        <h5 style="font-weight: bold; text-align: center;">Duration</h5>
         <span>
           Takes {{ feeToBePaid.days }} and a total of
           {{ feeToBePaid.hours }}
         </span>
         <hr />
-        <h5 style="font-weight: bold;">Cost</h5>
+        <h5 style="font-weight: bold;  text-align: center;">Cost</h5>
         <span>&#163;{{ feeToBePaid.fee }}</span>
-        <a>Pay</a>
+        <a @click="$emit('goToPayment', feeToBePaid)">Pay</a>
         <hr />
       </div>
     </div>
@@ -79,7 +79,8 @@ export default {
       totalScore: 0,
       fee: 0,
       courses: [], // to hold list of courses fetched from API
-      isManual: false
+      isManual: false,
+      courseCost: 0
       //total: 0
     }
   },
@@ -108,38 +109,39 @@ export default {
         return this.isManual
           ? this.courses[0].options[0]
           : this.courses[0].options[1]
+         
       } else if (this.totalScore > 10 && this.totalScore <= 20) {
         return this.isManual
-          ? this.courses[0].options[2].fee
-          : this.courses[0].options[3].fee
+          ? this.courses[0].options[2]
+          : this.courses[0].options[3]
       } else if (this.totalScore > 20 && this.totalScore <= 30) {
         return this.isManual
-          ? this.courses[0].options[4].fee
-          : this.courses[0].options[5].fee
+          ? this.courses[0].options[4]
+          : this.courses[0].options[5]
       } else if (this.totalScore > 30 && this.totalScore <= 40) {
         return this.isManual
-          ? this.courses[0].options[6].fee
-          : this.courses[0].options[7].fee
+          ? this.courses[0].options[6]
+          : this.courses[0].options[7]
       } else if (this.totalScore > 40 && this.totalScore <= 50) {
         return this.isManual
-          ? this.courses[1].options[0].fee
-          : this.courses[1].options[1].fee
+          ? this.courses[1].options[0]
+          : this.courses[1].options[1]
       } else if (this.totalScore > 50 && this.totalScore <= 60) {
         return this.isManual
-          ? this.courses[1].options[2].fee
-          : this.courses[1].options[3].fee
+          ? this.courses[1].options[2]
+          : this.courses[1].options[3]
       } else if (this.totalScore > 60 && this.totalScore <= 70) {
         return this.isManual
-          ? this.courses[2].options[0].fee
-          : this.courses[2].options[1].fee
+          ? this.courses[2].options[0]
+          : this.courses[2].options[1]
       } else if (this.totalScore > 70 && this.totalScore <= 85) {
         return this.isManual
-          ? this.courses[2].options[2].fee
-          : this.courses[2].options[3].fee
+          ? this.courses[2].options[2]
+          : this.courses[2].options[3]
       } else {
         return this.isManual
-          ? this.courses[0].options[4].fee
-          : this.courses[0].options[5].fee
+          ? this.courses[0].options[4]
+          : this.courses[0].options[5]
       }
     }
   },
@@ -165,14 +167,7 @@ export default {
         this.isManual = false
       }
 
-      // e.option.transType === 'transManual'
-      //   ? this.isManual === true
-      //   : this.isManual === false
-
-      if (
-        this.currentQuestion + 1 === this.questions.length ||
-        e.option.endpoint === true
-      ) {
+      if ( this.currentQuestion + 1 === this.questions.length || e.option.endpoint === true ) {
         console.log('Done Finally, total score is ' + this.totalScore)
         this.finishQuiz()
         this.questionStage = false
@@ -182,6 +177,8 @@ export default {
 
         this.currentQuestion++
       }
+
+
     },
 
     // Function to handle the final results and display of answers
@@ -195,8 +192,32 @@ export default {
       //   //return this.courses[1].options[4].fee
       // }
       //if(this.totalScore < 10) this.fee =
-    }
+    },
+   goToPayment() {
+      if (this.totalScore <= 10) {
+        //console.log(this.isManual)
+          this.isManual ? this.courseCost = this.courses[0].options[0] : this.courseCost =  this.courses[0].options[1]
+      } else if (this.totalScore > 10 && this.totalScore <= 20) {
+          this.isManual ? this.courseCost = this.courses[0].options[2].fee : this.courseCost = this.courses[0].options[3].fee
+      } else if (this.totalScore > 20 && this.totalScore <= 30) {
+          this.isManual ? this.courseCost = this.courses[0].options[4].fee : this.courseCost = this.courses[0].options[5].fee
+      } else if (this.totalScore > 30 && this.totalScore <= 40) {
+          this.isManual ? this.courseCost = this.courses[0].options[6].fee : this.courseCost = this.courses[0].options[7].fee
+      } else if (this.totalScore > 40 && this.totalScore <= 50) {
+          this.isManual ? this.courseCost = this.courses[1].options[0].fee : this.courseCost = this.courses[1].options[1].fee
+      } else if (this.totalScore > 50 && this.totalScore <= 60) {
+          this.isManual ? this.courseCost = this.courses[1].options[2].fee : this.courseCost = this.courses[1].options[3].fee
+      } else if (this.totalScore > 60 && this.totalScore <= 70) {
+          this.isManual ? this.courseCost = this.courses[2].options[0].fee : this.courseCost = this.courses[2].options[1].fee
+      } else if (this.totalScore > 70 && this.totalScore <= 85) {
+          this.isManual ? this.courseCost = this.courses[2].options[2].fee : this.courseCost = this.courses[2].options[3].fee
+      } else {
+          this.isManual ? this.courseCost = this.courses[0].options[4].fee : this.courseCost = this.courses[0].options[5].fee
+      }
+     //this.$emit('feeToBePaid', { option: this.option })
+   }
   }
+
 }
 </script>
 
