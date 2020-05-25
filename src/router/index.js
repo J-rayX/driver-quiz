@@ -1,7 +1,9 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
-import About from "../views/About.vue";
+import Recommender from "../views/Recommender.vue";
+import Booking from "../views/Booking.vue";
+
 
 
 Vue.use(VueRouter);
@@ -14,8 +16,14 @@ const routes = [
     props: true
   },
   {
-    path: "/about",
-    name: "about",
+    path: "/",
+    name: "recommender",
+    component: Recommender,
+    props: true
+  },
+  {
+    path: "/",
+    name: "booking",
     component: About,
     props: true
     // route level code-splitting
