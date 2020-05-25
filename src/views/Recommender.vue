@@ -1,10 +1,8 @@
 <template>
-  <div class="home">
+  <div class="recommender">
     <!-- <img alt="Vue logo" src="../assets/logo.png" /> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<!--     
     <Quiz />
-     -->
   </div>
 </template>
 
@@ -24,7 +22,7 @@ export default {
 </script>
 
 <style>
-.home {
+.recommender {
   margin-left: 0%;
 }
 

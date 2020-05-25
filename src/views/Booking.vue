@@ -1,17 +1,24 @@
 <template>
-  <div class="about">
-    <h1>This is our about page</h1>
+  <div class="booking">
+    <h1>Course Booking View</h1>
     <span>{{ welcome }}</span>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'About',
+  courseListStage: false,
+  personalDetailStage: false,
+  confirmationStage: false,
+  paymentOptionStage: false,
+  paymentStage: false,
+
+
+  name: 'Booking',
   props: ['courseRecommended'],
   data() {
     return {
-      welcome: 'THis is the about page'
+      welcome: 'This is the Booking page'
     }
   },
   mounted() {
