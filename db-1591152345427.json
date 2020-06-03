@@ -6,7 +6,6 @@
       "type": "doubleOption",
       "id": 1,
       "step": 1,
-
       "options": [
         {
           "desc": "Manual",
@@ -24,14 +23,12 @@
         }
       ]
     },
-
     {
       "name": "theoryTest",
       "desc": "Do you have a valid theory test pass",
       "type": "doubleOption",
       "id": 2,
       "step": 2,
-
       "options": [
         {
           "desc": "Yes",
@@ -45,7 +42,6 @@
         }
       ]
     },
-
     {
       "name": "ageGroup",
       "desc": "Which age group do you fall into?",
@@ -53,7 +49,6 @@
       "id": 3,
       "step": 3,
       "score": 0,
-
       "options": [
         {
           "desc": "Less than 17 years old",
@@ -77,14 +72,12 @@
         }
       ]
     },
-
     {
       "name": "pastDrivingExperience",
       "desc": "Have you ever driven before?",
       "type": "doubleOption",
       "id": 4,
       "step": 4,
-
       "options": [
         {
           "desc": "Yes",
@@ -98,14 +91,12 @@
         }
       ]
     },
-
     {
       "name": "pastDrivingExperience",
       "desc": "Can you drive along a straight line?",
       "type": "doubleOption",
       "id": 5,
       "step": 5,
-
       "options": [
         {
           "desc": "Yes",
@@ -119,14 +110,12 @@
         }
       ]
     },
-
     {
       "name": "stoppingAndMoving",
       "desc": "How good are you with stopping and moving?",
       "type": "fiveOption",
       "id": 6,
       "step": 6,
-
       "options": [
         {
           "desc": "1",
@@ -159,14 +148,12 @@
         }
       ]
     },
-
     {
       "name": "junctions",
       "desc": "How good are you with turning at junctions?",
       "type": "fiveOption",
       "id": 7,
       "step": 7,
-
       "options": [
         {
           "desc": "1",
@@ -199,14 +186,12 @@
         }
       ]
     },
-
     {
       "name": "parking",
       "desc": "How good are you with parking a car?",
       "type": "fiveOption",
       "id": 8,
       "step": 8,
-
       "options": [
         {
           "desc": "1",
@@ -239,14 +224,12 @@
         }
       ]
     },
-
     {
       "name": "reversing",
       "desc": "How good are you with reversing?",
       "type": "fiveOption",
       "id": 9,
       "step": 9,
-
       "options": [
         {
           "desc": "1",
@@ -279,14 +262,12 @@
         }
       ]
     },
-
     {
       "name": "lastDrivingPeriod",
       "desc": "When last did you drive a car",
       "type": "tripleOption",
       "id": 10,
       "step": 10,
-
       "options": [
         {
           "desc": "Within the last 2 months",

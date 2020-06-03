@@ -2,9 +2,8 @@
   <div class="home">
     <!-- <img alt="Vue logo" src="../assets/logo.png" /> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<!--     
-    <Quiz />
-     -->
+    <span>this is the homepGE</span>
+    <!-- <Quiz /> -->
   </div>
 </template>
 
@@ -18,7 +17,7 @@ export default {
   },
 
   components: {
-    Quiz
+    // Quiz
   }
 }
 </script>

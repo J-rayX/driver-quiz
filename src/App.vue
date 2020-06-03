@@ -1,9 +1,9 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link :to="{ name: 'home'}">Home</router-link> |
-      <router-link :to="{ name: 'recommender'}">Course Recommender</router-link> |
-      <router-link :to="{ name: 'about' }">Booking</router-link>
+      <router-link :to="{ name: 'home'}">Home</router-link>|
+      <router-link :to="{ name: 'course-recommender'}">Course Recommender</router-link>|
+      <router-link :to="{ name: 'booking' }">Booking</router-link>
     </div>
     <router-view />
   </div>
@@ -234,4 +234,3 @@ select::ms-expand {
   opacity: 0;
 }
 </style>
-
