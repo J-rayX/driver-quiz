@@ -42,8 +42,8 @@
         </span>
         <hr />
         <h5 style="font-weight: bold;  text-align: center;">Cost</h5>
-        <span>&#163;{{ feeToBePaid.fee }}</span>\
-        <router-link :to="{ name: 'about', params: { courseRecommended }}">
+        <span>&#163;{{ feeToBePaid.fee }}</span>
+        <router-link :to="{ name: 'booking', params: { courseRecommended }}">
           <a @click="$emit('goToPayment', feeToBePaid)">Pay</a>
         </router-link>
         <hr />
