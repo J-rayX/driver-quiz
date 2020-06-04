@@ -4,6 +4,9 @@ import Home from '../views/Home.vue'
 import Recommender from '../views/Recommender.vue'
 import Booking from '../views/Booking.vue'
 import NotFound from '../views/NotFound.vue'
+import Courses from '../views/booking/Courses.vue'
+import PersonalDetailForm from '../views/booking/PersonalDetailForm.vue'
+import ConfirmDetail from '../views/booking/ConfirmDetail.vue'
 
 Vue.use(VueRouter)
 
@@ -24,12 +27,40 @@ const routes = [
     path: '/booking',
     name: 'booking',
     component: Booking,
+    props: true,
+    children: [
+      // UserHome will be rendered inside User's <router-view>
+      // when /user/:id is matched
+      // { path: '/booking', component: Booking },
+
+      // UserProfile will be rendered inside User's <router-view>
+      // when /user/:id/profile is matched
+      { path: 'step1', component: Courses },
+      { path: 'step2', component: PersonalDetailForm },
+      { path: 'step3', component: ConfirmDetail }
+    ]
+  },
+  {
+    path: '/courses',
+    name: 'courses',
+    component: Courses,
+    props: true,
+    children: [
+      // { path: 'step1', component: PersonalDetailForm },
+      { path: 'step2', component: ConfirmDetail }
+    ]
+  },
+  {
+    path: '/courses/step1',
+    name: 'step1',
+    component: PersonalDetailForm,
     props: true
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    // component: () =>
-    //   import(/* webpackChunkName: "about" */ "../views/About.vue")
+  },
+  {
+    path: '/courses/step2',
+    name: 'step2',
+    component: ConfirmDetail,
+    props: true
   },
   {
     path: '*',
