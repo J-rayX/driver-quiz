@@ -5,15 +5,23 @@
 
     <div v-if="courseListStage">
       <h3>Click to select any of the Listed courses one by one</h3>
-      <Courses :courses="courses" v-on:course="handleOption" />
+      <Courses v-on:course="handleOption" />
     </div>
 
     <div v-if="personalDetailStage">
       <h3>Form to enter personal details while displaying the chosen course</h3>
+      <PersonalDetailForm v-on:form="handleForm" />
     </div>
 
     <div v-if="confirmationStage">
-      <h3>Display editable details filled in previous view for,</h3>
+      <h3>Check details filled in previous view form</h3>
+      <ConfirmDetail
+        :personalDetailFormData="personalDetailFormData"
+        :courseListStage="false"
+        :course="course"
+        v-on:goBackToCourseList="confirmCourse"
+        v-on:goBackToPersonalDetail="ConfirmDetail"
+      />
     </div>
 
     <div v-if="paymentOptionStage">
@@ -27,27 +35,37 @@
 </template>
 
 <script>
-import Courses from '@/components/Courses.vue'
 import QuestionService from '@/services/QuestionService.js'
+// import Courses from '@/views/booking/Courses.vue'
+// import PersonalDetailForm from '@/views/booking/PersonalDetailForm.vue'
+// import ConfirmDetail from '@/views/booking/ConfirmDetail.vue'
+
+import Courses from '@/components/Courses.vue'
+import PersonalDetailForm from '@/components/PersonalDetailForm.vue'
+import ConfirmDetail from '@/components/ConfirmDetail.vue'
 
 export default {
   name: 'Booking',
   props: ['courseRecommended'],
   components: {
-    Courses
+    Courses,
+    PersonalDetailForm,
+    ConfirmDetail
   },
   data() {
     return {
-      course: {},
-      courses: [],
       courseListStage: false,
       personalDetailStage: false,
       confirmationStage: false,
       paymentOptionStage: false,
-      paymentStage: false
+      paymentStage: false,
+      course: {},
+      courses: [],
+      personalDetailFormData: {}
     }
   },
   created() {
+    this.courseListStage = true
     QuestionService.getCourses()
       .then(response => {
         this.courses = response.data
@@ -61,8 +79,39 @@ export default {
     handleOption(e) {
       // this.$emit('option', { option: this.option })
       console.log('collected love and light ', e)
+      this.course = e
+      this.courseListStage = false
+      this.personalDetailStage = true
+    },
+    handleForm(e) {
+      // this.$emit('option', { option: this.option })
+      console.log('accepting form entry ', e)
+      this.personalDetailFormData = e
+      this.personalDetailStage = false
+      this.confirmationStage = true
+    },
+    confirmCourse(e) {
+      console.log('received course change e', e)
+      this.courseListStage = e
+      if ((this.courseListStage = true)) {
+        //this.courseListStage = true
+        // this.personalDetailStage = false
+        this.confirmationStage = false
+        this.handleForm()
+      } else this.confirmationStage = false
+    },
+    ConfirmDetail(e) {
+      console.log('received detail change e', e)
+      this.personalDetailStage = e
+      if ((this.personalDetailStage = true)) {
+        //this.confirmationStage = true
+        this.personalDetailStage = true
+        this.confirmationStage = false
+        this.handleOption()
+      } else this.confirmationStage = false
     }
   }
+
   // mounted() {
   //   if (this.courseRecommended) {
   //     this.course = this.courseRecommended

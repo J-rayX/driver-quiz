@@ -16,9 +16,10 @@
           <br />
           <span class="label">{{ course.transType }}</span>
         </b-card-text>
-
-        <b-button href="#" @click="startBooking(index)" variant="primary">Book Now</b-button>
-        <!-- <a @click="$emit('goToPayment', feeToBePaid)">Pay</a> -->
+        <router-link :to="{ name: 'step1', params: { courseChosen }}">
+          <b-button @click="startBooking(index)" variant="primary">Book Now</b-button>
+          <!-- <a @click="$emit('goToPayment', feeToBePaid)">Pay</a> -->
+        </router-link>
       </b-card>
       <!-- </div>
 
@@ -72,7 +73,9 @@ export default {
 
   methods: {
     startBooking(messageToBeSent) {
-   
+      // this.$emit('course', { course: this.course })
+      // this.$emit('course', course)
+      // console.log('sending love and light')
       if (messageToBeSent != undefined) {
         this.courseChosen = this.courses[messageToBeSent]
         console.log(this.courseChosen)
