@@ -19,7 +19,8 @@
         :personalDetailFormData="personalDetailFormData"
         :courseListStage="false"
         :course="course"
-        v-on:goBackToCourseList="confirmForm"
+        v-on:goBackToCourseList="confirmCourse"
+        v-on:goBackToPersonalDetail="ConfirmDetail"
       />
     </div>
 
@@ -89,12 +90,24 @@ export default {
       this.personalDetailStage = false
       this.confirmationStage = true
     },
-    confirmForm() {
-      console.log('received e', e)
+    confirmCourse(e) {
+      console.log('received course change e', e)
       this.courseListStage = e
       if ((this.courseListStage = true)) {
         //this.courseListStage = true
-        handleForm()
+        // this.personalDetailStage = false
+        this.confirmationStage = false
+        this.handleForm()
+      } else this.confirmationStage = false
+    },
+    ConfirmDetail(e) {
+      console.log('received detail change e', e)
+      this.personalDetailStage = e
+      if ((this.personalDetailStage = true)) {
+        //this.confirmationStage = true
+        this.personalDetailStage = true
+        this.confirmationStage = false
+        this.handleOption()
       } else this.confirmationStage = false
     }
   }

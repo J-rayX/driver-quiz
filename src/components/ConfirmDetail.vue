@@ -9,7 +9,7 @@
         <div class="d-block">
           <h3 class="d-inline float-left">Your Details</h3>
           <router-link :to="{ name: 'booking', params: { course } }">
-            <a href="//book/step2" class="link--basic d-inline float-right">Edit</a>
+            <a @click="changeDetail" class="link--basic d-inline float-right">Edit</a>
           </router-link>
         </div>
 
@@ -17,8 +17,8 @@
           <div class="row row--details">
             <h4 class="col-12 col-md-3 col-xl-2">Name</h4>
             <span id="name_summary" class="col-12 col-md-9 col-xl-10">
-              {{ personalDetailFormData.firstName }}
-              {{ personalDetailFormData.lastName }}
+              {{ personalDetailFormHold.firstName }}
+              {{ personalDetailFormHold.lastName }}
             </span>
           </div>
           <div class="row row--details">
@@ -26,7 +26,7 @@
             <span
               id="postcode_summary"
               class="col-12 col-md-9 col-xl-10"
-            >{{ personalDetailFormData.postCode }}</span>
+            >{{ personalDetailFormHold.postCode }}</span>
           </div>
           <div class="row row--details">
             <h4 class="col-12 col-md-3 col-xl-2">Email</h4>
@@ -34,21 +34,21 @@
               id="email_summary"
               class="col-12 col-md-9 col-xl-10"
               style="word-break:break-word"
-            >{{ personalDetailFormData.email }}</span>
+            >{{ personalDetailFormHold.email }}</span>
           </div>
           <div class="row row--details">
             <h4 class="control-label col-12 col-md-3 col-xl-2">Phone</h4>
             <span
               id="phone_summary"
               class="col-12 col-md-9 col-xl-10"
-            >{{ personalDetailFormData.phone }}</span>
+            >{{ personalDetailFormHold.phone }}</span>
           </div>
           <div class="row row--details">
             <h4 class="col-12 col-md-3 col-xl-2">Complete By</h4>
             <span
               id="date_summary"
               class="col-12 col-md-9 col-xl-10"
-            >{{ personalDetailFormData.dateToStart }}</span>
+            >{{ personalDetailFormHold.dateToStart }}</span>
           </div>
         </div>
       </div>
@@ -96,11 +96,14 @@ export default {
   props: {
     personalDetailFormData: Object,
     course: Object,
-    courseListStage: Boolean
+    courseListStage: Boolean,
+    personalDetailStage: Boolean
   },
   data() {
     return {
-      courseListStageData: this.courseListStage
+      personalDetailFormHold: this.personalDetailFormData,
+      courseListStageBoolean: this.courseListStage,
+      personalDetailStafeBoolean: this.personalDetailStage
     }
   },
   methods: {
@@ -111,10 +114,13 @@ export default {
     },
     changeCourse() {
       this.courseListStageData = true
-      this.$emit('goBackToCourseList', {
-        courseListStageData: this.courseListStageData
-      })
-      console.log(this.courseListStageData)
+      this.$emit('goBackToCourseList', this.courseListStageBoolean)
+      console.log(this.courseListStageBoolean)
+    },
+    changeDetail() {
+      this.personalDetailFormHold = true
+      this.$emit('goBackToPersonalDetail', this.personalDetailStafeBoolean)
+      console.log(this.personalDetailStafeBoolean)
     }
   }
 }
