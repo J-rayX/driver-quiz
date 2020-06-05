@@ -2,11 +2,21 @@
   <div>
     <b-form @submit="onSubmit">
       <b-form-group id="input-group-1" label="First name:" label-for="input-1">
-        <b-form-input id="input-1" v-model="form.firstName" required placeholder="Enter first name"></b-form-input>
+        <b-form-input
+          id="input-1"
+          v-model="form.firstName"
+          required
+          placeholder="Enter first name"
+        ></b-form-input>
       </b-form-group>
 
       <b-form-group id="input-group-2" label="Last name:" label-for="input-2">
-        <b-form-input id="input-2" v-model="form.lastName" required placeholder="Enter last name"></b-form-input>
+        <b-form-input
+          id="input-2"
+          v-model="form.lastName"
+          required
+          placeholder="Enter last name"
+        ></b-form-input>
       </b-form-group>
 
       <b-form-group
@@ -33,8 +43,17 @@
         ></b-form-input>
       </b-form-group>
 
-      <b-form-group id="input-group-5" label="Date to Start:" label-for="input-5">
-        <b-form-datepicker id="datepicker" v-model="form.dateToStart" class="mb-2" required></b-form-datepicker>
+      <b-form-group
+        id="input-group-5"
+        label="Date to Start:"
+        label-for="input-5"
+      >
+        <b-form-datepicker
+          id="datepicker"
+          v-model="form.dateToStart"
+          class="mb-2"
+          required
+        ></b-form-datepicker>
       </b-form-group>
 
       <b-form-group id="input-group-6" label="Post Code:" label-for="input-6">
@@ -48,7 +67,9 @@
 
       <b-form-group id="input-group-4">
         <b-form-checkbox-group v-model="form.checked" id="checkboxes-4">
-          <b-form-checkbox value="form.contactMe">You may Contact me about the Couse I have chosen</b-form-checkbox>
+          <b-form-checkbox value="form.contactMe"
+            >You may Contact me about the Couse I have chosen</b-form-checkbox
+          >
         </b-form-checkbox-group>
       </b-form-group>
 

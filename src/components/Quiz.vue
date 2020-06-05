@@ -26,9 +26,9 @@
 
     <div v-if="finalStage">
       <div class="flex-container final-stage">
-        <span
-          style="font-weight: 600; font-size: 24px; color:  #0a3592;"
-        >Enroll for {{ feeToBePaid.desc }} course</span>
+        <span style="font-weight: 600; font-size: 24px; color:  #0a3592;"
+          >Enroll for {{ feeToBePaid.desc }} course</span
+        >
         <hr />
         <h5 style="font-weight: bold; text-align: center;">About the Course</h5>
         <div v-for="(feature, index) in feeToBePaid.features" :key="index">
@@ -43,7 +43,7 @@
         <hr />
         <h5 style="font-weight: bold;  text-align: center;">Cost</h5>
         <span>&#163;{{ feeToBePaid.fee }}</span>
-        <router-link :to="{ name: 'booking', params: { courseRecommended }}">
+        <router-link :to="{ name: 'booking', params: { courseRecommended } }">
           <a>Pay</a>
           <!-- <a @click="$emit('goToPayment', feeToBePaid)">Pay</a> -->
         </router-link>
@@ -278,6 +278,7 @@ export default {
     }
   }
 }
+// the end
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

@@ -9,7 +9,9 @@
         <div class="d-block">
           <h3 class="d-inline float-left">Your Details</h3>
           <router-link :to="{ name: 'booking', params: { course } }">
-            <a @click="changeDetail" class="link--basic d-inline float-right">Edit</a>
+            <a @click="changeDetail" class="link--basic d-inline float-right"
+              >Edit</a
+            >
           </router-link>
         </div>
 
@@ -23,10 +25,9 @@
           </div>
           <div class="row row--details">
             <h4 class="col-12 col-md-3 col-xl-2">Postcode</h4>
-            <span
-              id="postcode_summary"
-              class="col-12 col-md-9 col-xl-10"
-            >{{ personalDetailFormHold.postCode }}</span>
+            <span id="postcode_summary" class="col-12 col-md-9 col-xl-10">{{
+              personalDetailFormHold.postCode
+            }}</span>
           </div>
           <div class="row row--details">
             <h4 class="col-12 col-md-3 col-xl-2">Email</h4>
@@ -34,21 +35,20 @@
               id="email_summary"
               class="col-12 col-md-9 col-xl-10"
               style="word-break:break-word"
-            >{{ personalDetailFormHold.email }}</span>
+              >{{ personalDetailFormHold.email }}</span
+            >
           </div>
           <div class="row row--details">
             <h4 class="control-label col-12 col-md-3 col-xl-2">Phone</h4>
-            <span
-              id="phone_summary"
-              class="col-12 col-md-9 col-xl-10"
-            >{{ personalDetailFormHold.phone }}</span>
+            <span id="phone_summary" class="col-12 col-md-9 col-xl-10">{{
+              personalDetailFormHold.phone
+            }}</span>
           </div>
           <div class="row row--details">
             <h4 class="col-12 col-md-3 col-xl-2">Complete By</h4>
-            <span
-              id="date_summary"
-              class="col-12 col-md-9 col-xl-10"
-            >{{ personalDetailFormHold.dateToStart }}</span>
+            <span id="date_summary" class="col-12 col-md-9 col-xl-10">{{
+              personalDetailFormHold.dateToStart
+            }}</span>
           </div>
         </div>
       </div>
@@ -59,7 +59,12 @@
             <span class="heading-word-break">Your Course</span> Breakdown
           </h3>
           <!-- <router-link :to="{ name: 'courses'}"> -->
-          <button @click="changeCourse" class="link--basic d-inline float-right">Change</button>
+          <button
+            @click="changeCourse"
+            class="link--basic d-inline float-right"
+          >
+            Change
+          </button>
           <!-- </router-link> -->
         </div>
 
@@ -83,7 +88,13 @@
         </div>
 
         <div class="col-12 col-md-6 order-first order-md-2">
-          <b-button type="submit" class="btn btn--primary float-md-right" value="Next">Next</b-button>
+          <b-button
+            type="submit"
+            @click="onSubmit"
+            class="btn btn--primary float-md-right"
+            value="Next"
+            >Next</b-button
+          >
         </div>
       </div>
     </b-form>
