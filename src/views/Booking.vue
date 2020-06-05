@@ -78,36 +78,39 @@ export default {
   methods: {
     handleOption(e) {
       // this.$emit('option', { option: this.option })
-      console.log('collected love and light ', e)
+      console.log('collected love and light, courseChosen ', e)
       this.course = e
       this.courseListStage = false
       this.personalDetailStage = true
     },
     handleForm(e) {
       // this.$emit('option', { option: this.option })
-      console.log('accepting form entry ', e)
+      console.log('accepting personal detail input ', e)
       this.personalDetailFormData = e
       this.personalDetailStage = false
       this.confirmationStage = true
     },
+    handlePayment(e) {},
     confirmCourse(e) {
-      console.log('received course change e', e)
+      console.log('request to course change e', e)
       this.courseListStage = e
       if ((this.courseListStage = true)) {
-        //this.courseListStage = true
-        // this.personalDetailStage = false
         this.confirmationStage = false
-        this.handleForm()
+        this.courseListStage = true
+        // this.personalDetailStage = false
+        //this.confirmationStage = false
+        //this.handleForm()
       } else this.confirmationStage = false
     },
     ConfirmDetail(e) {
-      console.log('received detail change e', e)
+      console.log('request to detail change e', e)
       this.personalDetailStage = e
       if ((this.personalDetailStage = true)) {
         //this.confirmationStage = true
-        this.personalDetailStage = true
         this.confirmationStage = false
-        this.handleOption()
+        this.personalDetailStage = true
+
+        //this.handleOption()
       } else this.confirmationStage = false
     }
   }
