@@ -16,8 +16,8 @@
           <br />
           <span class="label">{{ course.transType }}</span>
         </b-card-text>
-        <router-link :to="{ name: 'courses/step1', params: { courseChosen }}">
-          <b-button href="#" @click="startBooking(index)" variant="primary">Book Now</b-button>
+        <router-link :to="{ name: 'step1', params: { courseChosen }}">
+          <b-button @click="startBooking(index)" variant="primary">Book Now</b-button>
           <!-- <a @click="$emit('goToPayment', feeToBePaid)">Pay</a> -->
         </router-link>
       </b-card>

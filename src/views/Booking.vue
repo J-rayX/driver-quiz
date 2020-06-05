@@ -3,7 +3,7 @@
     <h1>Course Booking View</h1>
     <!-- <span>{{ course }}</span> -->
 
-    <!-- <div v-if="courseListStage">
+    <div v-if="courseListStage">
       <h3>Click to select any of the Listed courses one by one</h3>
       <Courses v-on:course="handleOption" />
     </div>
@@ -21,7 +21,7 @@
         :course="course"
         v-on:goBackToCourseList="confirmForm"
       />
-    </div>-->
+    </div>
 
     <div v-if="paymentOptionStage">
       <h3>Pay deposit or full</h3>
@@ -47,9 +47,9 @@ export default {
   name: 'Booking',
   props: ['courseRecommended'],
   components: {
-    // Courses,
-    // PersonalDetailForm,
-    // ConfirmDetail
+    Courses,
+    PersonalDetailForm,
+    ConfirmDetail
   },
   data() {
     return {
@@ -65,14 +65,14 @@ export default {
   },
   created() {
     this.courseListStage = true
-    // QuestionService.getCourses()
-    //   .then(response => {
-    //     this.courses = response.data
-    //     this.courseListStage = true
-    //   })
-    //   .catch(error => {
-    //     console.log('There was an error: ' + error.response)
-    //   })
+    QuestionService.getCourses()
+      .then(response => {
+        this.courses = response.data
+        this.courseListStage = true
+      })
+      .catch(error => {
+        console.log('There was an error: ' + error.response)
+      })
   },
   methods: {
     handleOption(e) {
@@ -92,8 +92,8 @@ export default {
     confirmForm() {
       console.log('received e', e)
       this.courseListStage = e
-      if (this.courseListStage) {
-        this.courseListStage = true
+      if ((this.courseListStage = true)) {
+        //this.courseListStage = true
         handleForm()
       } else this.confirmationStage = false
     }
