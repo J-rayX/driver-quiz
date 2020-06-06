@@ -17,7 +17,9 @@
           <span class="label">{{ course.transType }}</span>
         </b-card-text>
 
-        <b-button href="#" @click="startBooking(index)" variant="primary">Book Now</b-button>
+        <b-button href="#" @click="startBooking(index)" variant="primary"
+          >Book Now</b-button
+        >
         <!-- <a @click="$emit('goToPayment', feeToBePaid)">Pay</a> -->
       </b-card>
       <!-- </div>
@@ -72,7 +74,6 @@ export default {
 
   methods: {
     startBooking(messageToBeSent) {
-   
       if (messageToBeSent != undefined) {
         this.courseChosen = this.courses[messageToBeSent]
         console.log(this.courseChosen)
