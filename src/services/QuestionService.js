@@ -1,10 +1,10 @@
 import axios from 'axios'
 
 const apiCLient = axios.create({
-  baseURL: 'http://localhost:3000',
+  baseURL: 'http://localhost:8000',
   withCredentials: false,
   headers: {
-    Accept: 'aplication/json',
+    Accept: 'application/json',
     'Content-Type': 'application/json'
   },
   xsrfCookieName: 'XSRF-TOKEN',
@@ -13,9 +13,9 @@ const apiCLient = axios.create({
 
 export default {
   getQuestions() {
-    return apiCLient.get('/questions')
+    return apiCLient.get('/api/questions/')
   },
   getCourses() {
-    return apiCLient.get('/courses')
+    return apiCLient.get('/api/courses/')
   }
 }
