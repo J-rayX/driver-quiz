@@ -7,7 +7,7 @@
         <strong>{{ question.desc }}</strong>
 
         <!-- HTML Rendering of 2 Options Questions -->
-        <div v-if="question.type === 'doubleOption'">
+        <div v-if="question.typeOfQuestion === 'doubleOption'">
           <div
             v-for="(doubleAnswer, index) in question.options"
             :key="index"
@@ -29,7 +29,7 @@
         </div>
 
         <!-- HTML Rendering of 3 Options Questions -->
-        <div v-if="question.type === 'tripleOption'">
+        <div v-if="question.typeOfQuestion === 'tripleOption'">
           <div
             v-for="(tripleAnswer, index) in question.options"
             :key="index"
@@ -51,7 +51,7 @@
         </div>
 
         <!-- HTML Rendering of 4 Options Questions -->
-        <div v-if="question.type === 'quadOption'">
+        <div v-if="question.typeOfQuestion === 'quadOption'">
           <div
             v-for="(quadAnswer, index) in question.options"
             :key="index"
@@ -73,7 +73,7 @@
         </div>
 
         <!-- HTML Rendering of 5 Options Questions -->
-        <div v-if="question.type === 'fiveOption'">
+        <div v-if="question.typeOfQuestion === 'fiveOption'">
           <div
             v-for="(fiveAnswer, index) in question.options"
             :key="index"
