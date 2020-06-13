@@ -129,8 +129,9 @@ export default {
       console.log(this.selectedIndex)
     },
     submitAnswer() {
+      console.log(this.option)
       this.$emit('option', { option: this.option })
-      //console.log(this.doubleAnswer)
+
       this.option = null
       this.selectedIndex = null
     }
