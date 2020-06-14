@@ -26,24 +26,24 @@
 
     <div v-if="finalStage">
       <div class="flex-container final-stage">
-        <span style="font-weight: 600; font-size: 24px; color:  #0a3592;"
-          >Enroll for {{ feeToBePaid.desc }} course</span
-        >
+        <span
+          style="font-weight: 600; font-size: 24px; color:  #0a3592;"
+        >Enroll for {{ courseRecommended.desc }} course</span>
         <hr />
         <h5 style="font-weight: bold; text-align: center;">About the Course</h5>
-        <div v-for="(feature, index) in feeToBePaid.features" :key="index">
+        <div v-for="(feature, index) in courseRecommended.features" :key="index">
           <span>{{ feature }}</span>
         </div>
         <hr />
         <h5 style="font-weight: bold; text-align: center;">Duration</h5>
         <span>
-          Takes {{ feeToBePaid.days }} and a total of
-          {{ feeToBePaid.hours }}
+          Takes {{ courseRecommended.days }} and a total of
+          {{ courseRecommended.hours }}
         </span>
         <hr />
         <h5 style="font-weight: bold;  text-align: center;">Cost</h5>
-        <span>&#163;{{ feeToBePaid.fee }}</span>
-        <router-link :to="{ name: 'booking', params: { courseRecommended } }">
+        <span>&#163;{{ courseRecommended.fee }}</span>
+        <router-link :to="{ name: 'booking', params: { courseRecommended }}">
           <a>Pay</a>
           <!-- <a @click="$emit('goToPayment', feeToBePaid)">Pay</a> -->
         </router-link>
@@ -106,46 +106,46 @@ export default {
         })
   },
   computed: {
-    feeToBePaid() {
-      if (this.totalScore <= 10) {
-        //console.log(this.isManual)
-        return this.isManual
-          ? this.courses[0].options[0]
-          : this.courses[0].options[1]
-      } else if (this.totalScore > 10 && this.totalScore <= 20) {
-        return this.isManual
-          ? this.courses[0].options[2]
-          : this.courses[0].options[3]
-      } else if (this.totalScore > 20 && this.totalScore <= 30) {
-        return this.isManual
-          ? this.courses[0].options[4]
-          : this.courses[0].options[5]
-      } else if (this.totalScore > 30 && this.totalScore <= 40) {
-        return this.isManual
-          ? this.courses[0].options[6]
-          : this.courses[0].options[7]
-      } else if (this.totalScore > 40 && this.totalScore <= 50) {
-        return this.isManual
-          ? this.courses[1].options[0]
-          : this.courses[1].options[1]
-      } else if (this.totalScore > 50 && this.totalScore <= 60) {
-        return this.isManual
-          ? this.courses[1].options[2]
-          : this.courses[1].options[3]
-      } else if (this.totalScore > 60 && this.totalScore <= 70) {
-        return this.isManual
-          ? this.courses[2].options[0]
-          : this.courses[2].options[1]
-      } else if (this.totalScore > 70 && this.totalScore <= 85) {
-        return this.isManual
-          ? this.courses[2].options[2]
-          : this.courses[2].options[3]
-      } else {
-        return this.isManual
-          ? this.courses[0].options[4]
-          : this.courses[0].options[5]
-      }
-    }
+    // feeToBePaid() {
+    //   if (this.totalScore <= 10) {
+    //     //console.log(this.isManual)
+    //     return this.isManual
+    //       ? this.courses[0].options[0]
+    //       : this.courses[0].options[1]
+    //   } else if (this.totalScore > 10 && this.totalScore <= 20) {
+    //     return this.isManual
+    //       ? this.courses[0].options[2]
+    //       : this.courses[0].options[3]
+    //   } else if (this.totalScore > 20 && this.totalScore <= 30) {
+    //     return this.isManual
+    //       ? this.courses[0].options[4]
+    //       : this.courses[0].options[5]
+    //   } else if (this.totalScore > 30 && this.totalScore <= 40) {
+    //     return this.isManual
+    //       ? this.courses[0].options[6]
+    //       : this.courses[0].options[7]
+    //   } else if (this.totalScore > 40 && this.totalScore <= 50) {
+    //     return this.isManual
+    //       ? this.courses[1].options[0]
+    //       : this.courses[1].options[1]
+    //   } else if (this.totalScore > 50 && this.totalScore <= 60) {
+    //     return this.isManual
+    //       ? this.courses[1].options[2]
+    //       : this.courses[1].options[3]
+    //   } else if (this.totalScore > 60 && this.totalScore <= 70) {
+    //     return this.isManual
+    //       ? this.courses[2].options[0]
+    //       : this.courses[2].options[1]
+    //   } else if (this.totalScore > 70 && this.totalScore <= 85) {
+    //     return this.isManual
+    //       ? this.courses[2].options[2]
+    //       : this.courses[2].options[3]
+    //   } else {
+    //     return this.isManual
+    //       ? this.courses[0].options[4]
+    //       : this.courses[0].options[5]
+    //   }
+    // }
   },
   methods: {
     // Function to show the start of the app
@@ -174,51 +174,50 @@ export default {
         e.option.endpoint === true
       ) {
         console.log('Done Finally, total score is ' + this.totalScore)
-        this.finishQuiz()
+        //this.finishQuiz()
         this.questionStage = false
         this.finalStage = true
 
         if (this.totalScore <= 10) {
           //console.log(this.isManual)
           this.isManual
-            ? (this.courseRecommended = this.courses[0].options[0])
-            : (this.courseRecommended = this.courses[0].options[1])
+            ? (this.courseRecommended = this.courses[0])
+            : (this.courseRecommended = this.courses[1])
         } else if (this.totalScore > 10 && this.totalScore <= 20) {
           this.isManual
-            ? (this.courseRecommended = this.courses[0].options[2])
-            : (this.courseRecommended = this.courses[0].options[3])
+            ? (this.courseRecommended = this.courses[2])
+            : (this.courseRecommended = this.courses[3])
         } else if (this.totalScore > 20 && this.totalScore <= 30) {
           this.isManual
-            ? (this.courseRecommended = this.courses[0].options[4])
-            : (this.courseRecommended = this.courses[0].options[5])
+            ? (this.courseRecommended = this.courses[4])
+            : (this.courseRecommended = this.courses[5])
         } else if (this.totalScore > 30 && this.totalScore <= 40) {
           this.isManual
-            ? (this.courseRecommended = this.courses[0].options[6])
-            : (this.courseRecommended = this.courses[0].options[7])
+            ? (this.courseRecommended = this.courses[6])
+            : (this.courseRecommended = this.courses[7])
         } else if (this.totalScore > 40 && this.totalScore <= 50) {
           this.isManual
-            ? (this.courseRecommended = this.courses[1].options[0])
-            : (this.courseRecommended = this.courses[1].options[1])
+            ? (this.courseRecommended = this.courses[8])
+            : (this.courseRecommended = this.courses[9])
         } else if (this.totalScore > 50 && this.totalScore <= 60) {
           this.isManual
-            ? (this.courseRecommended = this.courses[1].options[2])
-            : (this.courseRecommended = this.courses[1].options[3])
+            ? (this.courseRecommended = this.courses[10])
+            : (this.courseRecommended = this.courses[11])
         } else if (this.totalScore > 60 && this.totalScore <= 70) {
           this.isManual
-            ? (this.courseRecommended = this.courses[2].options[0])
-            : (this.courseRecommended = this.courses[2].options[1])
+            ? (this.courseRecommended = this.courses[12])
+            : (this.courseRecommended = this.courses[13])
         } else if (this.totalScore > 70 && this.totalScore <= 85) {
           this.isManual
-            ? (this.courseRecommended = this.courses[2].options[2])
-            : (this.courseRecommended = this.courses[2].options[3])
+            ? (this.courseRecommended = this.courses[14])
+            : (this.courseRecommended = this.courses[15])
         } else {
           this.isManual
-            ? (this.courseRecommended = this.courses[0].options[4])
-            : (this.courseRecommended = this.courses[0].options[5])
+            ? (this.courseRecommended = this.courses[16])
+            : (this.courseRecommended = this.courses[17])
         }
       } else {
         this.totalScore = this.totalScore + e.option.score
-
         this.currentQuestion++
       }
     },
@@ -278,7 +277,6 @@ export default {
     }
   }
 }
-// the end
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
