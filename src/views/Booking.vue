@@ -5,9 +5,8 @@
 
     <div v-if="courseListStage">
       <h3>Click to select any of the Listed courses one by one</h3>
-      <Courses
-        v-on:course="handleCourseChosen"
-      /><!-- listening to select course chosen by customer then passed & saved into the this.course Object-->
+      <Courses v-on:course="handleCourseChosen" />
+      <!-- listening to select course chosen by customer then passed & saved into the this.course Object-->
     </div>
 
     <div v-if="personalDetailStage">
@@ -24,7 +23,8 @@
         v-on:goBackToCourseList="confirmCourse"
         v-on:goBackToPersonalDetail="confirmDetail"
         v-on:courseToBePaidFor="handleConfirmedData"
-      /><!-- Passed in this.course Object and details inputed by customer in previous stage then wait to recieve any changes made  -->
+      />
+      <!-- Passed in this.course Object and details inputed by customer in previous stage then wait to recieve any changes made  -->
     </div>
 
     <div v-if="paymentOptionStage">
@@ -80,20 +80,53 @@ export default {
       course: {}, // variable holding the course chosen by customer
       courses: [], // variable holding the courses dbase fetched by Axios
       personalDetailFormData: {}, // variable holding the Personal Details of customer supplied in the Personal Detail form
-      finalFee: 0 // final fee gotten from paymentOption handler methods, be it deposit fee or full fee
+      finalFee: 0, // final fee gotten from paymentOption handler methods, be it deposit fee or full fee
+      holdCourseRecommended: this.courseRecommended
     }
   },
   created() {
-    this.courseListStage = true
-    QuestionService.getCourses()
-      .then(response => {
-        this.courses = response.data
-        this.courseListStage = true
-      })
-      .catch(error => {
-        console.log('There was an error: ' + error.response)
-      })
+    // check if this.courseCourseRecommended is filled
+    if (this.holdCourseRecommended != null) {
+      console.log('to confirm course', this.holdCourseRecommended)
+      this.personalDetailStage = true
+      console.log('personal detail stage', this.personalDetailStage)
+      // let this.course = holdCourseRecommended
+      this.course = this.holdCourseRecommended
+      console.log('course chosen', this.course)
+      // if filled, let courseListStage= false
+      // this.courseListStage = false
+      // let personal detial stage = true
+    }
+    // else this.courseListStage =
+    else {
+      this.courseListStage = true
+      console.log('course list stage', this.courseListStage)
+      //this.courseListStage = true
+      QuestionService.getCourses()
+        .then(response => {
+          this.courses = response.data
+          this.courseListStage = true
+        })
+        .catch(error => {
+          console.log('There was an error: ' + error.response)
+        })
+    }
   },
+  //  mounted() {
+  //     // check if this.courseCourseRecommended is filled
+  //     if (this.holdCourseRecommended) {
+  //       // let this.course = holdCourseRecommended
+  //       this.course = this.holdCourseRecommended
+  //       // if filled, let courseListStage= false
+  //       this.courseListStage = false
+  //       // let personal detial stage = true
+  //       this.personalDetailStage = true
+  //     }
+  //     // else this.courseListStage =
+  //     else {
+  //       this.courseListStage = true
+  //     }
+  //   },
   methods: {
     // funtion to recieve the particular course chosen by Customer in CourselistStage
     handleCourseChosen(e) {
