@@ -166,6 +166,8 @@ export default {
       this.deposit = e
       this.finalFee = this.course.deposit
       console.log("so we'll pay ", this.finalFee)
+      this.course.fee = this.finalFee
+      console.log(this.course.fee)
       this.paymentOptionStage = false
       this.paymentStage = true
     },
@@ -174,8 +176,10 @@ export default {
     handleFullPayment(e) {
       console.log('we paying full altogether', e)
       this.deposit = e
-      this.finalFee = this.course.deposit
+      this.finalFee = this.course.fee
       console.log("so we'll pay ", this.finalFee)
+      this.course.fee = this.finalFee
+      console.log(this.course.fee)
       this.paymentOptionStage = false
       this.paymentStage = true
     },
