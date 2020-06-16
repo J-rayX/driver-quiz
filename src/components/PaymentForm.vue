@@ -27,11 +27,11 @@
               <ul>
                 <li>
                   Book Title:
-                  <em>Book Title</em>
+                  <em>{{ courseToBeTakenFinal.desc }}</em>
                 </li>
                 <li>
                   Amount:
-                  <em>$Book Price</em>
+                  <em>$ {{ courseToBeTakenFinal.fee }}</em>
                 </li>
               </ul>
             </div>
