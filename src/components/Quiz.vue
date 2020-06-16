@@ -162,10 +162,10 @@ export default {
     handleOption(e) {
       console.log('answer event ftw', e)
       this.options[this.currentQuestion] = e.option
-      if (e.option.transType === 'Manual') {
+      if (e.option.transType === 'transManual') {
         this.isManual = true
       }
-      if (e.option.transType === 'Auto') {
+      if (e.option.transType === 'transAuto') {
         this.isManual = false
       }
 

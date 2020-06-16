@@ -5,7 +5,7 @@ const apiCLient = axios.create({
   // baseURL: 'http://localhost:8000',
   withCredentials: false,
   headers: {
-    Accept: 'application/json',
+    Accept: 'aplication/json',
     'Content-Type': 'application/json'
   },
   xsrfCookieName: 'XSRF-TOKEN',
@@ -19,6 +19,9 @@ export default {
   },
   getCourses() {
     // return apiCLient.get('/api/courses/')
+    return apiCLient.get('/questions')
+  },
+  getCourses() {
     return apiCLient.get('/courses')
   }
 }
