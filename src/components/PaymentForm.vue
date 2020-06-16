@@ -117,8 +117,8 @@ export default {
     processTransaction(transactionToken) {
       var self = this
       dt = {
-        payAmount: slef.payAmount,
-        // amount: self.stripCurrency(self.payAmount), //stripe uses an int [with shifted decimal place] so we must convert our payment amount
+        //payAmount: self.payAmount,
+        amount: self.stripCurrency(self.payAmount), //stripe uses an int [with shifted decimal place] so we must convert our payment amount
         currency: 'GBP',
         description: this.courseToBeTakenFinal.desc,
         token: transactionToken
@@ -142,10 +142,7 @@ export default {
         })
     },
     stripCurrency(val) {
-      return val
-        .replace(',', '')
-        .replace('£', '')
-        .replace('.', '')
+      return val.replace(',', '').replace('.', '')
     }
   }
 
