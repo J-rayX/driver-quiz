@@ -13,15 +13,15 @@
 <template>
   <div class="container">
     <div class="row">
-      <div class="col-sm-10">
+      <div class="col-sm-12">
         <h1>Ready to buy?</h1>
         <hr />
         <router-link to="/" class="btn btn-primary">Back Home</router-link>
         <br />
-        <br />
-        <br />
-        <div class="row">
-          <div class="col-sm-6">
+      </div>
+    </div>
+
+    <!-- <div class="col-sm-6">
             <div>
               <h4>You are buying:</h4>
               <ul>
@@ -43,55 +43,24 @@
                 <li>Expiration: any date in the future</li>
               </ul>
             </div>
-          </div>
-          <div class="col-sm-6">
-            <h3>One time payment</h3>
-            <br />
-            <form>
-              <div class="form-group">
-                <label>Credit Card Info</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="XXXXXXXXXXXXXXXX"
-                  v-model="card.number"
-                  required
-                />
-              </div>
-              <div class="form-group">
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="CVC"
-                  v-model="card.cvc"
-                  required
-                />
-              </div>
-              <div class="form-group">
-                <label>Card Expiration Date</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="MM/YY"
-                  v-model="card.exp"
-                  required
-                />
-              </div>
-              <button class="btn btn-primary btn-block" @click.prevent="validate">Submit</button>
-            </form>
-            <div v-show="errors">
-              <br />
-              <ol class="text-danger">
-                <li v-for="(error, index) in errors" :key="index">{{ error }}</li>
-              </ol>
-            </div>
-          </div>
+    </div>-->
+
+    <div class="row">
+      <form id="payment-form" class="w-75 px-5 d-flex flex-column align-items-center">
+        <div ref="card" class="form-control m-2">
+          <!-- A Stripe Element will be inserted here. -->
         </div>
-      </div>
+        <input
+          :disabled="lockSubmit"
+          class="btn btn-primary shadow-sm"
+          type="submit"
+          value="Pay"
+          v-on:click.prevent="makePayment"
+        />
+      </form>
     </div>
   </div>
 </template>
-
 
 <script>
 export default {
@@ -102,75 +71,116 @@ export default {
   },
   data() {
     return {
+      stripePublishableKey:
+        'pk_test_51GrazpAvPywucau1IhcJNBX74gsRIYy5RmthiIxpt1dd8JJ9spvzHglHNS2AFO0f19iffxmxobO17LKmb53J4r5300wP5Of8A1',
       feeToBePaidFinal: this.finalFee,
       courseToBeTakenFinal: this.course,
       personalDetailOfCustomer: this.personalDetailFormData,
-      card: {
-        number: '',
-        cvc: '',
-        exp: ''
-      },
-      errors: [],
-      stripePublishableKey:
-        'pk_test_51GrazpAvPywucau1IhcJNBX74gsRIYy5RmthiIxpt1dd8JJ9spvzHglHNS2AFO0f19iffxmxobO17LKmb53J4r5300wP5Of8A1',
-      stripeCheck: false
+
+      stripe: undefined,
+      card: undefined,
+      payAmount: this.feeToBePaidFinal,
+      lockSubmit: false,
+      api: 'http://localhost:8000/api/'
+      //errors: []
     }
   },
+  mounted() {
+    var self = this
+    self.stripe = Stripe(self.stripePublishableKey)
+    self.card = self.stripe.elements().create('card')
+    self.card.mount(self.$refs.card)
+  },
   methods: {
-    validate() {
-      this.errors = [] //making errors empty everytime the validate button is clicked
-      let valid = true
+    makePayment() {
+      var self = this
+      self.lockSubmit = true
 
-      if (!this.card.number) {
-        valid = false
-        this.errors.push('Card Number is required')
-      }
-      if (!this.card.cvc) {
-        valid = false
-        this.errors.push('CVC is required')
-      }
-      if (!this.card.exp) {
-        valid = false
-        this.errors.push('Expiration date is required')
-      }
-      if (valid) {
-        this.createToken()
-      }
+      self.stripe
+        .createToken(self.cardNumber)
+        .then(function(result) {
+          if (result.error) {
+            alert(result.error.message)
+            self.$forceUpdate() // Forcing the DOM to update so the Stripe Element can update
+            self.lockSubmit = false
+            return
+          } else {
+            self.processTransaction(result.token.id)
+          }
+        })
+        .catch(err => {
+          alert('error: ' + err.message)
+          self.lockSubmit = false
+        })
     },
 
-    createToken() {
-      this.stripeCheck = true
-      window.Stripe.stripePublishableKey(this.stripePublishableKey)
-      window.Stripe.createToken(this.card, (status, response) => {
-        if (response.error) {
-          this.erros.push(response.error.message)
-          console.error(response)
-        } else {
-          const payload = {
-            course: this.courseToBeTakenFinal,
-            token: response.id
+    processTransaction(transactionToken) {
+      var self = this
+      dt = {
+        payAmount: slef.payAmount,
+        // amount: self.stripCurrency(self.payAmount), //stripe uses an int [with shifted decimal place] so we must convert our payment amount
+        currency: 'GBP',
+        description: this.courseToBeTakenFinal.desc,
+        token: transactionToken
+      }
+      var route = self.api + '/charge/'
+      self.$http
+        .post(route, dt, {
+          headers: {}
+        })
+        .then(response => {
+          if (response.status == 200) {
+            alert('Transaction succeeded')
+            self.lockSubmit = false
+          } else {
+            throw new Error('Failed payment')
           }
-          const path = 'http://localhost:5000/charge'
-          axios
-            .post(path, payload)
-            .then(() => {
-              this.$router.push({ path: '/' })
-            })
-            .catch(error => {
-              console.errorr(error)
-            })
-
-          // QuestionService.getCourses()
-          //   .then(response => {
-          //     this.courses = response.data
-          //     this.courseListStage = true
-          //   })
-          //   .catch(error => {
-          //     console.log('There was an error: ' + error.response)
-          //   })
-        }
-      })
+        })
+        .catch(err => {
+          alert('error: ' + err.message)
+          self.lockSubmit = false
+        })
+    },
+    stripCurrency(val) {
+      return val
+        .replace(',', '')
+        .replace('£', '')
+        .replace('.', '')
     }
   }
+
+  // createToken() {
+  //   this.lockSubmit = true
+  //   window.Stripe.stripePublishableKey(this.stripePublishableKey)
+  //   window.Stripe.createToken(this.card, (status, response) => {
+  //     if (response.error) {
+  //       this.erros.push(response.error.message)
+  //       console.error(response)
+  //     } else {
+  //       const payload = {
+  //         course: this.courseToBeTakenFinal,
+  //         token: response.id
+  //       }
+  //       const path = 'http://localhost:5000/charge'
+  //       axios
+  //         .post(path, payload)
+  //         .then(() => {
+  //           this.$router.push({ path: '/' })
+  //         })
+  //         .catch(error => {
+  //           console.errorr(error)
+  //         })
+
+  //       // QuestionService.getCourses()
+  //       //   .then(response => {
+  //       //     this.courses = response.data
+  //       //     this.courseListStage = true
+  //       //   })
+  //       //   .catch(error => {
+  //       //     console.log('There was an error: ' + error.response)
+  //       //   })
+  //     }
+  //   })
+  // }
 }
 </script>

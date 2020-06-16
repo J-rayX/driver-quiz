@@ -1,4 +1,4 @@
-# course-recommender
+# driving-frontend
 
 ## Project setup
 ```
