@@ -80,7 +80,7 @@ export default {
       course: {}, // variable holding the course chosen by customer
       courses: [], // variable holding the courses dbase fetched by Axios
       personalDetailFormData: {}, // variable holding the Personal Details of customer supplied in the Personal Detail form
-      finalFee: 0, // final fee gotten from paymentOption handler methods, be it deposit fee or full fee
+      finalFee: Float32Array, // final fee gotten from paymentOption handler methods, be it deposit fee or full fee
       holdCourseRecommended: this.courseRecommended
     }
   },
@@ -166,6 +166,8 @@ export default {
       this.deposit = e
       this.finalFee = this.course.deposit
       console.log("so we'll pay ", this.finalFee)
+      this.course.fee = this.finalFee
+      console.log(this.course.fee)
       this.paymentOptionStage = false
       this.paymentStage = true
     },
@@ -174,8 +176,11 @@ export default {
     handleFullPayment(e) {
       console.log('we paying full altogether', e)
       this.deposit = e
-      this.finalFee = this.course.deposit
+      // check here check here check here check here check here
+      this.finalFee = this.course.fee
       console.log("so we'll pay ", this.finalFee)
+      this.course.fee = this.finalFee
+      console.log(this.course.fee)
       this.paymentOptionStage = false
       this.paymentStage = true
     },

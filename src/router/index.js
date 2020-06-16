@@ -37,6 +37,11 @@ const routes = [
     component: Booking,
     props: true
   },
+  // {
+  //   path: '/order/:id',
+  //   name: 'Order',
+  //   component: Order
+  // },
 
   // prefixRoutes('/courses', [
   //   {
