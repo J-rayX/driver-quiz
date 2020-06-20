@@ -12,14 +12,12 @@
         <b-card-title>{{ course.desc }}</b-card-title>
         <b-card-text>
           <!--  <label class="option" :for="'option' + index"> -->
-          <span class="label">{{ course.type }}</span>
+          <span class="label">{{ course.courseType }}</span>
           <br />
           <span class="label">{{ course.transType }}</span>
         </b-card-text>
 
-        <b-button href="#" @click="startBooking(index)" variant="primary"
-          >Book Now</b-button
-        >
+        <b-button href="#" @click="startBooking(index)" variant="primary">Book Now</b-button>
         <!-- <a @click="$emit('goToPayment', feeToBePaid)">Pay</a> -->
       </b-card>
       <!-- </div>
@@ -66,6 +64,7 @@ export default {
     QuestionService.getCourses()
       .then(response => {
         this.courses = response.data
+        console.log(this.courses)
       })
       .catch(error => {
         console.log('There was an error: ' + error.response)
