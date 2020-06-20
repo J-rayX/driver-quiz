@@ -14,7 +14,7 @@
   <div class="container">
     <div class="row">
       <div class="col-sm-12">
-        <h1>Ready to buy?</h1>
+        <h1>Ready to Pay?</h1>
         <hr />
         <router-link to="/" class="btn btn-primary">Back Home</router-link>
         <br />
@@ -47,7 +47,7 @@
 
     <div class="row">
       <form id="payment-form" class="w-75 px-5 d-flex flex-column align-items-center">
-        <div ref="card" class="form-control m-2">
+        <div id="card-element" ref="card" class="form-control m-2">
           <!-- A Stripe Element will be inserted here. -->
         </div>
         <input
@@ -78,6 +78,7 @@ export default {
       personalDetailOfCustomer: this.personalDetailFormData,
 
       stripe: undefined,
+      elements: '',
       card: undefined,
       payAmount: this.feeToBePaidFinal,
       lockSubmit: false,
@@ -116,18 +117,16 @@ export default {
 
     processTransaction(transactionToken) {
       var self = this
-      dt = {
+      payload = {
         //payAmount: self.payAmount,
         amount: self.stripCurrency(self.payAmount), //stripe uses an int [with shifted decimal place] so we must convert our payment amount
         currency: 'GBP',
         description: this.courseToBeTakenFinal.desc,
         token: transactionToken
       }
-      var route = self.api + '/charge/'
-      self.$http
-        .post(route, dt, {
-          headers: {}
-        })
+      var path = 'http://localhost:8000/create-intent/'
+      axios
+        .post(path, payload)
         .then(response => {
           if (response.status == 200) {
             alert('Transaction succeeded')
