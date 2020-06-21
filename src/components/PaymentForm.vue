@@ -14,7 +14,6 @@
   <div class="container">
     <div class="row">
       <div class="col-sm-12">
-
         <h1>Ready to Pay?</h1>
 
         <hr />
@@ -49,9 +48,7 @@
 
     <div class="row">
       <form id="payment-form" class="w-75 px-5 d-flex flex-column align-items-center">
-
         <div id="card-element" ref="card" class="form-control m-2">
-
           <!-- A Stripe Element will be inserted here. -->
         </div>
         <input
@@ -69,7 +66,7 @@
 <script>
 export default {
   props: {
-    finalFee: Number,
+    finalFee: Float32Array,
     course: Object,
     personalDetailFormData: Object
   },
@@ -123,7 +120,7 @@ export default {
 
     processTransaction(transactionToken) {
       var self = this
-      
+
       payload = {
         //payAmount: self.payAmount,
         amount: self.stripCurrency(self.payAmount), //stripe uses an int [with shifted decimal place] so we must convert our payment amount
@@ -135,7 +132,6 @@ export default {
       var path = 'http://localhost:8000/create-intent/'
       axios
         .post(path, payload)
-
         .then(response => {
           if (response.status == 200) {
             alert('Transaction succeeded')
