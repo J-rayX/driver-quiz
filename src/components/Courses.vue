@@ -63,7 +63,9 @@ export default {
   created() {
     QuestionService.getCourses()
       .then(response => {
+        console.log(response.data)
         this.courses = response.data
+
         console.log(this.courses)
       })
       .catch(error => {
