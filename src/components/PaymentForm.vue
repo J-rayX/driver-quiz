@@ -51,6 +51,8 @@
         <div id="card-element" ref="card" class="form-control m-2">
           <!-- A Stripe Element will be inserted here. -->
         </div>
+        <!-- We'll put the error messages in this element -->
+        <div id="card-errors" role="alert"></div>
         <input
           :disabled="lockSubmit"
           class="btn btn-primary shadow-sm"
@@ -78,9 +80,9 @@ export default {
       courseToBeTakenFinal: this.course,
       personalDetailOfCustomer: this.personalDetailFormData,
 
-      stripe: undefined,
+      stripe: Stripe(this.stripePublishableKey),
 
-      elements: '',
+      elements: stripe.elements(),
 
       card: undefined,
       payAmount: this.feeToBePaidFinal,
@@ -91,30 +93,30 @@ export default {
   },
   mounted() {
     var self = this
-    self.stripe = Stripe(self.stripePublishableKey)
-    self.card = self.stripe.elements().create('card')
-    self.card.mount(self.$refs.card)
+    this.stripe = Stripe(this.stripePublishableKey)
+    this.card = this.stripe.elements().create('card')
+    this.card.mount(this.$refs.card)
   },
   methods: {
     makePayment() {
       var self = this
-      self.lockSubmit = true
+      this.lockSubmit = true
 
-      self.stripe
-        .createToken(self.cardNumber)
+      this.stripe
+        .createToken(this.card)
         .then(function(result) {
           if (result.error) {
             alert(result.error.message)
-            self.$forceUpdate() // Forcing the DOM to update so the Stripe Element can update
-            self.lockSubmit = false
+            this.$forceUpdate() // Forcing the DOM to update so the Stripe Element can update
+            this.lockSubmit = false
             return
           } else {
-            self.processTransaction(result.token.id)
+            this.processTransaction(result.token.id)
           }
         })
         .catch(err => {
           alert('error: ' + err.message)
-          self.lockSubmit = false
+          this.lockSubmit = false
         })
     },
 
@@ -123,7 +125,7 @@ export default {
 
       payload = {
         //payAmount: self.payAmount,
-        amount: self.stripCurrency(self.payAmount), //stripe uses an int [with shifted decimal place] so we must convert our payment amount
+        amount: this.stripCurrency(this.payAmount), //stripe uses an int [with shifted decimal place] so we must convert our payment amount
         currency: 'GBP',
         description: this.courseToBeTakenFinal.desc,
         token: transactionToken
@@ -135,14 +137,14 @@ export default {
         .then(response => {
           if (response.status == 200) {
             alert('Transaction succeeded')
-            self.lockSubmit = false
+            this.lockSubmit = false
           } else {
             throw new Error('Failed payment')
           }
         })
         .catch(err => {
           alert('error: ' + err.message)
-          self.lockSubmit = false
+          this.lockSubmit = false
         })
     },
     stripCurrency(val) {
