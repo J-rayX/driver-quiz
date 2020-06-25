@@ -120,7 +120,7 @@ export default {
               description: '10HR Beginners',
               token: result.id
             }
-            var path = 'http://localhost:8000/create-intent/'
+            var path = 'http://localhost:8000/api/v1/create-intent/'
             axios
               .post(path, payload)
               .then(response => {
