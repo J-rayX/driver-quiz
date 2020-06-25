@@ -19,5 +19,9 @@ export default {
 
   getCourses() {
     return apiCLient.get('/api/courses/')
+  },
+
+  postPayment() {
+    return apiCLient.post('/api/create-intent/', payload)
   }
 }

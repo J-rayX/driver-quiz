@@ -66,6 +66,9 @@
 </template>
 
 <script>
+import QuestionService from '@/services/QuestionService.js'
+import axios from 'axios'
+
 export default {
   props: {
     finalFee: Float32Array,
@@ -74,84 +77,76 @@ export default {
   },
   data() {
     return {
+      lockSubmit: false,
       stripePublishableKey:
         'pk_test_51GrazpAvPywucau1IhcJNBX74gsRIYy5RmthiIxpt1dd8JJ9spvzHglHNS2AFO0f19iffxmxobO17LKmb53J4r5300wP5Of8A1',
-      feeToBePaidFinal: this.finalFee,
+      payAmount: this.finalFee,
       courseToBeTakenFinal: this.course,
       personalDetailOfCustomer: this.personalDetailFormData,
 
       stripe: Stripe(this.stripePublishableKey),
-
       elements: stripe.elements(),
-
       card: undefined,
-      payAmount: this.feeToBePaidFinal,
-      lockSubmit: false,
+
       api: 'http://localhost:8000/api/'
       //errors: []
     }
   },
   mounted() {
-    var self = this
-    this.stripe = Stripe(this.stripePublishableKey)
+    this.stripe = Stripe(
+      'pk_test_51GrazpAvPywucau1IhcJNBX74gsRIYy5RmthiIxpt1dd8JJ9spvzHglHNS2AFO0f19iffxmxobO17LKmb53J4r5300wP5Of8A1'
+    )
     this.card = this.stripe.elements().create('card')
     this.card.mount(this.$refs.card)
   },
   methods: {
     makePayment() {
-      var self = this
       this.lockSubmit = true
 
       this.stripe
         .createToken(this.card)
         .then(function(result) {
           if (result.error) {
-            alert(result.error.message)
+            alert('token error is' + result.error.message)
             this.$forceUpdate() // Forcing the DOM to update so the Stripe Element can update
             this.lockSubmit = false
             return
           } else {
-            this.processTransaction(result.token.id)
+            //this.processTransaction(result.token.id)
+            const payload = {
+              //payAmount: self.payAmount,
+              amount: 123.0, //stripe uses an int [with shifted decimal place] so we must convert our payment amount
+              currency: 'GBP',
+              description: '10HR Beginners',
+              token: result.id
+            }
+            var path = 'http://localhost:8000/create-intent/'
+            axios
+              .post(path, payload)
+              .then(response => {
+                if (response.status == 200) {
+                  alert('Transaction succeeded')
+                  this.lockSubmit = false
+                } else {
+                  throw new Error('Failed payment')
+                }
+              })
+              .catch(err => {
+                alert('transaction error: ' + err.message)
+                this.lockSubmit = false
+              })
           }
         })
         .catch(err => {
-          alert('error: ' + err.message)
-          this.lockSubmit = false
-        })
-    },
-
-    processTransaction(transactionToken) {
-      var self = this
-
-      payload = {
-        //payAmount: self.payAmount,
-        amount: this.stripCurrency(this.payAmount), //stripe uses an int [with shifted decimal place] so we must convert our payment amount
-        currency: 'GBP',
-        description: this.courseToBeTakenFinal.desc,
-        token: transactionToken
-      }
-
-      var path = 'http://localhost:8000/create-intent/'
-      axios
-        .post(path, payload)
-        .then(response => {
-          if (response.status == 200) {
-            alert('Transaction succeeded')
-            this.lockSubmit = false
-          } else {
-            throw new Error('Failed payment')
-          }
-        })
-        .catch(err => {
-          alert('error: ' + err.message)
+          alert('outer error: ' + err.message)
           this.lockSubmit = false
         })
     },
     stripCurrency(val) {
       return val.replace(',', '').replace('.', '')
     }
+    //processTransaction(transactionToken) {},
   }
-
   // createToken() {
   //   this.lockSubmit = true
   //   window.Stripe.stripePublishableKey(this.stripePublishableKey)
@@ -174,16 +169,7 @@ export default {
   //           console.errorr(error)
   //         })
 
-  //       // QuestionService.getCourses()
-  //       //   .then(response => {
-  //       //     this.courses = response.data
-  //       //     this.courseListStage = true
-  //       //   })
-  //       //   .catch(error => {
-  //       //     console.log('There was an error: ' + error.response)
-  //       //   })
-  //     }
-  //   })
+  //
   // }
 }
 </script>
