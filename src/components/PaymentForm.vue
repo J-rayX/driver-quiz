@@ -1,15 +1,3 @@
-<!-- <template>
-  <div>
-    <span>£ {{ feeToBePaidFinal }}</span>
-    <hr />
-    <div>{{ courseToBeTakenFinal }}</div>
-    <hr />
-    <div>{{ personalDetailOfCustomer }}</div>
-  </div>
-
-
-</template> -->
-
 <template>
   <div class="container">
     <div class="row">
@@ -70,38 +58,64 @@ import QuestionService from '@/services/QuestionService.js'
 import axios from 'axios'
 
 export default {
+  name: 'PaymentForm',
   props: {
     finalFee: Float32Array,
     course: Object,
     personalDetailFormData: Object
   },
+
   data() {
     return {
       lockSubmit: false,
       stripePublishableKey:
         'pk_test_51GrazpAvPywucau1IhcJNBX74gsRIYy5RmthiIxpt1dd8JJ9spvzHglHNS2AFO0f19iffxmxobO17LKmb53J4r5300wP5Of8A1',
-      payAmount: this.finalFee,
-      courseToBeTakenFinal: this.course,
-      personalDetailOfCustomer: this.personalDetailFormData,
-
-      stripe: Stripe(this.stripePublishableKey),
+      amount: this.finalFee,
+      // courseToBeTakenFinal: this.course,
+      // personalDetailOfCustomer: this.personalDetailFormData,
+      payload: {},
+      stripe: undefined,
       elements: stripe.elements(),
       card: undefined,
+      result: undefined
 
-      api: 'http://localhost:8000/api/'
+      //api: 'http://localhost:8000/api/v1'
       //errors: []
     }
   },
+
   mounted() {
     this.stripe = Stripe(
       'pk_test_51GrazpAvPywucau1IhcJNBX74gsRIYy5RmthiIxpt1dd8JJ9spvzHglHNS2AFO0f19iffxmxobO17LKmb53J4r5300wP5Of8A1'
     )
     this.card = this.stripe.elements().create('card')
     this.card.mount(this.$refs.card)
+    this.lockSubmit = false
+    console.log(this.lockSubmit)
+    console.log(this.finalFee)
+    console.log(this.personalDetailFormData)
   },
+
   methods: {
     makePayment() {
       this.lockSubmit = true
+      this.result = this.stripe.confirmCardPayment('clientSecret', {
+        payment_method: {
+          card: this.card,
+          billing_details: {
+            name:
+              this.personalDetailFormData.firstName +
+              this.personalDetailFormData.lastName
+          }
+        }
+      })
+      this.payload = {
+        //payAmount: self.payAmount,
+        amount: 123.0, //stripe uses an int [with shifted decimal place] so we must convert our payment amount
+        currency: 'GBP',
+        description: '10HR Beginners',
+        token: result.id
+      }
 
       this.stripe
         .createToken(this.card)
@@ -113,7 +127,7 @@ export default {
             return
           } else {
             //this.processTransaction(result.token.id)
-            const payload = {
+            this.payload = {
               //payAmount: self.payAmount,
               amount: 123.0, //stripe uses an int [with shifted decimal place] so we must convert our payment amount
               currency: 'GBP',
@@ -132,6 +146,7 @@ export default {
                 }
               })
               .catch(err => {
+                console.log('payload contains' + this.payload)
                 alert('transaction error: ' + err.message)
                 this.lockSubmit = false
               })
