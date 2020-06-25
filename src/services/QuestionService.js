@@ -13,15 +13,15 @@ const apiCLient = axios.create({
 
 export default {
   getQuestions() {
-    return apiCLient.get('/api/questions/')
+    return apiCLient.get('/api/v1/questions/')
     // return apiCLient.get('/questions/')
   },
 
   getCourses() {
-    return apiCLient.get('/api/courses/')
+    return apiCLient.get('/api/v1/courses/')
   },
 
   postPayment() {
-    return apiCLient.post('/api/create-intent/', payload)
+    return apiCLient.post('/api/v1/create-intent/', payload)
   }
 }
