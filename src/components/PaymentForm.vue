@@ -73,9 +73,13 @@ export default {
       amount: this.finalFee,
       // courseToBeTakenFinal: this.course,
       // personalDetailOfCustomer: this.personalDetailFormData,
-      payload: {},
+      payload: {
+        amount: 123.0, //stripe uses an int [with shifted decimal place] so we must convert our payment amount
+        currency: 'GBP',
+        description: '10HR Beginners'
+      },
       stripe: undefined,
-      elements: stripe.elements(),
+      elements: undefined,
       card: undefined,
       result: undefined
 
@@ -88,6 +92,7 @@ export default {
     this.stripe = Stripe(
       'pk_test_51GrazpAvPywucau1IhcJNBX74gsRIYy5RmthiIxpt1dd8JJ9spvzHglHNS2AFO0f19iffxmxobO17LKmb53J4r5300wP5Of8A1'
     )
+    this.elements = this.stripe.elements()
     this.card = this.stripe.elements().create('card')
     this.card.mount(this.$refs.card)
     this.lockSubmit = false
@@ -99,68 +104,91 @@ export default {
   methods: {
     makePayment() {
       this.lockSubmit = true
-      this.result = this.stripe.confirmCardPayment('clientSecret', {
-        payment_method: {
-          card: this.card,
-          billing_details: {
-            name:
-              this.personalDetailFormData.firstName +
-              this.personalDetailFormData.lastName
-          }
-        }
-      })
+      // this.result = this.stripe.confirmCardPayment('clientSecret', {
+      //   payment_method: {
+      //     card: this.card,
+      //     billing_details: {
+      //       name:
+      //         this.personalDetailFormData.firstName +
+      //         this.personalDetailFormData.lastName
+      //     }
+      //   }
+      // })
+
       this.payload = {
         //payAmount: self.payAmount,
         amount: 123.0, //stripe uses an int [with shifted decimal place] so we must convert our payment amount
         currency: 'GBP',
-        description: '10HR Beginners',
-        token: result.id
+        description: '10HR Beginners'
+        //token: result.id
       }
 
-      this.stripe
-        .createToken(this.card)
-        .then(function(result) {
-          if (result.error) {
-            alert('token error is' + result.error.message)
-            this.$forceUpdate() // Forcing the DOM to update so the Stripe Element can update
+      var path = 'http://localhost:8000/api/v1/create-intent/'
+      axios
+        .post(path, this.payload)
+        .then(response => {
+          console.log('the payment Intent returned is ' + response.data)
+          if (response.status == 200) {
+            alert('Transaction succeeded')
             this.lockSubmit = false
-            return
           } else {
-            //this.processTransaction(result.token.id)
-            this.payload = {
-              //payAmount: self.payAmount,
-              amount: 123.0, //stripe uses an int [with shifted decimal place] so we must convert our payment amount
-              currency: 'GBP',
-              description: '10HR Beginners',
-              token: result.id
-            }
-            var path = 'http://localhost:8000/api/v1/create-intent/'
-            axios
-              .post(path, payload)
-              .then(response => {
-                if (response.status == 200) {
-                  alert('Transaction succeeded')
-                  this.lockSubmit = false
-                } else {
-                  throw new Error('Failed payment')
-                }
-              })
-              .catch(err => {
-                console.log('payload contains' + this.payload)
-                alert('transaction error: ' + err.message)
-                this.lockSubmit = false
-              })
+            throw new Error('Failed payment')
           }
         })
         .catch(err => {
-          alert('outer error: ' + err.message)
+          console.log('payload contains' + this.payload)
+          alert('transaction error: ' + err.message)
           this.lockSubmit = false
         })
+
+      // this.stripe
+      //   .createToken(this.card)
+      //   .then(function(result) {
+      //     if (result.error) {
+      //       alert('token error is' + result.error.message)
+      //       this.$forceUpdate() // Forcing the DOM to update so the Stripe Element can update
+      //       this.lockSubmit = false
+      //       return
+      //     } else {
+      //       //processTransaction(result.token.id)
+      //     }
+      //   })
+      //   .catch(err => {
+      //     alert('outer error: ' + err.message)
+      //     this.lockSubmit = false
+      //   })
     },
     stripCurrency(val) {
       return val.replace(',', '').replace('.', '')
     }
-    //processTransaction(transactionToken) {},
+
+    // processTransaction(transactionToken) {
+    //    this.payload = {
+    //           //payAmount: self.payAmount,
+    //           amount: 123.0, //stripe uses an int [with shifted decimal place] so we must convert our payment amount
+    //           currency: 'GBP',
+    //           description: '10HR Beginners',
+    //           token: transactionToken
+    //           // token: result.id
+    //         }
+
+    //         var path = 'http://localhost:8000/api/v1/create-intent/'
+    //         axios
+    //           .post(path, payload)
+    //           .then(response => {
+    //             if (response.status == 200) {
+    //               alert('Transaction succeeded')
+    //               this.lockSubmit = false
+    //             } else {
+    //               throw new Error('Failed payment')
+    //             }
+    //           })
+    //           .catch(err => {
+    //             console.log('payload contains' + this.payload)
+    //             alert('transaction error: ' + err.message)
+    //             this.lockSubmit = false
+    //           })
+    // }
   }
   // createToken() {
   //   this.lockSubmit = true
