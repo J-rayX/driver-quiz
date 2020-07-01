@@ -56,7 +56,12 @@ export default {
     return {
       courseChosen: {},
       courses: [],
-      course: {}
+      course: {},
+      dt: {
+        amount: 1099, //stripe uses an int [with shifted decimal place] so we must convert our payment amount
+        currency: 'ppt',
+        description: 'delamo'
+      }
     }
   },
 
@@ -75,8 +80,12 @@ export default {
 
   methods: {
     startBooking(messageToBeSent) {
+      // this.course = this.courses[messageToBeSent]
+      // console.log('na the payload be this so ', this.course)
+
       if (messageToBeSent != undefined) {
         this.courseChosen = this.courses[messageToBeSent]
+
         console.log(this.courseChosen)
         console.log('sending love and light')
         this.$emit('course', this.courseChosen)
