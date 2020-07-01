@@ -46,7 +46,7 @@
           class="btn btn-primary shadow-sm"
           type="submit"
           value="Pay"
-          v-on:click.prevent="makePayment"
+          v-on:click.prevent="onSubmit"
         />
       </form>
     </div>
@@ -68,16 +68,17 @@ export default {
   data() {
     return {
       lockSubmit: false,
+
       stripePublishableKey:
         'pk_test_51GrazpAvPywucau1IhcJNBX74gsRIYy5RmthiIxpt1dd8JJ9spvzHglHNS2AFO0f19iffxmxobO17LKmb53J4r5300wP5Of8A1',
       amount: this.finalFee,
-      // courseToBeTakenFinal: this.course,
-      // personalDetailOfCustomer: this.personalDetailFormData,
+
       payload: {
-        amount: 123.0, //stripe uses an int [with shifted decimal place] so we must convert our payment amount
-        currency: 'GBP',
+        amount: 1099, //stripe uses an int [with shifted decimal place] so we must convert our payment amount
+        currency: 'gbp',
         description: '10HR Beginners'
       },
+
       stripe: undefined,
       elements: undefined,
       card: undefined,
@@ -102,7 +103,16 @@ export default {
   },
 
   methods: {
-    makePayment() {
+    onSubmit() {
+      const dt = {
+        amount: this.payload.amount, //stripe uses an int [with shifted decimal place] so we must convert our payment amount
+        currency: this.payload.currency,
+        description: this.payload.description
+      }
+
+      this.makePayment(dt)
+    },
+    makePayment(dt) {
       this.lockSubmit = true
       // this.result = this.stripe.confirmCardPayment('clientSecret', {
       //   payment_method: {
@@ -114,18 +124,17 @@ export default {
       //     }
       //   }
       // })
+      // console.log('na the amount be this so ' + this.payload.amount)
 
-      this.payload = {
-        //payAmount: self.payAmount,
-        amount: 123.0, //stripe uses an int [with shifted decimal place] so we must convert our payment amount
-        currency: 'GBP',
-        description: '10HR Beginners'
-        //token: result.id
-      }
+      //console.log('na the amount be this so ' + dt.currency)
+      console.log('na the payload be this so ', dt)
 
+      // console.log('na the dt be this oo ' + this.dt)
       var path = 'http://localhost:8000/api/v1/create-intent/'
+      //console.log('na the payload be this so ' + this.payload)
+
       axios
-        .post(path, this.payload)
+        .post(path, dt)
         .then(response => {
           console.log('the payment Intent returned is ' + response.data)
           if (response.status == 200) {
@@ -136,7 +145,7 @@ export default {
           }
         })
         .catch(err => {
-          console.log('payload contains' + this.payload)
+          //console.log('payload contains' + this.payload)
           alert('transaction error: ' + err.message)
           this.lockSubmit = false
         })
