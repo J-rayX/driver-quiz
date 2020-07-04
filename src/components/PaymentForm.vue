@@ -135,20 +135,29 @@ export default {
 
       axios
         .post(path, dt)
-        .then(response => {
-          console.log('the payment Intent returned is ' + response.data)
-          if (response.status == 200) {
-            alert('Transaction succeeded')
-            this.lockSubmit = false
-          } else {
-            throw new Error('Failed payment')
-          }
-        })
+        .then(console.log('the payment Intent returned is ' + dt))
         .catch(err => {
           //console.log('payload contains' + this.payload)
           alert('transaction error: ' + err.message)
           this.lockSubmit = false
         })
+
+      // axios
+      //   .post(path, dt)
+      //   .then(response => {
+      //     console.log('the payment Intent returned is ' + response.data)
+      //     if (response.status == 200) {
+      //       alert('Transaction succeeded')
+      //       this.lockSubmit = false
+      //     } else {
+      //       throw new Error('Failed payment')
+      //     }
+      //   })
+      //   .catch(err => {
+      //     //console.log('payload contains' + this.payload)
+      //     alert('transaction error: ' + err.message)
+      //     this.lockSubmit = false
+      //   })
 
       // this.stripe
       //   .createToken(this.card)
