@@ -134,7 +134,19 @@ export default {
       //console.log('na the payload be this so ' + this.payload)
 
       axios
-        .post(path, dt)
+        .post(
+          path,
+          {
+            amount: 23, //stripe uses an int [with shifted decimal place] so we must convert our payment amount
+            currency: 'usd',
+            description: 'pocket money'
+          },
+          {
+            headers: {
+              'Content-Type': 'application/json'
+            }
+          }
+        )
         .then(console.log('the payment Intent returned is ' + dt))
         .catch(err => {
           //console.log('payload contains' + this.payload)
