@@ -46,7 +46,7 @@
           class="btn btn-primary shadow-sm"
           type="submit"
           value="Pay"
-          v-on:click.prevent="onSubmit"
+          v-on:click.prevent="makePayment"
         />
       </form>
     </div>
@@ -104,15 +104,14 @@ export default {
 
   methods: {
     onSubmit() {
-      const dt = {
-        amount: this.payload.amount, //stripe uses an int [with shifted decimal place] so we must convert our payment amount
-        currency: this.payload.currency,
-        description: this.payload.description
-      }
-
-      this.makePayment(dt)
+      // const dt = {
+      //   amount: this.payload.amount, //stripe uses an int [with shifted decimal place] so we must convert our payment amount
+      //   currency: this.payload.currency,
+      //   description: this.payload.description
+      // }
+      // this.makePayment(dt)
     },
-    makePayment(dt) {
+    makePayment() {
       this.lockSubmit = true
       // this.result = this.stripe.confirmCardPayment('clientSecret', {
       //   payment_method: {
@@ -127,32 +126,34 @@ export default {
       // console.log('na the amount be this so ' + this.payload.amount)
 
       //console.log('na the amount be this so ' + dt.currency)
-      console.log('na the payload be this so ', dt)
+      console.log('na the payload be this so ', this.payload)
 
       // console.log('na the dt be this oo ' + this.dt)
-      var path = 'http://localhost:8000/api/v1/create-intent/'
+      let path = 'http://localhost:8000/api/v1/create-intent/'
       //console.log('na the payload be this so ' + this.payload)
 
+      const headers = {
+        'Content-Type': 'application/json',
+        Authorization: 'JWT fefege...'
+      }
+
       axios
-        .post(
-          path,
-          {
-            amount: 23, //stripe uses an int [with shifted decimal place] so we must convert our payment amount
-            currency: 'usd',
-            description: 'pocket money'
-          },
-          {
-            headers: {
-              'Content-Type': 'application/json'
-            }
-          }
-        )
-        .then(console.log('the payment Intent returned is ' + dt))
-        .catch(err => {
+        .post(path, this.payload, { headers: headers })
+        .then(console.log('the payload returned is ', this.payload))
+        .catch(error => {
           //console.log('payload contains' + this.payload)
-          alert('transaction error: ' + err.message)
+          alert('transaction error: ' + error.message)
           this.lockSubmit = false
         })
+
+      // axios
+      //   .post(path, this.payload)
+      //   .catch(err => {
+      //     //console.log('payload contains' + this.payload)
+      //     alert('transaction error: ' + err.message)
+      //     this.lockSubmit = false
+      //   })
+      //   .finally(console.log('the payload returned is ' + amount))
 
       // axios
       //   .post(path, dt)
