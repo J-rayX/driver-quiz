@@ -26,12 +26,15 @@
 
     <div v-if="finalStage">
       <div class="flex-container final-stage">
-        <span
-          style="font-weight: 600; font-size: 24px; color:  #0a3592;"
-        >Enroll for {{ courseRecommended.desc }} course</span>
+        <span style="font-weight: 600; font-size: 24px; color:  #0a3592;"
+          >Enroll for {{ courseRecommended.desc }} course</span
+        >
         <hr />
         <h5 style="font-weight: bold; text-align: center;">About the Course</h5>
-        <div v-for="(feature, index) in courseRecommended.features" :key="index">
+        <div
+          v-for="(feature, index) in courseRecommended.features"
+          :key="index"
+        >
           <span>{{ feature }}</span>
         </div>
         <hr />
