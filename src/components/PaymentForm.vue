@@ -146,8 +146,42 @@ export default {
         .post(path, this.payload, { headers: headers })
         .then(response => {
           if (response.status == 200) {
-            alert('Transaction succeeded')
             this.lockSubmit = false
+            alert('Transaction succeeded')
+            const clientSecret = response.data.clientSecret
+            console.log('take the secret', clientSecret)
+            const stripeKeyFromBackend = response.data.publishableKey
+            console.log('the key from backend na', stripeKeyFromBackend)
+
+            this.stripe
+              .confirmCardPayment(clientSecret, {
+                payment_method: {
+                  card: this.card,
+                  //console.log('card details', card)
+                  billing_details: {
+                    name: this.personalDetailFormData.firstName,
+                    email: this.personalDetailFormData.email
+                    //phone: this.personalDetailFormData.phone
+                  }
+                }
+              })
+              .then(result => {
+                console.log(result)
+                if (result.error) {
+                  // Show error to your customer (e.g., insufficient funds)
+                  console.log(result.error.message)
+                } else {
+                  // The payment has been processed!
+                  // if (result.paymentIntent.status === "succeeded") {
+                  // Show a success message to your customer
+                  alert('Transaction ending')
+                  // There's a risk of the customer closing the window before callback
+                  // execution. Set up a webhook or plugin to listen for the
+                  // payment_intent.succeeded event that handles any business critical
+                  // post-payment actions.
+                  // }
+                }
+              })
           } else {
             throw new Error('Failed payment')
           }
