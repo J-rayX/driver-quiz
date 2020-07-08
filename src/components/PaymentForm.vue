@@ -74,9 +74,10 @@ export default {
       amount: this.finalFee,
 
       payload: {
-        amount: 1099, //stripe uses an int [with shifted decimal place] so we must convert our payment amount
+        amount: this.finalFee, //stripe uses an int [with shifted decimal place] so we must convert our payment amount
         currency: 'gbp',
-        description: '10HR Beginners'
+        description: this.course.desc
+        // course: this.course // new
       },
 
       stripe: undefined,
@@ -124,8 +125,12 @@ export default {
       //   }
       // })
       // console.log('na the amount be this so ' + this.payload.amount)
-
-      //console.log('na the amount be this so ' + dt.currency)
+      this.payload = {
+        amount: this.stripCurrency(this.finalFee), //stripe uses an int [with shifted decimal place] so we must convert our payment amount
+        currency: 'gbp',
+        description: this.course.desc
+        // course: this.course // new
+      }
       console.log('na the payload be this so ', this.payload)
 
       // console.log('na the dt be this oo ' + this.dt)
@@ -133,44 +138,60 @@ export default {
       //console.log('na the payload be this so ' + this.payload)
 
       const headers = {
-        'Content-Type': 'application/json',
-        Authorization: 'JWT fefege...'
+        'Content-Type': 'application/json'
+        //Authorization: 'JWT fefege...'
       }
 
       axios
         .post(path, this.payload, { headers: headers })
-        .then(console.log('the payload returned is ', this.payload))
+        .then(response => {
+          if (response.status == 200) {
+            this.lockSubmit = false
+            alert('Transaction succeeded')
+            const clientSecret = response.data.clientSecret
+            console.log('take the secret', clientSecret)
+            const stripeKeyFromBackend = response.data.publishableKey
+            console.log('the key from backend na', stripeKeyFromBackend)
+
+            this.stripe
+              .confirmCardPayment(clientSecret, {
+                payment_method: {
+                  card: this.card,
+                  //console.log('card details', card)
+                  billing_details: {
+                    name: this.personalDetailFormData.firstName,
+                    email: this.personalDetailFormData.email
+                    //phone: this.personalDetailFormData.phone
+                  }
+                }
+              })
+              .then(result => {
+                console.log(result)
+                if (result.error) {
+                  // Show error to your customer (e.g., insufficient funds)
+                  console.log(result.error.message)
+                } else {
+                  // The payment has been processed!
+                  // if (result.paymentIntent.status === "succeeded") {
+                  // Show a success message to your customer
+                  alert('Transaction ending')
+                  // There's a risk of the customer closing the window before callback
+                  // execution. Set up a webhook or plugin to listen for the
+                  // payment_intent.succeeded event that handles any business critical
+                  // post-payment actions.
+                  // }
+                }
+              })
+          } else {
+            throw new Error('Failed payment')
+          }
+          console.log('the payload returned is ', this.payload)
+        })
         .catch(error => {
           //console.log('payload contains' + this.payload)
           alert('transaction error: ' + error.message)
           this.lockSubmit = false
         })
-
-      // axios
-      //   .post(path, this.payload)
-      //   .catch(err => {
-      //     //console.log('payload contains' + this.payload)
-      //     alert('transaction error: ' + err.message)
-      //     this.lockSubmit = false
-      //   })
-      //   .finally(console.log('the payload returned is ' + amount))
-
-      // axios
-      //   .post(path, dt)
-      //   .then(response => {
-      //     console.log('the payment Intent returned is ' + response.data)
-      //     if (response.status == 200) {
-      //       alert('Transaction succeeded')
-      //       this.lockSubmit = false
-      //     } else {
-      //       throw new Error('Failed payment')
-      //     }
-      //   })
-      //   .catch(err => {
-      //     //console.log('payload contains' + this.payload)
-      //     alert('transaction error: ' + err.message)
-      //     this.lockSubmit = false
-      //   })
 
       // this.stripe
       //   .createToken(this.card)
