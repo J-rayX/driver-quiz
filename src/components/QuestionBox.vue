@@ -126,10 +126,10 @@ export default {
   methods: {
     selectAnswer(index) {
       this.selectedIndex = index
-      console.log(this.selectedIndex)
+      //  console.log(this.selectedIndex)
     },
     submitAnswer() {
-      console.log(this.option)
+      //  console.log(this.option)
       this.$emit('option', { option: this.option })
 
       this.option = null
