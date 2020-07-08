@@ -35,7 +35,10 @@
     </div>-->
 
     <div class="row">
-      <form id="payment-form" class="w-75 px-5 d-flex flex-column align-items-center">
+      <form
+        id="payment-form"
+        class="w-75 px-5 d-flex flex-column align-items-center"
+      >
         <div id="card-element" ref="card" class="form-control m-2">
           <!-- A Stripe Element will be inserted here. -->
         </div>
@@ -98,9 +101,9 @@ export default {
     this.card = this.stripe.elements().create('card')
     this.card.mount(this.$refs.card)
     this.lockSubmit = false
-    console.log(this.lockSubmit)
-    console.log(this.finalFee)
-    console.log(this.personalDetailFormData)
+    // console.log(this.lockSubmit)
+    // console.log(this.finalFee)
+    // console.log(this.personalDetailFormData)
   },
 
   methods: {
@@ -131,7 +134,7 @@ export default {
         description: this.course.desc
         // course: this.course // new
       }
-      console.log('na the payload be this so ', this.payload)
+      // console.log('na the payload be this so ', this.payload)
 
       // console.log('na the dt be this oo ' + this.dt)
       let path = 'http://localhost:8000/api/v1/create-intent/'
@@ -149,9 +152,9 @@ export default {
             this.lockSubmit = false
             alert('Transaction succeeded')
             const clientSecret = response.data.clientSecret
-            console.log('take the secret', clientSecret)
+            // console.log('take the secret', clientSecret)
             const stripeKeyFromBackend = response.data.publishableKey
-            console.log('the key from backend na', stripeKeyFromBackend)
+            // console.log('the key from backend na', stripeKeyFromBackend)
 
             this.stripe
               .confirmCardPayment(clientSecret, {
@@ -166,10 +169,10 @@ export default {
                 }
               })
               .then(result => {
-                console.log(result)
+                // console.log(result)
                 if (result.error) {
                   // Show error to your customer (e.g., insufficient funds)
-                  console.log(result.error.message)
+                  // console.log(result.error.message)
                 } else {
                   // The payment has been processed!
                   // if (result.paymentIntent.status === "succeeded") {
@@ -185,7 +188,7 @@ export default {
           } else {
             throw new Error('Failed payment')
           }
-          console.log('the payload returned is ', this.payload)
+          // console.log('the payload returned is ', this.payload)
         })
         .catch(error => {
           //console.log('payload contains' + this.payload)

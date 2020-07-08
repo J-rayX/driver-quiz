@@ -17,7 +17,9 @@
           <span class="label">{{ course.transType }}</span>
         </b-card-text>
 
-        <b-button href="#" @click="startBooking(index)" variant="primary">Book Now</b-button>
+        <b-button href="#" @click="startBooking(index)" variant="primary"
+          >Book Now</b-button
+        >
         <!-- <a @click="$emit('goToPayment', feeToBePaid)">Pay</a> -->
       </b-card>
       <!-- </div>
@@ -68,13 +70,13 @@ export default {
   created() {
     QuestionService.getCourses()
       .then(response => {
-        console.log(response.data)
+        // console.log(response.data)
         this.courses = response.data
 
-        console.log(this.courses)
+        // console.log(this.courses)
       })
       .catch(error => {
-        console.log('There was an error: ' + error.response)
+        // console.log('There was an error: ' + error.response)
       })
   },
 
@@ -86,8 +88,8 @@ export default {
       if (messageToBeSent != undefined) {
         this.courseChosen = this.courses[messageToBeSent]
 
-        console.log(this.courseChosen)
-        console.log('sending love and light')
+        // console.log(this.courseChosen)
+        // console.log('sending love and light')
         this.$emit('course', this.courseChosen)
       } else {
         this.courseChosen = null

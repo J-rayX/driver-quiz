@@ -43,7 +43,7 @@
         <hr />
         <h5 style="font-weight: bold;  text-align: center;">Cost</h5>
         <span>&#163;{{ courseRecommended.fee }}</span>
-        <router-link :to="{ name: 'booking', params: { courseRecommended }}">
+        <router-link :to="{ name: 'booking', params: { courseRecommended } }">
           <a>Pay</a>
           <!-- <a @click="$emit('goToPayment', feeToBePaid)">Pay</a> -->
         </router-link>
@@ -95,14 +95,14 @@ export default {
         this.introStage = true
       })
       .catch(error => {
-        console.log('There was an error: ' + error.response)
+        //  console.log('There was an error: ' + error.response)
       }),
       QuestionService.getCourses()
         .then(response => {
           this.courses = response.data
         })
         .catch(error => {
-          console.log('There was an error: ' + error.response)
+          //    console.log('There was an error: ' + error.response)
         })
   },
   computed: {
@@ -153,14 +153,14 @@ export default {
       this.introStage = false
       this.questionStage = true
 
-      console.log(
-        'test ' + JSON.stringify(this.questions[this.currentQuestion])
-      )
+      // console.log(
+      //   'test ' + JSON.stringify(this.questions[this.currentQuestion])
+      // )
     },
 
     // Function to handle Display questions and options
     handleOption(e) {
-      console.log('answer event ftw', e)
+      //  console.log('answer event ftw', e)
       this.options[this.currentQuestion] = e.option
       if (e.option.transType === 'transManual') {
         this.isManual = true
@@ -173,7 +173,7 @@ export default {
         this.currentQuestion + 1 === this.questions.length ||
         e.option.endpoint === true
       ) {
-        console.log('Done Finally, total score is ' + this.totalScore)
+        //  console.log('Done Finally, total score is ' + this.totalScore)
         //this.finishQuiz()
         this.questionStage = false
         this.finalStage = true
@@ -224,7 +224,7 @@ export default {
 
     // Function to handle the final results and display of answers
     finishQuiz() {
-      console.log('The End!')
+      //  console.log('The End!')
       // if (this.totalScore < 10) {
       //   console.log(this.courses[1].options[1].fee)
       //   //return this.courses[1].options[1].fee

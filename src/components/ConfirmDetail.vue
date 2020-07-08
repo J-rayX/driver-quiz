@@ -126,12 +126,12 @@ export default {
     changeCourse() {
       this.courseListStageData = true
       this.$emit('goBackToCourseList', this.courseListStageBoolean)
-      console.log(this.courseListStageBoolean)
+      //  console.log(this.courseListStageBoolean)
     },
     changeDetail() {
       this.personalDetailFormHold = true
       this.$emit('goBackToPersonalDetail', this.personalDetailStafeBoolean)
-      console.log(this.personalDetailStafeBoolean)
+      //  console.log(this.personalDetailStafeBoolean)
     }
   }
 }

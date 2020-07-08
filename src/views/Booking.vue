@@ -87,12 +87,12 @@ export default {
   created() {
     // check if this.courseCourseRecommended is filled
     if (this.holdCourseRecommended != null) {
-      console.log('to confirm course', this.holdCourseRecommended)
+      //  console.log('to confirm course', this.holdCourseRecommended)
       this.personalDetailStage = true
-      console.log('personal detail stage', this.personalDetailStage)
+      //  console.log('personal detail stage', this.personalDetailStage)
       // let this.course = holdCourseRecommended
       this.course = this.holdCourseRecommended
-      console.log('course chosen', this.course)
+      //  console.log('course chosen', this.course)
       // if filled, let courseListStage= false
       // this.courseListStage = false
       // let personal detial stage = true
@@ -100,7 +100,7 @@ export default {
     // else this.courseListStage =
     else {
       this.courseListStage = true
-      console.log('course list stage', this.courseListStage)
+      //  console.log('course list stage', this.courseListStage)
       //this.courseListStage = true
       QuestionService.getCourses()
         .then(response => {
@@ -108,7 +108,7 @@ export default {
           this.courseListStage = true
         })
         .catch(error => {
-          console.log('There was an error: ' + error.response)
+          //      console.log('There was an error: ' + error.response)
         })
     }
   },
@@ -131,7 +131,7 @@ export default {
     // funtion to recieve the particular course chosen by Customer in CourselistStage
     handleCourseChosen(e) {
       // this.$emit('option', { option: this.option })
-      console.log('collected love and light, courseChosen ', e)
+      //  console.log('collected love and light, courseChosen ', e)
       this.course = e
       this.courseListStage = false
       this.personalDetailStage = true
@@ -140,7 +140,7 @@ export default {
     // function to receive the perosnal detail supplied by the user inside the PersonalDetailStage form
     handleDetailForm(e) {
       // this.$emit('option', { option: this.option })
-      console.log('accepting personal detail input ', e)
+      //  console.log('accepting personal detail input ', e)
       this.personalDetailFormData = e
       this.personalDetailStage = false
       this.confirmationStage = true
@@ -148,12 +148,12 @@ export default {
 
     // function to recieve fully confirmed data from user
     handleConfirmedData(e) {
-      console.log('you have finally made up your mind ', e)
+      //  console.log('you have finally made up your mind ', e)
       this.course = e
-      console.log(
-        'check your personals to be very very very very sure ',
-        this.personalDetailFormData
-      )
+      // console.log(
+      //   'check your personals to be very very very very sure ',
+      //   this.personalDetailFormData
+      // )
       this.confirmationStage = false
       this.paymentOptionStage = true
     },
@@ -162,31 +162,31 @@ export default {
 
     // function 1: receives deposit payment info
     handleDepositPayment(e) {
-      console.log('we can only pay deposit first ', e)
+      //  console.log('we can only pay deposit first ', e)
       this.deposit = e
       this.finalFee = this.course.deposit
-      console.log("so we'll pay ", this.finalFee)
+      //  console.log("so we'll pay ", this.finalFee)
       this.course.fee = this.finalFee
-      console.log(this.course.fee)
+      //  console.log(this.course.fee)
       this.paymentOptionStage = false
       this.paymentStage = true
     },
 
     // function 1: receives full payment info
     handleFullPayment(e) {
-      console.log('we paying full altogether', e)
+      //  console.log('we paying full altogether', e)
       this.deposit = e
       // check here check here check here check here check here
       this.finalFee = this.course.fee
-      console.log("so we'll pay ", this.finalFee)
+      //  console.log("so we'll pay ", this.finalFee)
       this.course.fee = this.finalFee
-      console.log(this.course.fee)
+      //  console.log(this.course.fee)
       this.paymentOptionStage = false
       this.paymentStage = true
     },
 
     confirmCourse(e) {
-      console.log('request to course change e', e)
+      //  console.log('request to course change e', e)
       this.courseListStage = e
       if ((this.courseListStage = true)) {
         this.confirmationStage = false
@@ -197,7 +197,7 @@ export default {
       } else this.confirmationStage = false
     },
     confirmDetail(e) {
-      console.log('request to detail change e', e)
+      //  console.log('request to detail change e', e)
       this.personalDetailStage = e
       if ((this.personalDetailStage = true)) {
         //this.confirmationStage = true
