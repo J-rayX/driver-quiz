@@ -131,7 +131,8 @@ export default {
       this.payload = {
         amount: this.stripCurrency(this.finalFee), //stripe uses an int [with shifted decimal place] so we must convert our payment amount
         currency: 'gbp',
-        description: this.course.desc
+        description: this.course.desc,
+        receipt_email: this.personalDetailFormData.email
         // course: this.course // new
       }
       // console.log('na the payload be this so ', this.payload)
@@ -162,7 +163,9 @@ export default {
                   card: this.card,
                   //console.log('card details', card)
                   billing_details: {
-                    name: this.personalDetailFormData.firstName,
+                    name:
+                      this.personalDetailFormData.firstName +
+                      this.personalDetailFormData.lastName,
                     email: this.personalDetailFormData.email
                     //phone: this.personalDetailFormData.phone
                   }
