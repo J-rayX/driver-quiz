@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 <template>
   <b-container>
     <div v-for="(course, index) in courses" :key="index">
@@ -16,10 +17,10 @@
           <br />
           <span class="label">{{ course.transType }}</span>
         </b-card-text>
-
         <b-button href="#" @click="startBooking(index)" variant="primary"
           >Book Now</b-button
         >
+
         <!-- <a @click="$emit('goToPayment', feeToBePaid)">Pay</a> -->
       </b-card>
       <!-- </div>
