@@ -79,7 +79,8 @@ export default {
       payload: {
         amount: this.finalFee, //stripe uses an int [with shifted decimal place] so we must convert our payment amount
         currency: 'gbp',
-        description: this.course.desc
+        description: this.course.desc,
+        receipt_email: this.personalDetailFormData.email
         // course: this.course // new
       },
 
