@@ -95,13 +95,6 @@ export default {
         checked: [],
         contactMe: false
       },
-      foods: [
-        { text: 'Select One', value: null },
-        'Carrots',
-        'Beans',
-        'Tomatoes',
-        'Corn'
-      ],
       show: true
     }
   },
