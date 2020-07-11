@@ -1,8 +1,10 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link :to="{ name: 'home'}">Home</router-link>|
-      <router-link :to="{ name: 'course-recommender'}">Course Recommender</router-link>|
+      <router-link :to="{ name: 'home' }">Home</router-link>|
+      <router-link :to="{ name: 'course-recommender' }"
+        >Course Recommender</router-link
+      >|
       <router-link :to="{ name: 'booking' }">Booking</router-link>
     </div>
     <router-view />

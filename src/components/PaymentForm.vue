@@ -3,7 +3,6 @@
     <div class="row">
       <div class="col-sm-12">
         <h1>Ready to Pay?</h1>
-
         <hr />
         <router-link to="/" class="btn btn-primary">Back Home</router-link>
         <br />
@@ -53,6 +52,42 @@
         />
       </form>
     </div>
+
+    <div v-show="isModalVisible">
+      <div class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>Thanks for booking with us!</p>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+              >
+                Close
+              </button>
+              <router-link :to="{ name: 'home' }">
+                <button type="button" class="btn btn-primary">
+                  Save changes
+                </button>
+              </router-link>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -79,14 +114,18 @@ export default {
       payload: {
         amount: this.finalFee, //stripe uses an int [with shifted decimal place] so we must convert our payment amount
         currency: 'gbp',
-        description: this.course.desc
+        description: this.course.desc,
+        receipt_email: this.personalDetailFormData.email
         // course: this.course // new
       },
 
       stripe: undefined,
       elements: undefined,
       card: undefined,
-      result: undefined
+      result: undefined,
+      paymentComplete: false,
+      customer: {},
+      isModalVisible: false
 
       //api: 'http://localhost:8000/api/v1'
       //errors: []
@@ -114,6 +153,9 @@ export default {
       //   description: this.payload.description
       // }
       // this.makePayment(dt)
+    },
+    showModal() {
+      this.isModalVisible = true
     },
     makePayment() {
       this.lockSubmit = true
@@ -180,7 +222,27 @@ export default {
                   // The payment has been processed!
                   // if (result.paymentIntent.status === "succeeded") {
                   // Show a success message to your customer
-                  alert('Transaction ending')
+                  this.customer = {
+                    firstName: this.personalDetailFormData.firstName,
+                    lastName: this.personalDetailFormData.lastName,
+                    email: this.personalDetailFormData.email,
+                    phone: this.personalDetailFormData.phone,
+                    startDate: this.personalDetailFormData.dateToStart,
+                    postCode: this.personalDetailFormData.postCode,
+                    courseChosen: this.course.desc
+                  }
+                  console.log('customer to add', this.customer)
+                  axios
+                    .post(
+                      'http://127.0.0.1:8000/api/v1/customers/',
+                      this.customer
+                    )
+                    .then(response => {
+                      this.paymentComplete = true
+                      console.log('Transaction ending')
+                      //showModal()
+                      this.$router.push('/')
+                    })
                   // There's a risk of the customer closing the window before callback
                   // execution. Set up a webhook or plugin to listen for the
                   // payment_intent.succeeded event that handles any business critical

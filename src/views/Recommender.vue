@@ -96,8 +96,8 @@ p {
     justify-content: center;
     align-items: center;
   }
-  .container {
-  }
+  /* .container {
+  } */
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */

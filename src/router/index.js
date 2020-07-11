@@ -4,6 +4,7 @@ import Home from '../views/Home.vue'
 import Recommender from '../views/Recommender.vue'
 import Booking from '../views/Booking.vue'
 import NotFound from '../views/NotFound.vue'
+import SuccessPayment from '../components/SuccessPayment.vue'
 // import Courses from '../views/booking/Courses.vue'
 // import EmptyRouterView from '../views/booking/EmptyRouterView.vue'
 // import PersonalDetailForm from '../views/booking/PersonalDetailForm.vue'
@@ -35,6 +36,12 @@ const routes = [
     path: '/booking',
     name: 'booking',
     component: Booking,
+    props: true
+  },
+  {
+    path: '/booking-successful',
+    name: 'booking-success',
+    component: SuccessPayment,
     props: true
   },
   // {
