@@ -10,7 +10,10 @@
 
       <div class="row">
         <div class="col-sm-6 course-details">
-          <form id="payment-form" class="w-75 px-5 d-flex flex-column align-items-center">
+          <form
+            id="payment-form"
+            class="w-75 px-5 d-flex flex-column align-items-center"
+          >
             <div id="card-element" ref="card" class="form-control m-2">
               <!-- A Stripe Element will be inserted here. -->
             </div>
@@ -187,7 +190,7 @@ export default {
                     postCode: this.personalDetailFormData.postCode,
                     courseChosen: this.course.desc
                   }
-                  console.log('customer to add', this.customer)
+                  //console.log('customer to add', this.customer)
                   axios
                     .post(
                       'http://127.0.0.1:8000/api/v1/customers/',
@@ -195,7 +198,7 @@ export default {
                     )
                     .then(response => {
                       this.paymentComplete = true
-                      console.log('Transaction ending')
+                      alert('Transaction ending')
                       //showModal()
                       this.$router.push('/')
                     })
