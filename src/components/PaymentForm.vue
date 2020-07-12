@@ -1,59 +1,32 @@
 <template>
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-12">
-        <h1>Ready to Pay?</h1>
-        <hr />
-        <router-link to="/" class="btn btn-primary">Back Home</router-link>
-        <br />
-      </div>
-    </div>
-
-    <!-- <div class="col-sm-6">
-            <div>
-              <h4>You are buying:</h4>
-              <ul>
-                <li>
-                  Book Title:
-                  <em>{{ courseToBeTakenFinal.desc }}</em>
-                </li>
-                <li>
-                  Amount:
-                  <em>$ {{ courseToBeTakenFinal.fee }}</em>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h4>Use this info for testing:</h4>
-              <ul>
-                <li>Card Number: 4242424242424242</li>
-                <li>CVC Code: any three digits</li>
-                <li>Expiration: any date in the future</li>
-              </ul>
-            </div>
-    </div>-->
-
-    <div class="row">
-      <form
-        id="payment-form"
-        class="w-75 px-5 d-flex flex-column align-items-center"
-      >
-        <div id="card-element" ref="card" class="form-control m-2">
-          <!-- A Stripe Element will be inserted here. -->
+  <div class="h-100 d-flex justify-content-center align-items-center">
+    <div class="container-fluid h-100">
+      <div class="row">
+        <div class="col-sm-6 course-details">
+          <h5>Book the {{ course.desc }}</h5>
+          <p>£{{ finalFee }}</p>
         </div>
-        <!-- We'll put the error messages in this element -->
-        <div id="card-errors" role="alert"></div>
-        <input
-          :disabled="lockSubmit"
-          class="btn btn-primary shadow-sm"
-          type="submit"
-          value="Pay"
-          v-on:click.prevent="makePayment"
-        />
-      </form>
-    </div>
+      </div>
 
-    <div v-show="isModalVisible">
+      <div class="row">
+        <div class="col-sm-6 course-details">
+          <form id="payment-form" class="w-75 px-5 d-flex flex-column align-items-center">
+            <div id="card-element" ref="card" class="form-control m-2">
+              <!-- A Stripe Element will be inserted here. -->
+            </div>
+            <!-- We'll put the error messages in this element -->
+            <div id="card-errors" role="alert"></div>
+            <input
+              :disabled="lockSubmit"
+              class="btn btn-primary shadow-sm"
+              type="submit"
+              value="Pay"
+              v-on:click.prevent="makePayment"
+            />
+          </form>
+        </div>
+      </div>
+      <!-- <div v-show="isModalVisible">
       <div class="modal" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
@@ -87,6 +60,7 @@
           </div>
         </div>
       </div>
+      </div>-->
     </div>
   </div>
 </template>
@@ -146,30 +120,13 @@ export default {
   },
 
   methods: {
-    onSubmit() {
-      // const dt = {
-      //   amount: this.payload.amount, //stripe uses an int [with shifted decimal place] so we must convert our payment amount
-      //   currency: this.payload.currency,
-      //   description: this.payload.description
-      // }
-      // this.makePayment(dt)
-    },
+    onSubmit() {},
     showModal() {
       this.isModalVisible = true
     },
     makePayment() {
       this.lockSubmit = true
-      // this.result = this.stripe.confirmCardPayment('clientSecret', {
-      //   payment_method: {
-      //     card: this.card,
-      //     billing_details: {
-      //       name:
-      //         this.personalDetailFormData.firstName +
-      //         this.personalDetailFormData.lastName
-      //     }
-      //   }
-      // })
-      // console.log('na the amount be this so ' + this.payload.amount)
+
       this.payload = {
         amount: this.stripCurrency(this.finalFee), //stripe uses an int [with shifted decimal place] so we must convert our payment amount
         currency: 'gbp',
@@ -185,7 +142,7 @@ export default {
 
       const headers = {
         'Content-Type': 'application/json'
-        //Authorization: 'JWT fefege...'
+        //Authorization: 'JWT things...'
       }
 
       axios
@@ -214,14 +171,13 @@ export default {
                 }
               })
               .then(result => {
-                // console.log(result)
                 if (result.error) {
-                  // Show error to your customer (e.g., insufficient funds)
-                  // console.log(result.error.message)
+                  // Show error to customer (e.g., insufficient funds)
+                  alert(result.error.message)
                 } else {
                   // The payment has been processed!
                   // if (result.paymentIntent.status === "succeeded") {
-                  // Show a success message to your customer
+
                   this.customer = {
                     firstName: this.personalDetailFormData.firstName,
                     lastName: this.personalDetailFormData.lastName,
@@ -281,58 +237,23 @@ export default {
     stripCurrency(val) {
       return val.replace(',', '').replace('.', '')
     }
-
-    // processTransaction(transactionToken) {
-    //    this.payload = {
-    //           //payAmount: self.payAmount,
-    //           amount: 123.0, //stripe uses an int [with shifted decimal place] so we must convert our payment amount
-    //           currency: 'GBP',
-    //           description: '10HR Beginners',
-    //           token: transactionToken
-    //           // token: result.id
-    //         }
-
-    //         var path = 'http://localhost:8000/api/v1/create-intent/'
-    //         axios
-    //           .post(path, payload)
-    //           .then(response => {
-    //             if (response.status == 200) {
-    //               alert('Transaction succeeded')
-    //               this.lockSubmit = false
-    //             } else {
-    //               throw new Error('Failed payment')
-    //             }
-    //           })
-    //           .catch(err => {
-    //             console.log('payload contains' + this.payload)
-    //             alert('transaction error: ' + err.message)
-    //             this.lockSubmit = false
-    //           })
-    // }
   }
-  // createToken() {
-  //   this.lockSubmit = true
-  //   window.Stripe.stripePublishableKey(this.stripePublishableKey)
-  //   window.Stripe.createToken(this.card, (status, response) => {
-  //     if (response.error) {
-  //       this.erros.push(response.error.message)
-  //       console.error(response)
-  //     } else {
-  //       const payload = {
-  //         course: this.courseToBeTakenFinal,
-  //         token: response.id
-  //       }
-  //       const path = 'http://localhost:5000/charge'
-  //       axios
-  //         .post(path, payload)
-  //         .then(() => {
-  //           this.$router.push({ path: '/' })
-  //         })
-  //         .catch(error => {
-  //           console.errorr(error)
-  //         })
-
-  //
-  // }
 }
 </script>
+
+<style scoped>
+.card {
+  border: 2px solid rgb(219, 219, 219);
+  border-radius: 4px;
+  /* box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15); */
+}
+
+.button {
+  /* Reset text link default */
+  text-decoration: none;
+  background-color: rebeccapurple;
+  color: #fff; /* white */
+  padding: 0.5em 1em; /* vertical | horizontal */
+  border-radius: 4px;
+}
+</style>
