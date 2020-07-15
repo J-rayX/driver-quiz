@@ -7,7 +7,12 @@
             <!-- Nav-bar Icons -->
             <!-- <i class="fas fa-book-reader fa-2x mx-3"></i> -->
             <i>
-              <img src="@/assets/logo.png" alt="steering logo" class="header-logo" max-width="1%" />
+              <img
+                src="@/assets/logo.png"
+                alt="steering logo"
+                class="header-logo"
+                max-width="1%"
+              />
             </i>
             <!-- <img src="..//assets/logoo.png alt="Logo">  -->
             7Days Driving School
@@ -41,11 +46,13 @@
               </li>
               <li class="nav-item">
                 <router-link :to="{ name: 'course-recommender' }">
-                  <a class="nav-link" href="#">COURSE-RECOMMENDER</a>
-                </router-link>|
+                  <a class="nav-link" href="#"
+                    >COURSE-RECOMMENDER</a
+                  > </router-link
+                >|
               </li>
               <li class="nav-item">
-                <router-link :to="{ name: 'course-recommender' }">
+                <router-link :to="{ name: 'instructors' }">
                   <a class="nav-link" href="#">INSTRUCTORS</a>
                 </router-link>
               </li>

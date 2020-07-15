@@ -4,23 +4,21 @@
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
     <!-- <span>this is the homepGE</span> -->
     <div class="banner container text-center">
-        <div class="row">
-          <div class="col-md-7 col-sm-12 text-white text-center">
-            <h1>PASS YOUR DRIVING TEST IN JUST ONE WEEK</h1>
-            <p>
-              7Days Driving School makes it easy and possible to learn how to
-              drive and pass your driving test in 7 days
-            </p>
-            <button class="btn btn-light px-5 py-2 primary-btn">Start Now</button>
-          </div>
-          <div class="col-md-5 col-sm-12 h-25 text-center">
-            <img src="../assets/illustration.png" alt="cars" class="header-img" />
-          </div>
+      <div class="row">
+        <div class="col-md-7 col-sm-12 text-white text-center">
+          <h1>PASS YOUR DRIVING TEST IN JUST ONE WEEK</h1>
+          <p>
+            7Days Driving School makes it easy and possible to learn how to
+            drive and pass your driving test in 7 days
+          </p>
+          <button class="btn btn-light px-5 py-2 primary-btn">Start Now</button>
+        </div>
+        <div class="col-md-5 col-sm-12 h-25 text-center">
+          <img src="../assets/illustration.png" alt="cars" class="header-img" />
         </div>
       </div>
+    </div>
     <main>
-      
-
       <!------------- Section-1 ------------->
       <section class="section-1 container-fluid p-0">
         <div class="cover">
@@ -33,7 +31,9 @@
           </div>-->
         </div>
         <div class="container-fluid text-center">
-          <div class="numbers d-flex flex-md-row flex-wrap justify-content-center">
+          <div
+            class="numbers d-flex flex-md-row flex-wrap justify-content-center"
+          >
             <div class="rect">
               <h1>2345</h1>
               <p>Happy Clients</p>
@@ -146,7 +146,9 @@
                     help you to pass within weeks of booking in—even on a busy
                     schedule!
                   </p>
-                  <a href="#" class="text-decoration-none">DISCOVER OUR COURSES</a>
+                  <a href="#" class="text-decoration-none"
+                    >DISCOVER OUR COURSES</a
+                  >
                 </div>
               </div>
             </div>
@@ -166,7 +168,9 @@
                     They’ll teach you the skills you need to pass fast and
                     become a safe driver for life.
                   </p>
-                  <a href="#" class="text-decoration-none">MEET OUR EXPERT INSTRUCTORS</a>
+                  <a href="#" class="text-decoration-none"
+                    >MEET OUR EXPERT INSTRUCTORS</a
+                  >
                 </div>
               </div>
             </div>
@@ -186,7 +190,9 @@
                     you within ten working days, you’re eligible for a full
                     refund. It’s as simple as that!
                   </p>
-                  <a href="#" class="text-decoration-none">FIND OUT HOW IT WORKS</a>
+                  <a href="#" class="text-decoration-none"
+                    >FIND OUT HOW IT WORKS</a
+                  >
                 </div>
               </div>
             </div>
@@ -203,10 +209,16 @@
           <p class="text-secondary">Lorem ipsum dolor sit amet.</p>
         </div>
         <div class="team row">
-          <div class="col-md-4 col-12 col-lg-4 mb-3 mb-lg-0 card-parent text-center">
+          <div
+            class="col-md-4 col-12 col-lg-4 mb-3 mb-lg-0 card-parent text-center"
+          >
             <div class="card mr-2 d-inline-block shadow-lg">
               <div class="card-img-top">
-                <img src="../assets/UI-face-3.jpg" class="img-fluid border-radius p-4" alt="Member" />
+                <img
+                  src="../assets/UI-face-3.jpg"
+                  class="img-fluid border-radius p-4"
+                  alt="Member"
+                />
               </div>
               <div class="card-body">
                 <h3 class="card-title">Beginners</h3>
@@ -217,7 +229,9 @@
                   repellendus aut facilis quasi voluptas!
                 </p>
                 <!-- <a href="#" class="text-secondary text-decoration-none">Go somewhere</a> -->
-                <button class="btn btn-dark px-20 py-22 primary-btn">Go somewhere</button>
+                <button class="btn btn-dark px-20 py-22 primary-btn">
+                  Go somewhere
+                </button>
               </div>
             </div>
           </div>
@@ -225,7 +239,11 @@
           <div class="col-md-4 col-12 text-center card-parent">
             <div class="card mr-2 d-inline-block shadow-lg">
               <div class="card-img-top">
-                <img src="../assets/UI-face-3.jpg" class="img-fluid border-radius p-4" alt="Member" />
+                <img
+                  src="../assets/UI-face-3.jpg"
+                  class="img-fluid border-radius p-4"
+                  alt="Member"
+                />
               </div>
               <div class="card-body">
                 <h3 class="card-title">Refreshers</h3>
@@ -236,7 +254,9 @@
                   repellendus aut facilis quasi voluptas!
                 </p>
                 <!-- <a href="#" class="text-secondary text-decoration-none">Go somewhere</a> -->
-                <button class="btn btn-dark px-20 py-22 primary-btn">Go somewhere</button>
+                <button class="btn btn-dark px-20 py-22 primary-btn">
+                  Go somewhere
+                </button>
               </div>
             </div>
           </div>
@@ -244,7 +264,11 @@
           <div class="col-md-4 col-12 text-center card-parent">
             <div class="card mr-2 d-inline-block shadow-lg">
               <div class="card-img-top">
-                <img src="../assets/UI-face-4.jpg" class="img-fluid border-radius p-4" alt />
+                <img
+                  src="../assets/UI-face-4.jpg"
+                  class="img-fluid border-radius p-4"
+                  alt
+                />
               </div>
               <div class="card-body">
                 <h3 class="card-title">Lisence Tests</h3>
@@ -255,7 +279,9 @@
                   repellendus aut facilis quasi voluptas!
                 </p>
                 <!-- <a href="#" class="text-secondary text-decoration-none">Go somewhere</a> -->
-                <button class="btn btn-dark px-20 py-22 primary-btn">Go somewhere</button>
+                <button class="btn btn-dark px-20 py-22 primary-btn">
+                  Go somewhere
+                </button>
               </div>
             </div>
           </div>
@@ -263,7 +289,9 @@
 
         <div class="text-center">
           <h3>Need help choosing a course?</h3>
-          <button class="btn btn-light px-5 py-2 primary-btn">Use our Course Recommender</button>
+          <button class="btn btn-light px-5 py-2 primary-btn">
+            Use our Course Recommender
+          </button>
         </div>
       </section>
 
@@ -302,7 +330,10 @@
                 <!-- <i class="fas fa-desktop fa-3x py-2 pr-3"></i> -->
                 <a href="#">
                   <span>
-                    <img src="..//assets/store-apple.svg" alt="Download on App Store" />
+                    <img
+                      src="..//assets/store-apple.svg"
+                      alt="Download on App Store"
+                    />
                   </span>
                 </a>
                 <div class="text text-center">
@@ -318,7 +349,10 @@
                 <!-- <i class="fas fa-desktop fa-3x py-2 pr-3"></i> -->
                 <a href="#">
                   <span>
-                    <img src="..//assets/store-google.svg" alt="Download on Play Store" />
+                    <img
+                      src="..//assets/store-google.svg"
+                      alt="Download on Play Store"
+                    />
                   </span>
                 </a>
                 <div class="text text-center">
@@ -356,13 +390,19 @@
                   minima quia velit officia sit exercitationem nam ipsa,
                   repellendus aut facilis quasi voluptas!
                 </p>
-                <a href="#" class="text-secondary text-decoration-none">Go somewhere</a>
+                <a href="#" class="text-secondary text-decoration-none"
+                  >Go somewhere</a
+                >
                 <p class="text-black-50">CEO at Google</p>
               </div>
             </div>
           </div>
           <div class="col-md-4 col-12 text-center card-parent">
-            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+            <div
+              id="carouselExampleControls"
+              class="carousel slide"
+              data-ride="carousel"
+            >
               <div class="carousel-inner text-center">
                 <div class="carousel-item active">
                   <div class="card mr-2 d-inline-block shadow">
@@ -381,7 +421,9 @@
                         assumenda minima quia velit officia sit exercitationem
                         nam ipsa, repellendus aut facilis quasi voluptas!
                       </p>
-                      <a href="#" class="text-secondary text-decoration-none">Go somewhere</a>
+                      <a href="#" class="text-secondary text-decoration-none"
+                        >Go somewhere</a
+                      >
                       <p class="text-black-50">CEO at Google</p>
                     </div>
                   </div>
@@ -403,7 +445,9 @@
                         assumenda minima quia velit officia sit exercitationem
                         nam ipsa, repellendus aut facilis quasi voluptas!
                       </p>
-                      <a href="#" class="text-secondary text-decoration-none">Go somewhere</a>
+                      <a href="#" class="text-secondary text-decoration-none"
+                        >Go somewhere</a
+                      >
                       <p class="text-black-50">CEO at Google</p>
                     </div>
                   </div>
@@ -414,7 +458,11 @@
           <div class="col-md-4 col-12 text-center">
             <div class="card mr-2 d-inline-block shadow-lg">
               <div class="card-img-top">
-                <img src="../assets/UI-face-2.jpg" class="img-fluid rounded-circle w-50 p-4" alt />
+                <img
+                  src="../assets/UI-face-2.jpg"
+                  class="img-fluid rounded-circle w-50 p-4"
+                  alt
+                />
               </div>
               <div class="card-body">
                 <h3 class="card-title">Olivia Louis</h3>
@@ -424,7 +472,9 @@
                   minima quia velit officia sit exercitationem nam ipsa,
                   repellendus aut facilis quasi voluptas!
                 </p>
-                <a href="#" class="text-secondary text-decoration-none">Go somewhere</a>
+                <a href="#" class="text-secondary text-decoration-none"
+                  >Go somewhere</a
+                >
                 <p class="text-black-50">CEO at Google</p>
               </div>
             </div>
@@ -443,10 +493,16 @@
           <div class="col-md-4 col-12 text-center">
             <div class="card mr-2 d-inline-block shadow-lg">
               <div class="card-img-top">
-                <img src="../assets/UI-face-6.jpeg" class="img-fluid p-0" alt="Member" />
+                <img
+                  src="../assets/UI-face-6.jpeg"
+                  class="img-fluid p-0"
+                  alt="Member"
+                />
               </div>
               <div class="card-body">
-                <h3 class="card-title">Our Pass Photo of the Week—Megan from Solihull!</h3>
+                <h3 class="card-title">
+                  Our Pass Photo of the Week—Megan from Solihull!
+                </h3>
                 <p class="text-black-50">6th November, 2019</p>
                 <p class="card-text">
                   Time to reveal our top pass photo of the week—it's Megan from
@@ -460,10 +516,16 @@
           <div class="col-md-4 col-12 text-center">
             <div class="card mr-2 d-inline-block shadow-lg">
               <div class="card-img-top">
-                <img src="../assets/UI-face-3.jpg" class="img-fluid p-0" alt="Member" />
+                <img
+                  src="../assets/UI-face-3.jpg"
+                  class="img-fluid p-0"
+                  alt="Member"
+                />
               </div>
               <div class="card-body">
-                <h3 class="card-title">Our Pass Photo of the Week—Megan from Solihull!</h3>
+                <h3 class="card-title">
+                  Our Pass Photo of the Week—Megan from Solihull!
+                </h3>
                 <p class="text-black-50">6th November, 2019</p>
                 <p class="card-text">
                   Time to reveal our top pass photo of the week—it's Megan from
@@ -480,7 +542,9 @@
                 <img src="../assets/UI-face-4.jpg" class="img-fluid p-0" alt />
               </div>
               <div class="card-body">
-                <h3 class="card-title">Our Pass Photo of the Week—Megan from Solihull!</h3>
+                <h3 class="card-title">
+                  Our Pass Photo of the Week—Megan from Solihull!
+                </h3>
                 <p class="text-black-50">6th November, 2019</p>
                 <p class="card-text">
                   Time to reveal our top pass photo of the week—it's Megan from
@@ -494,7 +558,9 @@
         </div>
 
         <div class="text-center">
-          <button class="btn btn-light px-5 py-2 primary-btn">Read more from our Blog</button>
+          <button class="btn btn-light px-5 py-2 primary-btn">
+            Read more from our Blog
+          </button>
         </div>
       </section>
     </main>
@@ -571,10 +637,7 @@
           <div class="col-md-12 col-12 text-center copyright">
             <p class="pt-4 text-muted">
               Copyright ©2020 All rights reserved | Made with
-              <i
-                class="fa fa-heart pulse"
-                style="color: red;"
-              ></i> by
+              <i class="fa fa-heart pulse" style="color: red;"></i> by
               <span>JkayLight</span>
             </p>
           </div>
