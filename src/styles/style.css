@@ -287,11 +287,10 @@ header .header-img {
 }
 
 /********** section-3 **************/
-/* .section-3 {
-  
-} */
-.section-3 .cover {
+.section-3 {
   background: #12326b;
+}
+.section-3 .container {
   margin-top: 3vmin;
   /* display: flex; */
 }
@@ -325,7 +324,7 @@ header .header-img {
   line-height: 1.15;
   font-weight: 700;
   color: #122f65;
-  text-align: center !important;
+  text-align: left !important;
 }
 
 .section-3 .card .card-body > p {
@@ -341,7 +340,7 @@ header .header-img {
   font-weight: 700;
   color: #122f65;
   text-transform: uppercase;
-  text-align: center !important;
+  text-align: left !important;
 }
 /* .section-3 a:hover{
 
