@@ -10,10 +10,16 @@
                 We have qualified expert driving tutors who will train you and
                 help you get certified
               </p>
-              <button class="btn btn-light px-5 py-2 primary-btn">Start Now</button>
+              <button class="btn btn-light px-5 py-2 primary-btn">
+                Start Now
+              </button>
             </div>
             <div class="col-md-5 col-sm-12 h-25 text-center">
-              <img src="../assets/illustration.png" alt="cars" class="header-img" />
+              <img
+                src="../assets/illustration.png"
+                alt="cars"
+                class="header-img"
+              />
             </div>
           </div>
         </div>
@@ -43,7 +49,9 @@
                     Facilis consectetur quas, provident sit quibusdam similique,
                     impedit aperiam in quidem ratione voluptatem
                   </p>
-                  <a href="#" class="text-decoration-none">Manual Transmission</a>
+                  <a href="#" class="text-decoration-none"
+                    >Manual Transmission</a
+                  >
                 </div>
               </div>
             </div>
@@ -68,7 +76,9 @@
                     Facilis consectetur quas, provident sit quibusdam similique,
                     impedit aperiam in quidem ratione voluptatem
                   </p>
-                  <a href="#" class="text-decoration-none">Manual Transmission</a>
+                  <a href="#" class="text-decoration-none"
+                    >Manual Transmission</a
+                  >
                 </div>
               </div>
             </div>
@@ -93,7 +103,9 @@
                     Facilis consectetur quas, provident sit quibusdam similique,
                     impedit aperiam in quidem ratione voluptatem
                   </p>
-                  <a href="#" class="text-decoration-none">Automatic Transmission</a>
+                  <a href="#" class="text-decoration-none"
+                    >Automatic Transmission</a
+                  >
                 </div>
               </div>
             </div>
@@ -118,7 +130,9 @@
                     Facilis consectetur quas, provident sit quibusdam similique,
                     impedit aperiam in quidem ratione voluptatem
                   </p>
-                  <a href="#" class="text-decoration-none">Manual Transmission</a>
+                  <a href="#" class="text-decoration-none"
+                    >Manual Transmission</a
+                  >
                 </div>
               </div>
             </div>
@@ -143,7 +157,9 @@
                     Facilis consectetur quas, provident sit quibusdam similique,
                     impedit aperiam in quidem ratione voluptatem
                   </p>
-                  <a href="#" class="text-decoration-none">Manual Transmission</a>
+                  <a href="#" class="text-decoration-none"
+                    >Manual Transmission</a
+                  >
                 </div>
               </div>
             </div>
@@ -168,7 +184,9 @@
                     Facilis consectetur quas, provident sit quibusdam similique,
                     impedit aperiam in quidem ratione voluptatem
                   </p>
-                  <a href="#" class="text-decoration-none">Manual Transmission</a>
+                  <a href="#" class="text-decoration-none"
+                    >Manual Transmission</a
+                  >
                 </div>
               </div>
             </div>
@@ -193,7 +211,9 @@
                     Facilis consectetur quas, provident sit quibusdam similique,
                     impedit aperiam in quidem ratione voluptatem
                   </p>
-                  <a href="#" class="text-decoration-none">Manual Transmission</a>
+                  <a href="#" class="text-decoration-none"
+                    >Manual Transmission</a
+                  >
                 </div>
               </div>
             </div>
@@ -218,7 +238,9 @@
                     Facilis consectetur quas, provident sit quibusdam similique,
                     impedit aperiam in quidem ratione voluptatem
                   </p>
-                  <a href="#" class="text-decoration-none">Automatic Transmission</a>
+                  <a href="#" class="text-decoration-none"
+                    >Automatic Transmission</a
+                  >
                 </div>
               </div>
             </div>
@@ -243,7 +265,9 @@
                     Facilis consectetur quas, provident sit quibusdam similique,
                     impedit aperiam in quidem ratione voluptatem
                   </p>
-                  <a href="#" class="text-decoration-none">Automatic Transmission</a>
+                  <a href="#" class="text-decoration-none"
+                    >Automatic Transmission</a
+                  >
                 </div>
               </div>
             </div>
@@ -268,7 +292,9 @@
                     Facilis consectetur quas, provident sit quibusdam similique,
                     impedit aperiam in quidem ratione voluptatem
                   </p>
-                  <a href="#" class="text-decoration-none">Manual Transmission</a>
+                  <a href="#" class="text-decoration-none"
+                    >Manual Transmission</a
+                  >
                 </div>
               </div>
             </div>
@@ -293,7 +319,9 @@
                     Facilis consectetur quas, provident sit quibusdam similique,
                     impedit aperiam in quidem ratione voluptatem
                   </p>
-                  <a href="#" class="text-decoration-none">Automatic Transmission</a>
+                  <a href="#" class="text-decoration-none"
+                    >Automatic Transmission</a
+                  >
                 </div>
               </div>
             </div>
@@ -303,4 +331,3 @@
     </main>
   </div>
 </template>
- 
