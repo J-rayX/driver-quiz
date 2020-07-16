@@ -5,7 +5,7 @@
     <!-- <span>this is the homepGE</span> -->
     <div class="banner container text-center">
       <div class="row">
-        <div class="col-md-7 col-sm-12 text-white text-center">
+        <div class="col-md-12 col-sm-12 text-white text-center">
           <h1>PASS YOUR DRIVING TEST IN JUST ONE WEEK</h1>
           <p>
             7Days Driving School makes it easy and possible to learn how to
@@ -20,28 +20,17 @@
     </div>
     <main>
       <!------------- Section-1 ------------->
-      <section class="section-1 container-fluid p-0">
+      <!-- <section class="section-1 container-fluid p-0">
         <div class="cover">
-          <!-- <div class="content text-center">
-              <h1>Some Features That Made Us Unique</h1>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                Quos, voluptatum.
-              </p>
-          </div>-->
+       
         </div>
         <div class="container-fluid text-center">
-          <div
-            class="numbers d-flex flex-md-row flex-wrap justify-content-center"
-          >
+          <div class="numbers d-flex flex-md-row flex-wrap justify-content-center">
             <div class="rect">
               <h1>2345</h1>
               <p>Happy Clients</p>
             </div>
-            <!-- <div class="rect">
-                <h1>6789</h1>
-                <p></p>
-            </div>-->
+          
             <div class="rect">
               <h1>1056</h1>
               <p>Distance covered</p>
@@ -52,7 +41,7 @@
             </div>
           </div>
         </div>
-      </section>
+      </section>-->
 
       <!------------- Section-2  STEPS ------------->
       <section class="section-2 container">
@@ -122,14 +111,91 @@
 
       <!------------- Section-3   REASON ------------->
 
-      <section class="section-3">
+      <section class="area section-3">
+        <h1 class="text-white">Why Choose Us</h1>
+        <p class="text-secondary text-white">Lorem ipsum dolor sit amet.</p>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4 col-12 text-left">
+              <div class="card mr-2 d-inline-block shadow-lg">
+                <div class="card-img-top">
+                  <!-- <img src="../assets/info-bar-countries.svg" class="img-fluid border-radius p-4" alt="Member">  -->
+                  <!-- <i class="fas fa-tachometer-alt" style="height: 200px; width: 200px;"></i> -->
+                </div>
+                <div class="card-body">
+                  <img
+                    src="../assets/info-bar-countries.svg"
+                    class="img-fluid border-radius p-4"
+                    alt="globe"
+                  />
+                  <h3 class="card-title text-left">Intensive Courses</h3>
+                  <p class="card-text text-left">
+                    No matter how much experience you’ve previously had, we can
+                    help you to pass within weeks of booking in—even on a busy
+                    schedule!
+                  </p>
+                  <!-- <a href="#" class="text-decoration-none">DISCOVER OUR COURSES</a> -->
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4 col-12 text-left">
+              <div class="card mr-2 d-inline-block shadow-lg">
+                <div class="card-img-top">
+                  <!-- <img src="../assets/info-bar-countries.svg" class="img-fluid border-radius p-4" alt="Member">  -->
+                  <!-- <i class="fas fa-tachometer-alt" style="height: 200px; width: 200px;"></i> -->
+                </div>
+                <div class="card-body">
+                  <img
+                    src="../assets/info-bar-customers.svg"
+                    class="img-fluid border-radius p-4"
+                    alt="customers"
+                  />
+                  <h3 class="card-title text-left">Expert Instruction</h3>
+                  <p class="card-text text-left">
+                    With our DVSA-approved instructors, you’re in safe hands.
+                    They’ll teach you the skills you need to pass fast and
+                    become a safe driver for life.
+                  </p>
+                  <!-- <a href="#" class="text-decoration-none">MEET OUR EXPERT INSTRUCTORS</a> -->
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4 col-12 text-left">
+              <div class="card mr-2 d-inline-block shadow-lg">
+                <div class="card-img-top">
+                  <!-- <img src="../assets/info-bar-countries.svg" class="img-fluid border-radius p-4" alt="Member">  -->
+                  <!-- <i class="fas fa-tachometer-alt" style="height: 200px; width: 200px;"></i> -->
+                </div>
+                <div class="card-body">
+                  <img
+                    src="../assets/info-bar-billions.svg"
+                    class="img-fluid border-radius p-4"
+                    alt="money"
+                  />
+                  <h3 class="card-title text-left">100% Money Back</h3>
+                  <p class="card-text text-left">
+                    If we can’t secure a suitable test date and instructor for
+                    you within ten working days, you’re eligible for a full
+                    refund. It’s as simple as that!
+                  </p>
+                  <!-- <a href="#" class="text-decoration-none">FIND OUT HOW IT WORKS</a> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- <section class="section-3">
         <div class="cover">
           <div class="container text-center">
             <h1 class="text-white">Why Choose Us</h1>
             <p class="text-secondary text-white">Lorem ipsum dolor sit amet.</p>
           </div>
           <div class="team row">
-            <div class="col-md-4 col-12 text-center">
+            <div class="col-md-4 text-center">
               <div class="card mr-2 d-inline-block shadow-lg">
                 <div class="card-img-top">
                   <img
@@ -137,7 +203,6 @@
                     class="img-fluid border-radius p-4"
                     alt="Member"
                   />
-                  <!-- <i class="fas fa-tachometer-alt" style="height: 200px; width: 200px;"></i> -->
                 </div>
                 <div class="card-body">
                   <h3 class="card-title">Intensive Courses</h3>
@@ -146,13 +211,11 @@
                     help you to pass within weeks of booking in—even on a busy
                     schedule!
                   </p>
-                  <a href="#" class="text-decoration-none"
-                    >DISCOVER OUR COURSES</a
-                  >
+                  <a href="#" class="text-decoration-none">DISCOVER OUR COURSES</a>
                 </div>
               </div>
             </div>
-            <div class="col-md-4 col-12 text-center">
+            <div class="col-md-4 text-center">
               <div class="card mr-2 d-inline-block shadow-lg">
                 <div class="card-img-top">
                   <img
@@ -168,13 +231,11 @@
                     They’ll teach you the skills you need to pass fast and
                     become a safe driver for life.
                   </p>
-                  <a href="#" class="text-decoration-none"
-                    >MEET OUR EXPERT INSTRUCTORS</a
-                  >
+                  <a href="#" class="text-decoration-none">MEET OUR EXPERT INSTRUCTORS</a>
                 </div>
               </div>
             </div>
-            <div class="col-md-4 col-12 text-center">
+            <div class="col-md-4 text-center">
               <div class="card mr-2 d-inline-block shadow-lg">
                 <div class="card-img-top">
                   <img
@@ -190,115 +251,112 @@
                     you within ten working days, you’re eligible for a full
                     refund. It’s as simple as that!
                   </p>
-                  <a href="#" class="text-decoration-none"
-                    >FIND OUT HOW IT WORKS</a
-                  >
+                  <a href="#" class="text-decoration-none">FIND OUT HOW IT WORKS</a>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </section>-->
       <img src="../assets/home_header_curve.svg" alt class="curve-bottom" />
 
       <!------------- Section-4     COURSES------------->
 
-      <section class="section-4">
-        <div class="container text-center">
+      <section class=" section-4">
+        <div class="container">
           <h1 class="text-dark">Our Courses</h1>
           <p class="text-secondary">Lorem ipsum dolor sit amet.</p>
-        </div>
-        <div class="team row">
-          <div
-            class="col-md-4 col-12 col-lg-4 mb-3 mb-lg-0 card-parent text-center"
-          >
-            <div class="card mr-2 d-inline-block shadow-lg">
-              <div class="card-img-top">
-                <img
-                  src="../assets/UI-face-3.jpg"
-                  class="img-fluid border-radius p-4"
-                  alt="Member"
-                />
+
+          <div class="row">
+            <div class="col-md-4 col-12 card-parent text-left">
+              <div class="card mr-2 d-inline-block shadow">
+                <div class="card-img-top">
+                  <img
+                    src="../assets/UI-face-3.jpg"
+                    class="img-fluid border-radius p-4"
+                    alt="Member"
+                  />
+                </div>
+                <div class="card-body text-left">
+                  <h3 class="card-title text-left">Beginners</h3>
+                  <p class="card-text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Sint iure autem recusandae, veniam, illo dolor soluta
+                    assumenda minima quia velit officia sit exercitationem nam
+                    ipsa, repellendus aut facilis quasi voluptas!
+                  </p>
+                  <!-- <a href="#" class="text-secondary text-decoration-none">Go somewhere</a> -->
+                  <button class="btn btn-dark px-20 py-22 primary-btn">
+                    Go somewhere
+                  </button>
+                </div>
               </div>
-              <div class="card-body">
-                <h3 class="card-title">Beginners</h3>
-                <p class="card-text">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint
-                  iure autem recusandae, veniam, illo dolor soluta assumenda
-                  minima quia velit officia sit exercitationem nam ipsa,
-                  repellendus aut facilis quasi voluptas!
-                </p>
-                <!-- <a href="#" class="text-secondary text-decoration-none">Go somewhere</a> -->
-                <button class="btn btn-dark px-20 py-22 primary-btn">
-                  Go somewhere
-                </button>
+            </div>
+
+            <div class="col-md-4 col-12 text-center card-parent">
+              <div class="card mr-2 d-inline-block shadow">
+                <div class="card-img-top">
+                  <img
+                    src="../assets/UI-face-3.jpg"
+                    class="img-fluid border-radius p-4"
+                    alt="Member"
+                  />
+                </div>
+                <div class="card-body text-left">
+                  <h3 class="card-title">Refreshers</h3>
+                  <p class="card-text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Sint iure autem recusandae, veniam, illo dolor soluta
+                    assumenda minima quia velit officia sit exercitationem nam
+                    ipsa, repellendus aut facilis quasi voluptas!
+                  </p>
+                  <!-- <a href="#" class="text-secondary text-decoration-none">Go somewhere</a> -->
+                  <button class="btn btn-dark px-20 py-22 primary-btn">
+                    Go somewhere
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4 col-12 text-center card-parent">
+              <div class="card mr-2 d-inline-block shadow">
+                <div class="card-img-top">
+                  <img
+                    src="../assets/UI-face-4.jpg"
+                    class="img-fluid border-radius p-4"
+                    alt
+                  />
+                </div>
+                <div class="card-body text-left">
+                  <h3 class="card-title">Advanced</h3>
+                  <p class="card-text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Sint iure autem recusandae, veniam, illo dolor soluta
+                    assumenda minima quia velit officia sit exercitationem nam
+                    ipsa, repellendus aut facilis quasi voluptas!
+                  </p>
+                  <!-- <a href="#" class="text-secondary text-decoration-none">Go somewhere</a> -->
+                  <button class="btn btn-dark px-20 py-22 primary-btn">
+                    Go somewhere
+                  </button>
+                </div>
               </div>
             </div>
           </div>
 
-          <div class="col-md-4 col-12 text-center card-parent">
-            <div class="card mr-2 d-inline-block shadow-lg">
-              <div class="card-img-top">
-                <img
-                  src="../assets/UI-face-3.jpg"
-                  class="img-fluid border-radius p-4"
-                  alt="Member"
-                />
-              </div>
-              <div class="card-body">
-                <h3 class="card-title">Refreshers</h3>
-                <p class="card-text">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint
-                  iure autem recusandae, veniam, illo dolor soluta assumenda
-                  minima quia velit officia sit exercitationem nam ipsa,
-                  repellendus aut facilis quasi voluptas!
-                </p>
-                <!-- <a href="#" class="text-secondary text-decoration-none">Go somewhere</a> -->
-                <button class="btn btn-dark px-20 py-22 primary-btn">
-                  Go somewhere
-                </button>
-              </div>
-            </div>
+          <div class="text-center mt-5">
+            <h3>Need help choosing a course?</h3>
+            <button class="btn btn-light px-5 py-2 primary-btn">
+              Use our Course Recommender
+            </button>
           </div>
-
-          <div class="col-md-4 col-12 text-center card-parent">
-            <div class="card mr-2 d-inline-block shadow-lg">
-              <div class="card-img-top">
-                <img
-                  src="../assets/UI-face-4.jpg"
-                  class="img-fluid border-radius p-4"
-                  alt
-                />
-              </div>
-              <div class="card-body">
-                <h3 class="card-title">Lisence Tests</h3>
-                <p class="card-text">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint
-                  iure autem recusandae, veniam, illo dolor soluta assumenda
-                  minima quia velit officia sit exercitationem nam ipsa,
-                  repellendus aut facilis quasi voluptas!
-                </p>
-                <!-- <a href="#" class="text-secondary text-decoration-none">Go somewhere</a> -->
-                <button class="btn btn-dark px-20 py-22 primary-btn">
-                  Go somewhere
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="text-center">
-          <h3>Need help choosing a course?</h3>
-          <button class="btn btn-light px-5 py-2 primary-btn">
-            Use our Course Recommender
-          </button>
         </div>
       </section>
 
       <!--------------------------------- Section-5    APPS---------------------------->
 
-      <section class="section-5 container-fluid p-0 text-center">
-        <div class="row">
+      <!-- <section class="section-5 p-0 text-center">
+        <div class="container-fluid">
           <div class="col-md-12 col-sm-12">
             <h1>Get Started On Your Driving Plan</h1>
             <p>
@@ -306,64 +364,46 @@
               fixed a plan
             </p>
           </div>
-        </div>
-        <div class="row platform">
-          <div class="col-md-4 col-sm-12 text-right">
-            <div class="desktop shadow-lg">
-              <div class="d-flex flex-row justify-content-center">
-                <!-- <i class="fas fa-desktop fa-3x py-2 pr-3"></i> -->
-                <a href>
-                  <span>
-                    <img src="..//assets/website.svg" alt="Website" />
-                  </span>
-                </a>
-                <div class="text text-center">
-                  <!-- <h3 class="pt-1 m-0">Website</h3>
-                  <p class="p-0 m-0">Get started Here</p>-->
+          <div class="row">
+            <div class="col-md-4 col-12">
+              <div class="desktop shadow-lg">
+                <div class="d-flex flex-row justify-content-center">
+                  <a href>
+                    <span>
+                      <img src="..//assets/website.svg" alt="Website" />
+                    </span>
+                  </a>
+                  
                 </div>
               </div>
             </div>
-          </div>
-          <div class="col-md-4 col-sm-12 text-center">
-            <div class="desktop shadow-lg">
-              <div class="d-flex flex-row justify-content-center">
-                <!-- <i class="fas fa-desktop fa-3x py-2 pr-3"></i> -->
-                <a href="#">
-                  <span>
-                    <img
-                      src="..//assets/store-apple.svg"
-                      alt="Download on App Store"
-                    />
-                  </span>
-                </a>
-                <div class="text text-center">
-                  <!-- <h3 class="pt-1 m-0">iOS</h3>
-                  <p class="p-0 m-0">Download on App Store</p>-->
+            <div class="col-md-4 col-12 text-center">
+              <div class="desktop shadow-lg">
+                <div class="d-flex flex-row justify-content-center">
+                  <a href="#">
+                    <span>
+                      <img src="..//assets/store-apple.svg" alt="Download on App Store" />
+                    </span>
+                  </a>
+                  <div class="text text-center"></div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="col-md-4 col-sm-12 text-left">
-            <div class="desktop shadow-lg">
-              <div class="d-flex flex-row justify-content-center">
-                <!-- <i class="fas fa-desktop fa-3x py-2 pr-3"></i> -->
-                <a href="#">
-                  <span>
-                    <img
-                      src="..//assets/store-google.svg"
-                      alt="Download on Play Store"
-                    />
-                  </span>
-                </a>
-                <div class="text text-center">
-                  <!-- <h3 class="pt-1 m-0">Android</h3>
-                  <p class="p-0 m-0">Download on Play Store</p>-->
+            <div class="col-md-4 col-12">
+              <div class="desktop shadow-lg">
+                <div class="d-flex flex-row justify-content-center">
+                  <a href="#">
+                    <span>
+                      <img src="..//assets/store-google.svg" alt="Download on Play Store" />
+                    </span>
+                  </a>
+                  <div class="text text-center"></div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </section>-->
 
       <!--------------------- Section-6   TESTIMONY ----------------------------------->
 
@@ -371,111 +411,114 @@
         <div class="container text-center">
           <h1 class="text-dark">Our Customers</h1>
           <p class="text-secondary">Lorem ipsum dolor sit amet.</p>
-        </div>
-        <div class="team row">
-          <div class="col-md-4 col-12 col-lg-4 mb-lg-0 card-parent text-center">
-            <div class="card mr-2 d-inline-block">
-              <div class="card-img-top">
-                <img
-                  src="../assets/UI-face-1.jpg"
-                  class="img-fluid rounded-circle w-50 p-4"
-                  alt="Member"
-                />
-              </div>
-              <div class="card-body">
-                <h3 class="card-title">Blalock Jolene</h3>
-                <p class="card-text">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint
-                  iure autem recusandae, veniam, illo dolor soluta assumenda
-                  minima quia velit officia sit exercitationem nam ipsa,
-                  repellendus aut facilis quasi voluptas!
-                </p>
-                <a href="#" class="text-secondary text-decoration-none"
-                  >Go somewhere</a
-                >
-                <p class="text-black-50">CEO at Google</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 col-12 text-center card-parent">
-            <div
-              id="carouselExampleControls"
-              class="carousel slide"
-              data-ride="carousel"
-            >
-              <div class="carousel-inner text-center">
-                <div class="carousel-item active">
-                  <div class="card mr-2 d-inline-block shadow">
-                    <div class="card-img-top">
-                      <img
-                        src="../assets/UI-face-1.jpg"
-                        class="img-fluid rounded-circle w-50 p-4"
-                        alt
-                      />
-                    </div>
-                    <div class="card-body">
-                      <h3 class="card-title">Allen Agnes</h3>
-                      <p class="card-text">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Sint iure autem recusandae, veniam, illo dolor soluta
-                        assumenda minima quia velit officia sit exercitationem
-                        nam ipsa, repellendus aut facilis quasi voluptas!
-                      </p>
-                      <a href="#" class="text-secondary text-decoration-none"
-                        >Go somewhere</a
-                      >
-                      <p class="text-black-50">CEO at Google</p>
-                    </div>
-                  </div>
+
+          <div class="row">
+            <div class="col-md-4 col-12 mb-lg-0 card-parent text-center">
+              <div class="card mr-2 d-inline-block">
+                <div class="card-img-top">
+                  <img
+                    src="../assets/UI-face-1.jpg"
+                    class="img-fluid rounded-circle w-50 p-4"
+                    alt="Member"
+                  />
                 </div>
-                <div class="carousel-item">
-                  <div class="card d-inline-block mr-2 shadow">
-                    <div class="card-img-top">
-                      <img
-                        src="../assets/UI-face-2.jpg"
-                        class="img-fluid rounded-circle w-50 p-4"
-                        alt
-                      />
-                    </div>
-                    <div class="card-body">
-                      <h3 class="card-title">Amiel Barbara</h3>
-                      <p class="card-text">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Sint iure autem recusandae, veniam, illo dolor soluta
-                        assumenda minima quia velit officia sit exercitationem
-                        nam ipsa, repellendus aut facilis quasi voluptas!
-                      </p>
-                      <a href="#" class="text-secondary text-decoration-none"
-                        >Go somewhere</a
-                      >
-                      <p class="text-black-50">CEO at Google</p>
-                    </div>
-                  </div>
+                <div class="card-body">
+                  <h3 class="card-title">Blalock Jolene</h3>
+                  <p class="card-text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Sint iure autem recusandae, veniam, illo dolor soluta
+                    assumenda minima quia velit officia sit exercitationem nam
+                    ipsa, repellendus aut facilis quasi voluptas!
+                  </p>
+                  <a href="#" class="text-secondary text-decoration-none"
+                    >Go somewhere</a
+                  >
+                  <p class="text-black-50">CEO at Google</p>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="col-md-4 col-12 text-center">
-            <div class="card mr-2 d-inline-block shadow-lg">
-              <div class="card-img-top">
-                <img
-                  src="../assets/UI-face-2.jpg"
-                  class="img-fluid rounded-circle w-50 p-4"
-                  alt
-                />
+            <div class="col-md-4 col-12 text-center card-parent">
+              <div
+                id="carouselExampleControls"
+                class="carousel slide"
+                data-ride="carousel"
+              >
+                <div class="carousel-inner text-center">
+                  <div class="carousel-item active">
+                    <div class="card mr-2 d-inline-block shadow">
+                      <div class="card-img-top">
+                        <img
+                          src="../assets/UI-face-1.jpg"
+                          class="img-fluid rounded-circle w-50 p-4"
+                          alt
+                        />
+                      </div>
+                      <div class="card-body">
+                        <h3 class="card-title">Allen Agnes</h3>
+                        <p class="card-text">
+                          Lorem ipsum dolor sit amet consectetur adipisicing
+                          elit. Sint iure autem recusandae, veniam, illo dolor
+                          soluta assumenda minima quia velit officia sit
+                          exercitationem nam ipsa, repellendus aut facilis quasi
+                          voluptas!
+                        </p>
+                        <a href="#" class="text-secondary text-decoration-none"
+                          >Go somewhere</a
+                        >
+                        <p class="text-black-50">CEO at Google</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="card d-inline-block mr-2 shadow">
+                      <div class="card-img-top">
+                        <img
+                          src="../assets/UI-face-2.jpg"
+                          class="img-fluid rounded-circle w-50 p-4"
+                          alt
+                        />
+                      </div>
+                      <div class="card-body">
+                        <h3 class="card-title">Amiel Barbara</h3>
+                        <p class="card-text">
+                          Lorem ipsum dolor sit amet consectetur adipisicing
+                          elit. Sint iure autem recusandae, veniam, illo dolor
+                          soluta assumenda minima quia velit officia sit
+                          exercitationem nam ipsa, repellendus aut facilis quasi
+                          voluptas!
+                        </p>
+                        <a href="#" class="text-secondary text-decoration-none"
+                          >Go somewhere</a
+                        >
+                        <p class="text-black-50">CEO at Google</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div class="card-body">
-                <h3 class="card-title">Olivia Louis</h3>
-                <p class="card-text">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint
-                  iure autem recusandae, veniam, illo dolor soluta assumenda
-                  minima quia velit officia sit exercitationem nam ipsa,
-                  repellendus aut facilis quasi voluptas!
-                </p>
-                <a href="#" class="text-secondary text-decoration-none"
-                  >Go somewhere</a
-                >
-                <p class="text-black-50">CEO at Google</p>
+            </div>
+            <div class="col-md-4 col-12 text-center">
+              <div class="card mr-2 d-inline-block shadow-lg">
+                <div class="card-img-top">
+                  <img
+                    src="../assets/UI-face-2.jpg"
+                    class="img-fluid rounded-circle w-50 p-4"
+                    alt
+                  />
+                </div>
+                <div class="card-body">
+                  <h3 class="card-title">Olivia Louis</h3>
+                  <p class="card-text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Sint iure autem recusandae, veniam, illo dolor soluta
+                    assumenda minima quia velit officia sit exercitationem nam
+                    ipsa, repellendus aut facilis quasi voluptas!
+                  </p>
+                  <a href="#" class="text-secondary text-decoration-none"
+                    >Go somewhere</a
+                  >
+                  <p class="text-black-50">CEO at Google</p>
+                </div>
               </div>
             </div>
           </div>
@@ -488,79 +531,86 @@
         <div class="container text-center">
           <h1 class="text-dark">Updates From Our Blog</h1>
           <p class="text-secondary">Lorem ipsum dolor sit amet.</p>
-        </div>
-        <div class="team row">
-          <div class="col-md-4 col-12 text-center">
-            <div class="card mr-2 d-inline-block shadow-lg">
-              <div class="card-img-top">
-                <img
-                  src="../assets/UI-face-6.jpeg"
-                  class="img-fluid p-0"
-                  alt="Member"
-                />
-              </div>
-              <div class="card-body">
-                <h3 class="card-title">
-                  Our Pass Photo of the Week—Megan from Solihull!
-                </h3>
-                <p class="text-black-50">6th November, 2019</p>
-                <p class="card-text">
-                  Time to reveal our top pass photo of the week—it's Megan from
-                  Solihull! Find out how she came to earn her driving licence
-                  with PassMeFast!
-                </p>
-                <a href="#" class="text-decoration-none">Continue reading</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 col-12 text-center">
-            <div class="card mr-2 d-inline-block shadow-lg">
-              <div class="card-img-top">
-                <img
-                  src="../assets/UI-face-3.jpg"
-                  class="img-fluid p-0"
-                  alt="Member"
-                />
-              </div>
-              <div class="card-body">
-                <h3 class="card-title">
-                  Our Pass Photo of the Week—Megan from Solihull!
-                </h3>
-                <p class="text-black-50">6th November, 2019</p>
-                <p class="card-text">
-                  Time to reveal our top pass photo of the week—it's Megan from
-                  Solihull! Find out how she came to earn her driving licence
-                  with PassMeFast!
-                </p>
-                <a href="#" class="text-decoration-none">Continue reading</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 col-12 text-center">
-            <div class="card mr-2 d-inline-block shadow-lg">
-              <div class="card-img-top">
-                <img src="../assets/UI-face-4.jpg" class="img-fluid p-0" alt />
-              </div>
-              <div class="card-body">
-                <h3 class="card-title">
-                  Our Pass Photo of the Week—Megan from Solihull!
-                </h3>
-                <p class="text-black-50">6th November, 2019</p>
-                <p class="card-text">
-                  Time to reveal our top pass photo of the week—it's Megan from
-                  Solihull! Find out how she came to earn her driving licence
-                  with PassMeFast!
-                </p>
-                <a href="#" class="y text-decoration-none">Contninue reading</a>
-              </div>
-            </div>
-          </div>
-        </div>
 
-        <div class="text-center">
-          <button class="btn btn-light px-5 py-2 primary-btn">
-            Read more from our Blog
-          </button>
+          <div class="row">
+            <div class="col-md-4 col-12 text-center">
+              <div class="card mr-2 d-inline-block shadow-lg">
+                <div class="card-img-top">
+                  <img
+                    src="../assets/UI-face-6.jpeg"
+                    class="img-fluid p-0"
+                    alt="Member"
+                  />
+                </div>
+                <div class="card-body">
+                  <h3 class="card-title">
+                    Our Pass Photo of the Week—Megan from Solihull!
+                  </h3>
+                  <p class="text-black-50">6th November, 2019</p>
+                  <p class="card-text">
+                    Time to reveal our top pass photo of the week—it's Megan
+                    from Solihull! Find out how she came to earn her driving
+                    licence with PassMeFast!
+                  </p>
+                  <a href="#" class="text-decoration-none">Continue reading</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-12 text-center">
+              <div class="card mr-2 d-inline-block shadow-lg">
+                <div class="card-img-top">
+                  <img
+                    src="../assets/UI-face-3.jpg"
+                    class="img-fluid p-0"
+                    alt="Member"
+                  />
+                </div>
+                <div class="card-body">
+                  <h3 class="card-title">
+                    Our Pass Photo of the Week—Megan from Solihull!
+                  </h3>
+                  <p class="text-black-50">6th November, 2019</p>
+                  <p class="card-text">
+                    Time to reveal our top pass photo of the week—it's Megan
+                    from Solihull! Find out how she came to earn her driving
+                    licence with PassMeFast!
+                  </p>
+                  <a href="#" class="text-decoration-none">Continue reading</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-12 text-center">
+              <div class="card mr-2 d-inline-block shadow-lg">
+                <div class="card-img-top">
+                  <img
+                    src="../assets/UI-face-4.jpg"
+                    class="img-fluid p-0"
+                    alt
+                  />
+                </div>
+                <div class="card-body">
+                  <h3 class="card-title">
+                    Our Pass Photo of the Week—Megan from Solihull!
+                  </h3>
+                  <p class="text-black-50">6th November, 2019</p>
+                  <p class="card-text">
+                    Time to reveal our top pass photo of the week—it's Megan
+                    from Solihull! Find out how she came to earn her driving
+                    licence with PassMeFast!
+                  </p>
+                  <a href="#" class="y text-decoration-none"
+                    >Contninue reading</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center">
+            <button class="btn btn-light px-5 py-2 primary-btn">
+              Read more from our Blog
+            </button>
+          </div>
         </div>
       </section>
     </main>
