@@ -1,14 +1,89 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link :to="{ name: 'home' }">Home</router-link>|
-      <router-link :to="{ name: 'course-recommender' }"
-        >Course Recommender</router-link
-      >|
-      <router-link :to="{ name: 'booking' }">Booking</router-link>
-    </div>
+    <header class="header">
+      <div class="container-fluid p-0">
+        <nav class="navbar navbar-expand-lg">
+          <a class="navbar-brand" href="#">
+            <!-- Nav-bar Icons -->
+            <!-- <i class="fas fa-book-reader fa-2x mx-3"></i> -->
+            <i>
+              <img
+                src="@/assets/logo.png"
+                alt="steering logo"
+                class="header-logo"
+                max-width="1%"
+              />
+            </i>
+            <!-- <img src="..//assets/logoo.png alt="Logo">  -->
+            7Days Driving School
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <i class="fas fa-align-right text-light"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="mr-auto"></div>
+            <ul class="navbar-nav">
+              <li class="nav-item active">
+                <router-link :to="{ name: 'home' }">
+                  <a class="nav-link" href="#">
+                    HOME
+                    <span class="sr-only">(current)</span>
+                  </a>
+                </router-link>
+              </li>
+              <li class="nav-item">
+                <router-link :to="{ name: 'booking' }">
+                  <a class="nav-link" href="#">COURSES</a>
+                </router-link>
+              </li>
+              <li class="nav-item">
+                <router-link :to="{ name: 'course-recommender' }">
+                  <a class="nav-link" href="#"
+                    >COURSE-RECOMMENDER</a
+                  > </router-link
+                >|
+              </li>
+              <li class="nav-item">
+                <router-link :to="{ name: 'instructors' }">
+                  <a class="nav-link" href="#">INSTRUCTORS</a>
+                </router-link>
+              </li>
+              <li class="nav-item">
+                <router-link :to="{ name: 'course-recommender' }">
+                  <a class="nav-link" href="#">FAQ AND REVIEWS</a>
+                </router-link>
+              </li>
+              <li class="nav-item">
+                <router-link :to="{ name: 'course-recommender' }">
+                  <a class="nav-link" href="#">AREAS COVERED</a>
+                </router-link>
+              </li>
+              <li class="nav-item">
+                <router-link :to="{ name: 'course-recommender' }">
+                  <a class="nav-link" href="#">CONTACT</a>
+                </router-link>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Router View is a canvas where the different parts of the app is displayed -->
     <router-view />
   </div>
+  <!-- 
+    <div id="nav">   
+    <router-link :to="{ name: 'booking' }">Booking</router-link>
+  </div>-->
 </template>
 
 <style>
@@ -19,195 +94,23 @@ html {
 }
 body {
   margin: 0;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Montserrat', 'Open Sans', sans-serif;
   font-size: 16px;
   line-height: 1.5;
 }
-#app {
+/* #app {
   box-sizing: border-box;
-  width: 500px;
+  width: 100%;
   padding: 0 20px 20px;
   margin: 0 auto;
 }
-hr {
-  box-sizing: content-box;
-  height: 0;
-  overflow: visible;
-}
-a {
-  color: #39b982;
-  font-weight: 600;
-  background-color: transparent;
-}
-img {
-  border-style: none;
-  width: 100%;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
 h6 {
   display: flex;
   align-items: center;
   font-family: 'Montserrat', sans-serif;
 }
-h1 {
-  font-size: 50px;
-  font-weight: 700;
-}
-h2 {
-  font-size: 38px;
-  font-weight: 700;
-}
-h3 {
-  font-size: 28px;
-  font-weight: 700;
-}
-h4 {
-  font-size: 21px;
-  font-weight: 700;
-}
-h5 {
-  font-size: 16px;
-  font-weight: 700;
-}
-h6 {
-  font-size: 15px;
-  font-weight: 700;
-}
-b,
-strong {
-  font-weight: bolder;
-}
-small {
-  font-size: 80%;
-}
-.eyebrow {
-  font-size: 20px;
-}
-.-text-primary {
-  color: #39b982;
-}
-.-text-base {
-  color: #000;
-}
-.-text-error {
-  color: tomato;
-}
-.-text-gray {
-  color: rgba(0, 0, 0, 0.5);
-}
 .-shadow {
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.13);
-}
-.badge {
-  display: inline-flex;
-  height: 26px;
-  width: auto;
-  padding: 0 7px;
-  margin: 0 5px;
-  background: transparent;
-  border-radius: 13px;
-  font-size: 13px;
-  font-weight: 400;
-  line-height: 26px;
-}
-.badge.-fill-gradient {
-  background: linear-gradient(to right, #16c0b0, #84cf6a);
-  color: #fff;
-}
-button,
-label,
-input,
-optgroup,
-select,
-textarea {
-  display: inline-flex;
-  font-family: 'Open sans', sans-serif;
-  font-size: 100%;
-  line-height: 1.15;
-  margin: 0;
-}
-button,
-input {
-  overflow: visible;
-}
-button,
-select {
-  text-transform: none;
-}
-button,
-[type='button'],
-[type='reset'],
-[type='submit'] {
-  -webkit-appearance: none;
-}
-button::-moz-focus-inner,
-[type='button']::-moz-focus-inner,
-[type='reset']::-moz-focus-inner,
-[type='submit']::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
-}
-button:-moz-focusring,
-[type='button']:-moz-focusring,
-[type='reset']:-moz-focusring,
-[type='submit']:-moz-focusring {
-  outline: 2px solid #39b982;
-}
-label {
-  color: rgba(0, 0, 0, 0.5);
-  font-weight: 700;
-}
-input,
-textarea {
-  box-sizing: border-box;
-  border: solid 1px rgba(0, 0, 0, 0.4);
-}
-textarea {
-  width: 100%;
-  overflow: auto;
-  font-size: 20px;
-}
-[type='checkbox'],
-[type='radio'] {
-  box-sizing: border-box;
-  padding: 0;
-}
-[type='number']::-webkit-inner-spin-button,
-[type='number']::-webkit-outer-spin-button {
-  height: auto;
-}
-[type='search'] {
-  -webkit-appearance: textfield;
-  outline-offset: -2px;
-}
-[type='search']::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-[type='text'],
-[type='number'],
-[type='search'],
-[type='password'] {
-  height: 52px;
-  width: 100%;
-  padding: 0 10px;
-  font-size: 20px;
-}
-[type='text']:focus,
-[type='number']:focus,
-[type='search']:focus,
-[type='password']:focus {
-  border-color: #39b982;
-}
-::-webkit-file-upload-button {
-  -webkit-appearance: button;
-  font: inherit;
-}
-[hidden] {
-  display: none;
 }
 select {
   width: 100%;
@@ -234,5 +137,5 @@ select:focus::ms-value {
 }
 select::ms-expand {
   opacity: 0;
-}
+}*/
 </style>
