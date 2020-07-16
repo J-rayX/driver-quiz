@@ -126,9 +126,9 @@
                   <img
                     src="../assets/info-bar-countries.svg"
                     class="img-fluid border-radius p-4"
-                    alt="globe" 
+                    alt="globe"
                   />
-                  <h3 class="card-title text-left">Expert Instruction</h3>
+                  <h3 class="card-title text-left">Intensive Courses</h3>
                   <p class="card-text text-left">
                     No matter how much experience you’ve previously had, we can
                     help you to pass within weeks of booking in—even on a busy
@@ -151,12 +151,10 @@
                     class="img-fluid border-radius p-4"
                     alt="customers"
                   />
-                  <h3 class="card-title">Expert Instruction</h3>
-                  <p class="card-text">
-                    No matter how much experience you’ve previously had, we can
-                    help you to pass within weeks of booking in—even on a busy
-                    schedule!
-                  </p>
+                  <h3 class="card-title text-left">Expert Instruction</h3>
+                  <p
+                    class="card-text text-left"
+                  >With our DVSA-approved instructors, you’re in safe hands. They’ll teach you the skills you need to pass fast and become a safe driver for life.</p>
                   <!-- <a href="#" class="text-decoration-none">MEET OUR EXPERT INSTRUCTORS</a> -->
                 </div>
               </div>
@@ -174,8 +172,8 @@
                     class="img-fluid border-radius p-4"
                     alt="money"
                   />
-                  <h3 class="card-title">100% Money Back</h3>
-                  <p class="card-text">
+                  <h3 class="card-title text-left">100% Money Back</h3>
+                  <p class="card-text text-left">
                     If we can’t secure a suitable test date and instructor for
                     you within ten working days, you’re eligible for a full
                     refund. It’s as simple as that!
