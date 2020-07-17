@@ -391,8 +391,8 @@ header .header-img {
 
 /********** section-4   --  COURSES   **************/
 
-.section-4 .container h1 {
-}
+/* .section-4 .container h1 {
+} */
 
 .section-4 .team {
   padding: 5vmin 0vmin;
@@ -471,11 +471,11 @@ header .header-img {
   margin-top: 5em;
 }
 
-.section-6 .container h1 {
-  /* font-size: 6vmin;
-  /* font-weight: 600; 
-  padding-top: 14vmin; */
-}
+/*.section-6 .container h1 {
+  font-size: 6vmin;
+  font-weight: 600; 
+  padding-top: 14vmin; 
+}*/
 
 .section-6 .team {
   padding: 5vmin 0vmin;
@@ -517,11 +517,11 @@ header .header-img {
   background-color: #f2f2f2;
 }
 
-.section-7 .container h1 {
-  /* font-size: 6vmin;
+/* .section-7 .container h1 {
+  font-size: 6vmin;
   line-height: 1.4;
-  padding-top: 14vmin; */
-}
+  padding-top: 14vmin; 
+}*/
 
 .section-7 .team {
   padding: 5vmin 0vmin;
