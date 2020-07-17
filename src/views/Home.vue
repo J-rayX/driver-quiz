@@ -20,36 +20,32 @@
     </div>-->
 
     <main>
-      <!------------- Section-1 ------------->
-      <!-- <section class="section-1 container-fluid p-0">
-        <div class="cover">
-
-        </div>
-        <div class="container-fluid text-center">
-          <div class="numbers d-flex flex-md-row flex-wrap justify-content-center">
-            <div class="rect">
-              <h1>2345</h1>
-              <p>Happy Clients</p>
+      <!-- Section-1 BANNER -->
+      <section class="section-1 banner">
+        <div class="container">
+          <div class="row d-flex pt-4">
+            <div class="col-12 col-md-5 text-left justify-content-center align-self-center">
+              <div class>
+                <h1 class="display-4 text-white mt-2">PASS YOUR DRIVING TEST IN JUST ONE WEEK</h1>
+                <p
+                  class="text-white text-left"
+                >7Days Driving School makes it easy and possible to learn how to drive and pass your driving test in 7 days</p>
+                <button class="text-left btn btn-light px-5 py-2 primary-btn">Start Now</button>
+              </div>
             </div>
-          
-            <div class="rect">
-              <h1>1056</h1>
-              <p>Distance covered</p>
-            </div>
-            <div class="rect">
-              <h1>3152</h1>
-              <p>Number of Tutors</p>
+            <div class="col-12 col-md-7 pt-5">
+              <img src="../assets/illustration.png" alt="cars" class="img-fluid" />
             </div>
           </div>
         </div>
-      </section>-->
+      </section>
 
       <!------------- Section-2  STEPS ------------->
       <section class="section-2 pl-4">
         <div class="container">
           <div class="text-center">
             <h1 class="text-dark">How it Works</h1>
-            <p class="text-secondary">Four Steps To Get Your License</p>
+            <p class="text-secondary">Three Steps To Get Your License</p>
           </div>
           <!-- <div class="text-center">
           <button class="btn btn-dark px-20 py-22 primary-btn">Book Now</button>
@@ -102,27 +98,18 @@
 
                 <div class="content">
                   <h6>Book your Course</h6>
-                  <p>
-                    Complete your booking and get started learning how to drive
-                  </p>
+                  <p>Complete your booking and get started learning how to drive</p>
                 </div>
               </div>
             </div>
             <div class="col-12 col-md-7">
-              <img
-                src="../assets/illustration.png"
-                alt="cars"
-                class="img-fluid"
-                max-width="300px"
-              />
+              <img src="../assets/illustration.png" alt="cars" class="img-fluid" max-width="300px" />
             </div>
           </div>
           <div class="text-center pb-5">
             <div class="mt-5">
               <h3>Need help choosing a course?</h3>
-              <button class="btn btn-light px-5 py-2 primary-btn">
-                Use our Course Recommender
-              </button>
+              <button class="btn btn-light px-5 py-2 primary-btn">Use our Course Recommender</button>
             </div>
           </div>
         </div>
@@ -131,8 +118,8 @@
       <!------------- Section-3   REASON ------------->
 
       <section class="area section-3">
-        <h1 class="text-white">Why Choose Us</h1>
-        <p class="text-secondary text-white">Lorem ipsum dolor sit amet.</p>
+        <h1 class="text-white text-center">Why Choose Us</h1>
+        <p class="text-white text-center">Lorem ipsum dolor sit amet.</p>
         <div class="container">
           <div class="row">
             <div class="col-md-4 col-12 text-left">
@@ -284,9 +271,9 @@
       <section class="section-4">
         <div class="container">
           <h1 class="text-dark text-center">Our Courses</h1>
-          <p class="text-secondary text-center">
-            We offer a range of exciting courses for different skill levels
-          </p>
+          <p
+            class="text-secondary text-center"
+          >We offer a range of exciting courses for different skill levels</p>
 
           <div class="row">
             <div class="col-md-4 col-12 card-parent text-left">
@@ -307,9 +294,7 @@
                     ipsa, repellendus aut facilis quasi voluptas!
                   </p>
                   <!-- <a href="#" class="text-secondary text-decoration-none">Go somewhere</a> -->
-                  <button class="btn btn-dark px-20 py-22 primary-btn">
-                    Go somewhere
-                  </button>
+                  <button class="btn btn-dark px-20 py-22 primary-btn">Go somewhere</button>
                 </div>
               </div>
             </div>
@@ -332,9 +317,7 @@
                     ipsa, repellendus aut facilis quasi voluptas!
                   </p>
                   <!-- <a href="#" class="text-secondary text-decoration-none">Go somewhere</a> -->
-                  <button class="btn btn-dark px-20 py-22 primary-btn">
-                    Go somewhere
-                  </button>
+                  <button class="btn btn-dark px-20 py-22 primary-btn">Go somewhere</button>
                 </div>
               </div>
             </div>
@@ -342,11 +325,7 @@
             <div class="col-md-4 col-12 text-center card-parent">
               <div class="card mr-2 d-inline-block shadow">
                 <div class="card-img-top">
-                  <img
-                    src="../assets/UI-face-4.jpg"
-                    class="img-fluid border-radius p-4"
-                    alt
-                  />
+                  <img src="../assets/UI-face-4.jpg" class="img-fluid border-radius p-4" alt />
                 </div>
                 <div class="card-body text-left">
                   <h3 class="card-title">Advanced</h3>
@@ -357,9 +336,7 @@
                     ipsa, repellendus aut facilis quasi voluptas!
                   </p>
                   <!-- <a href="#" class="text-secondary text-decoration-none">Go somewhere</a> -->
-                  <button class="btn btn-dark px-20 py-22 primary-btn">
-                    Go somewhere
-                  </button>
+                  <button class="btn btn-dark px-20 py-22 primary-btn">Go somewhere</button>
                 </div>
               </div>
             </div>
@@ -367,9 +344,7 @@
 
           <div class="text-center mt-5">
             <h3>Need help choosing a course?</h3>
-            <button class="btn btn-light px-5 py-2 primary-btn">
-              Use our Course Recommender
-            </button>
+            <button class="btn btn-light px-5 py-2 primary-btn">Use our Course Recommender</button>
           </div>
         </div>
       </section>
@@ -431,12 +406,10 @@
       <section class="section-6">
         <div class="container text-center">
           <h1 class="text-dark text-center">Our Customers</h1>
-          <p class="text-secondary text-center">
-            Hear what our customers have to say
-          </p>
+          <p class="text-secondary text-center">Hear what our customers have to say</p>
           <div class="row">
             <div class="col-md-4 col-12 mb-lg-0 card-parent text-center">
-              <div class="card mr-2 d-inline-block">
+              <div class="card mr-2 d-inline-block shadow">
                 <div class="card-img-top">
                   <img
                     src="../assets/UI-face-1.jpg"
@@ -445,26 +418,20 @@
                   />
                 </div>
                 <div class="card-body">
-                  <h3 class="card-title">Blalock Jolene</h3>
+                  <h3 class="card-title">Jasmine</h3>
                   <p class="card-text">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Sint iure autem recusandae, veniam, illo dolor soluta
-                    assumenda minima quia velit officia sit exercitationem nam
-                    ipsa, repellendus aut facilis quasi voluptas!
+                    I have had so many problems driving and as soon as I had my
+                    first lesson with him I felt better I felt safer I passed
+                    with only 7 minors with only 20 hours driving lessons he is
+                    the nicest instructor 🎊 1/6/2020
                   </p>
-                  <a href="#" class="text-secondary text-decoration-none"
-                    >Go somewhere</a
-                  >
-                  <p class="text-black-50">CEO at Google</p>
+                  <!-- <a href="#" class="text-secondary text-decoration-none">Go somewhere</a>
+                  <p class="text-black-50">CEO at Google</p>-->
                 </div>
               </div>
             </div>
             <div class="col-md-4 col-12 text-center card-parent">
-              <div
-                id="carouselExampleControls"
-                class="carousel slide"
-                data-ride="carousel"
-              >
+              <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner text-center">
                   <div class="carousel-item active">
                     <div class="card mr-2 d-inline-block shadow">
@@ -476,18 +443,15 @@
                         />
                       </div>
                       <div class="card-body">
-                        <h3 class="card-title">Allen Agnes</h3>
+                        <h3 class="card-title">Mohammed</h3>
                         <p class="card-text">
-                          Lorem ipsum dolor sit amet consectetur adipisicing
-                          elit. Sint iure autem recusandae, veniam, illo dolor
-                          soluta assumenda minima quia velit officia sit
-                          exercitationem nam ipsa, repellendus aut facilis quasi
-                          voluptas!
+                          Ali Ibrahim has been an excellent instructor. He has
+                          your best interest throughout the experience. I did an
+                          intensive 7-day course and passed! 7Days Driving School
+                          really provided me goog oportunity.
                         </p>
-                        <a href="#" class="text-secondary text-decoration-none"
-                          >Go somewhere</a
-                        >
-                        <p class="text-black-50">CEO at Google</p>
+                        <!-- <a href="#" class="text-secondary text-decoration-none">Go somewhere</a> 
+                        <p class="text-black-50">CEO at Google</p>-->
                       </div>
                     </div>
                   </div>
@@ -509,10 +473,8 @@
                           exercitationem nam ipsa, repellendus aut facilis quasi
                           voluptas!
                         </p>
-                        <a href="#" class="text-secondary text-decoration-none"
-                          >Go somewhere</a
-                        >
-                        <p class="text-black-50">CEO at Google</p>
+                        <!-- <a href="#" class="text-secondary text-decoration-none">Go somewhere</a>
+                        <p class="text-black-50">CEO at Google</p>-->
                       </div>
                     </div>
                   </div>
@@ -520,13 +482,9 @@
               </div>
             </div>
             <div class="col-md-4 col-12 text-center">
-              <div class="card mr-2 d-inline-block shadow-lg">
+              <div class="card mr-2 d-inline-block shadow">
                 <div class="card-img-top">
-                  <img
-                    src="../assets/UI-face-2.jpg"
-                    class="img-fluid rounded-circle w-50 p-4"
-                    alt
-                  />
+                  <img src="../assets/UI-face-2.jpg" class="img-fluid rounded-circle w-50 p-4" alt />
                 </div>
                 <div class="card-body">
                   <h3 class="card-title">Olivia Louis</h3>
@@ -534,12 +492,10 @@
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Sint iure autem recusandae, veniam, illo dolor soluta
                     assumenda minima quia velit officia sit exercitationem nam
-                    ipsa, repellendus aut facilis quasi voluptas!
+                    ipsa, repellendus aut facilis quasi!
                   </p>
-                  <a href="#" class="text-secondary text-decoration-none"
-                    >Go somewhere</a
-                  >
-                  <p class="text-black-50">CEO at Google</p>
+                  <!-- <a href="#" class="text-secondary text-decoration-none">Go somewhere</a>
+                  <p class="text-black-50">CEO at Google</p>-->
                 </div>
               </div>
             </div>
@@ -550,28 +506,20 @@
       <!------------------------------------- Section-7   BLOG  -------------------->
 
       <section class="section-7">
-        <div class="container text-center">
+        <div class="container">
           <h1 class="text-dark text-center">Updates from our Blog</h1>
-          <p class="text-secondary text-center">
-            Get informed on the latest from our blog
-          </p>
+          <p class="text-secondary text-center">Get informed on the latest from our blog</p>
 
           <div class="row">
-            <div class="col-md-4 col-12 text-center">
+            <div class="col-md-4 col-12">
               <div class="card mr-2 d-inline-block shadow-sm">
                 <div class="card-img-top">
-                  <img
-                    src="../assets/UI-face-6.jpeg"
-                    class="img-fluid p-0"
-                    alt="Member"
-                  />
+                  <img src="../assets/UI-face-6.jpeg" class="img-fluid p-0" alt="Member" />
                 </div>
-                <div class="card-body">
-                  <h3 class="card-title">
-                    Our Pass Photo of the Week—Megan from Solihull!
-                  </h3>
-                  <p class="text-black-50">6th November, 2019</p>
-                  <p class="card-text">
+                <div class="card-body text-left">
+                  <h3 class="card-title text-left">Our Pass Photo of the Week—Megan from Solihull!</h3>
+                  <p class="text-black-50 text-left">6th November, 2019</p>
+                  <p class="card-text text-left">
                     Time to reveal our top pass photo of the week—it's Megan
                     from Solihull! Find out how she came to earn her driving
                     licence with PassMeFast!
@@ -583,18 +531,12 @@
             <div class="col-md-4 col-12 text-center">
               <div class="card mr-2 d-inline-block shadow-sm">
                 <div class="card-img-top">
-                  <img
-                    src="../assets/UI-face-3.jpg"
-                    class="img-fluid p-0"
-                    alt="Member"
-                  />
+                  <img src="../assets/UI-face-3.jpg" class="img-fluid p-0" alt="Member" />
                 </div>
-                <div class="card-body">
-                  <h3 class="card-title">
-                    Our Pass Photo of the Week—Megan from Solihull!
-                  </h3>
-                  <p class="text-black-50">6th November, 2019</p>
-                  <p class="card-text">
+                <div class="card-body text-left">
+                  <h3 class="card-title text-left">Our Pass Photo of the Week—Megan from Solihull!</h3>
+                  <p class="text-black-50 text-left">6th November, 2019</p>
+                  <p class="card-text text-left">
                     Time to reveal our top pass photo of the week—it's Megan
                     from Solihull! Find out how she came to earn her driving
                     licence with PassMeFast!
@@ -606,34 +548,24 @@
             <div class="col-md-4 col-12 text-center">
               <div class="card mr-2 d-inline-block shadow-sm">
                 <div class="card-img-top">
-                  <img
-                    src="../assets/UI-face-4.jpg"
-                    class="img-fluid p-0"
-                    alt
-                  />
+                  <img src="../assets/UI-face-4.jpg" class="img-fluid p-0" alt />
                 </div>
-                <div class="card-body">
-                  <h3 class="card-title">
-                    Our Pass Photo of the Week—Megan from Solihull!
-                  </h3>
-                  <p class="text-black-50">6th November, 2019</p>
-                  <p class="card-text">
+                <div class="card-body text-left">
+                  <h3 class="card-title text-left">Our Pass Photo of the Week—Megan from Solihull!</h3>
+                  <p class="text-black-50 text-left">6th November, 2019</p>
+                  <p class="card-text text-left">
                     Time to reveal our top pass photo of the week—it's Megan
                     from Solihull! Find out how she came to earn her driving
                     licence with PassMeFast!
                   </p>
-                  <a href="#" class="y text-decoration-none"
-                    >Contninue reading</a
-                  >
+                  <a href="#" class="text-decoration-none">Contninue reading</a>
                 </div>
               </div>
             </div>
           </div>
 
           <div class="text-center">
-            <button class="btn btn-light px-5 py-2 primary-btn">
-              Read more from our Blog
-            </button>
+            <button class="btn btn-light px-5 py-2 primary-btn">Read more from our Blog</button>
           </div>
         </div>
       </section>
@@ -655,8 +587,10 @@
             <a href>
               <h4 class="text-light">Privacy Policy</h4>
             </a>
-            <p class="text-muted">
-              7 DAYS DRIVING SCHOOL LTD Company number: 9790469
+            <p class="text-muted text-left">
+              7 DAYS DRIVING SCHOOL LTD
+              <br />
+              <span class="text-muted">Company number: 9790469</span>
             </p>
           </div>
           <div class="col-md-5 col-sm-12">
@@ -676,7 +610,7 @@
             <a>
               <h4 class="text-light">Newsletter</h4>
             </a>
-            <p class="text-muted">Stay Updated</p>
+            <!-- <p class="text-muted text-left">Stay Updated</p>
             <form class="form-inline">
               <div class="col pl-0">
                 <div class="input-group pr-5 p-7">
@@ -693,7 +627,7 @@
                   </div>
                 </div>
               </div>
-            </form>
+            </form>-->
           </div>
           <div class="col-md-2 col-sm-12">
             <h4 class="text-light">Let us be social</h4>
@@ -710,7 +644,10 @@
           <div class="col-md-12 col-12 text-center copyright">
             <p class="pt-4 text-muted">
               Copyright ©2020 All rights reserved | Made with
-              <i class="fa fa-heart pulse" style="color: red;"></i> by
+              <i
+                class="fa fa-heart pulse"
+                style="color: red;"
+              ></i> by
               <span>JkayLight</span>
             </p>
           </div>
