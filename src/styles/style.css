@@ -1,11 +1,20 @@
 /*Google Fonts*/
 @import url('https://fonts.googleapis.com/css?family=Acme|Lobster|Patua+One|Rubik|Sniglet');
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+@import url('https://fonts.googleapis.com/css?family=Cantarell');
 
 * {
   box-sizing: border-box;
-  font-family: Montserrat;
+  font-family: -apple-system, 'Montserrat', BlinkMacSystemFont, “Segoe UI”,
+    “Oxygen”, “Ubuntu”, “Cantarell”, “Fira Sans”, “Droid Sans”, “Helvetica Neue”,
+    sans-serif;
 }
-
+.home {
+  padding: 0;
+  margin: 0;
+  max-width: 100%;
+}
 header,
 section {
   overflow-x: hidden;
@@ -80,10 +89,6 @@ header .row .col-md-7 {
   left: -10vmin;
   padding: 22vmin 1vmin;
   padding-bottom: 35vmin;
-  /* padding: 22vmin 1vmin;
-    padding-right: 42vmin;
-    padding-left: 0vmin ;
-    padding-bottom: 35vmin; */
   font-family: var(--Rubik);
   color: white;
 }
@@ -120,57 +125,6 @@ header .header-img {
 
 /********** Bannerr **************/
 
-.banner {
-  background: var(--bggradient);
-  width: 100%;
-}
-
-.banner .row.col-md-5 {
-  padding: 6vmin 1vmin;
-}
-
-.banner .row .col-md-7 {
-  left: -30vmin;
-  padding: 14vmin 1vmin;
-  padding-bottom: 5vmin;
-  /* padding: 22vmin 1vmin;
-  padding-right: 42vmin;
-  padding-left: 0vmin ;
-  padding-bottom: 35vmin; */
-  font-family: var(--Rubik);
-  color: white;
-}
-
-.banner .row.col-md-5 img {
-  width: 20%;
-}
-
-/* header .container .col-md-7 h6{
-  padding: 1vmin;
-  letter-spacing: 4px;
-} */
-
-.banner .container .col-md-7 h1 {
-  font-size: 8vmin;
-  font-weight: bold;
-  padding: 0.1em 0em;
-}
-
-.banner .container .col-md-7 p {
-  padding: 1vmin 1vmin;
-}
-
-.banner .container .col-md-7 button {
-  border-radius: 30px;
-  font-weight: bold;
-}
-
-.banner .header-img {
-  margin-top: 5vmin;
-  height: 34vmin;
-  width: 60vmin;
-}
-
 /********** section 1 **************/
 
 .numbers {
@@ -205,7 +159,7 @@ header .header-img {
 }
 
 .numbers .rect > p {
-  font-size: 14px;
+  font-size: 16px;
 }
 
 /* .purchase > h1 {
@@ -231,59 +185,133 @@ header .header-img {
 } */
 
 /********** section-2  **************/
-
-.section-2 .cover {
-  margin-top: 14vmin;
-  margin-bottom: 6vmin;
+.section-2 {
+  background-color: #f4f8fc;
+  padding: 3em;
+  padding-left: 10em;
+  z-index: -10;
 }
+
 .section-2 .container h1 {
   font-size: 6vmin;
-
   /* margin-top: 14vmin; */
 }
 
-.cover .content {
-  width: 100%;
-  height: 100%;
-  padding-top: 10vmin;
+.step {
+  padding: 10px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
 }
 
-.cover .content > h1 {
-  font-family: var(--Patua);
-  font-size: 6vmin;
+.stepper-shapes {
+  position: relative;
+  /*   visibility: visible; */
+}
+
+/* regular step */
+.step .circle {
+  background-color: rgb(255, 255, 255);
+  border: 3px solid rgb(255, 255, 255);
+
+  border-radius: 100%;
+  width: 3em; /* +6 for border */
+  height: 3em;
+  padding-top: 35%;
+  padding-left: 10%;
+  display: inline-block;
+  margin-left: -1.5em;
+  z-index: 999;
+}
+.step .circle .step-number {
+  /* position: relative;  */
+  margin-left: 10px;
+  top: 15px;
   color: #12326b;
 }
 
-.section .step-text {
-  vertical-align: middle;
+.step .line {
+  top: 20px;
+  left: px;
+  /*   height: 120px; */
+  height: 100%;
+  z-index: -9;
+
+  position: absolute;
+  border-left: 3px solid rgb(6, 150, 215);
 }
 
-.section-2 .parent {
-  display: table;
+.step.completed .circle {
+  visibility: visible;
+  background-color: rgb(255, 255, 255);
+  border-color: rgb(255, 255, 255);
+  z-index: 999;
 }
 
-.section-2 .child {
-  display: table-cell;
-  vertical-align: middle;
-  padding-left: 20px;
-  top: 25%;
+.step.completed .line {
+  border-left: 3px solid rgb(6, 150, 215);
+  z-index: -9;
 }
 
-.section-2 h6 {
-  font-family: var(--Rubik);
-  font-size: 24px;
+.step.active .circle {
+  visibility: visible;
+  border-color: rgb(255, 255, 255);
 }
 
-.section-2 img {
-  height: 80%;
-  width: 80%;
+.step.empty .circle {
+  visibility: hidden;
+}
+
+.step.empty .line {
+  /*     visibility: hidden; */
+  /*   height: 150%; */
+  top: 0;
+  height: 150%;
+}
+
+.step:last-child .line {
+  border-left: 3px solid white;
+  z-index: -1; /* behind the circle to completely hide */
+}
+
+.section-2 .stepper .content {
+  margin-left: 20px;
+  display: inline-block;
+  line-height: 1;
+  font-weight: 600;
+  font-family: 'Montserrat';
+}
+
+.section-2 .stepper .content h6 {
+  color: #12326b;
+  font-size: 1.3rem;
+}
+.section-2 .stepper .content p {
+  color: #003f9c;
+  text-align: left;
 }
 
 .section-2 button {
+  position: relative;
   border-radius: 30px;
   font-weight: bold;
   background-color: #12326b;
-  padding: 0.4em 4em;
+  padding: 0.2em em;
+  text-transform: uppercase;
+  color: whitesmoke;
+  border: none;
+}
+
+.section-2 button:hover {
+  background-color: #427cc9;
+  color: whitesmoke;
+  border: none;
+}
+
+.section-2 .border-radius {
+  border-radius: 340px;
+  width: 60%;
 }
 
 /********** section-3 **************/
@@ -335,7 +363,7 @@ header .header-img {
 }
 
 .section-3 .card .card-body > a {
-  font-size: 17px;
+  font-size: 16px;
   line-height: 1;
   font-weight: 700;
   color: #122f65;
@@ -363,10 +391,7 @@ header .header-img {
 
 /********** section-4   --  COURSES   **************/
 
-.section-4 h1 {
-  font-size: 6vmin;
-  line-height: 1.4;
-  padding-top: 14vmin;
+.section-4 .container h1 {
 }
 
 .section-4 .team {
@@ -408,7 +433,7 @@ header .header-img {
 }
 
 .section-4 .card .card-body > a {
-  font-size: 17px;
+  font-size: 16px;
   line-height: 1;
   font-weight: 700;
   color: #122f65;
@@ -440,53 +465,16 @@ header .header-img {
 
 /********** section-5   --   APPS  **************/
 
-.section-5 {
-  height: 60vmin;
-  margin-top: 15vmin;
-  padding-top: 27vmin;
-  background: var(--bggradient);
-}
-
-.section-5 h1 {
-  padding: 2em 0 0.5em 0;
-  color: whitesmoke;
-  font-size: 6vmin;
-}
-
-.section-5 p {
-  padding: 0 4em;
-  padding-bottom: 0em;
-  color: whitesmoke;
-  font-size: 3vmin;
-}
-/* 
-  .section .platform{
- 
- }  */
-.section-5 .desktop {
-  border: rgba(255, 255, 255, 0.541) solid 1px;
-  color: white;
-  display: inline-block;
-  border-radius: 0.5em;
-  padding: 2vmin 4.5vmin;
-  margin: 4em 0em;
-  max-width: 100%;
-}
-
-.section-5 .desktop h3 {
-  font-size: 2.5vmin;
-}
-
-.section-5 .desktop p {
-  font-size: 2vmin;
-}
-
 /********** section-6   --    TESTIMONY   **************/
 
+.section-6 {
+  margin-top: 5em;
+}
+
 .section-6 .container h1 {
-  font-size: 6vmin;
-  /* font-weight: 600; */
-  padding-top: 14vmin;
+  /* font-size: 6vmin;
+  /* font-weight: 600; 
+  padding-top: 14vmin; */
 }
 
 .section-6 .team {
@@ -523,13 +511,16 @@ header .header-img {
 /********** section 7   --  BLOG  **************/
 
 .section-7 {
-  margin-bottom: 15vmin;
+  margin-top: 5em;
+  margin-bottom: 0;
+  padding: 5em 0;
+  background-color: #f2f2f2;
 }
 
 .section-7 .container h1 {
-  font-size: 6vmin;
+  /* font-size: 6vmin;
   line-height: 1.4;
-  padding-top: 14vmin;
+  padding-top: 14vmin; */
 }
 
 .section-7 .team {
@@ -748,6 +739,7 @@ textarea:focus {
 footer {
   background: rgba(0, 0, 0, 0.815);
   overflow-x: hidden;
+  margin-top: 0;
   padding: 14vmin 18vmin;
 }
 
@@ -761,7 +753,7 @@ footer a:hover {
 }
 
 footer h4 {
-  font-size: 18px;
+  font-size: 16px;
 }
 
 footer p > span {
