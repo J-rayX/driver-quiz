@@ -1,4 +1,4 @@
-ore<template>
+<template>
   <div class="home">
     <!-- <img alt="Vue logo" src="../assets/logo.png" /> -->
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
@@ -23,7 +23,7 @@ ore<template>
       <!-- Section-1 BANNER -->
       <section class="section-1 banner">
         <div class="container">
-          <div class="row d-flex">
+          <div class="row d-flex pt-4">
             <div class="col-12 col-md-5 text-left justify-content-center align-self-center">
               <div class>
                 <h1 class="display-4 text-white mt-2">PASS YOUR DRIVING TEST IN JUST ONE WEEK</h1>
