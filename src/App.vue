@@ -3,20 +3,23 @@
     <header class="header">
       <div class="container-fluid p-0">
         <nav class="navbar navbar-expand-lg">
-          <a class="navbar-brand" href="#">
-            <!-- Nav-bar Icons -->
-            <!-- <i class="fas fa-book-reader fa-2x mx-3"></i> -->
-            <i>
-              <img
-                src="@/assets/logo.png"
-                alt="steering logo"
-                class="header-logo"
-                max-width="1%"
-              />
-            </i>
-            <!-- <img src="..//assets/logoo.png alt="Logo">  -->
-            7Days Driving School
-          </a>
+          <router-link :to="{ name: 'home' }">
+            <a class="navbar-brand active" href="#">
+              <!-- Nav-bar Icons -->
+              <!-- <i class="fas fa-book-reader fa-2x mx-3"></i> -->
+              <i>
+                <img
+                  src="@/assets/logo.png"
+                  alt="steering logo"
+                  class="header-logo img-fluid"
+                  max-width="1%"
+                />
+              </i>
+              <!-- <img src="..//assets/logoo.png alt="Logo">  -->
+              7Days Driving School
+              <span class="sr-only">(current)</span>
+            </a>
+          </router-link>
           <button
             class="navbar-toggler"
             type="button"
@@ -30,45 +33,35 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
             <div class="mr-auto"></div>
-            <ul class="navbar-nav">
-              <li class="nav-item active">
-                <router-link :to="{ name: 'home' }">
-                  <a class="nav-link" href="#">
-                    HOME
-                    <span class="sr-only">(current)</span>
-                  </a>
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0 text-left">
+              <li class="nav-item">
+                <router-link :to="{ name: 'booking' }">
+                  <a class="nav-link" href="#">Courses</a>
+                </router-link>
+              </li>
+              <li class="nav-item">
+                <router-link :to="{ name: 'course-recommender' }">
+                  <a class="nav-link" href="#">Course Recommender</a>
+                </router-link>|
+              </li>
+              <li class="nav-item">
+                <router-link :to="{ name: 'instructors' }">
+                  <a class="nav-link" href="#">Instructors</a>
                 </router-link>
               </li>
               <li class="nav-item">
                 <router-link :to="{ name: 'booking' }">
-                  <a class="nav-link" href="#">COURSES</a>
+                  <a class="nav-link" href="#">FAQ & Reviews</a>
                 </router-link>
               </li>
               <li class="nav-item">
-                <router-link :to="{ name: 'course-recommender' }">
-                  <a class="nav-link" href="#"
-                    >COURSE-RECOMMENDER</a
-                  > </router-link
-                >|
-              </li>
-              <li class="nav-item">
-                <router-link :to="{ name: 'instructors' }">
-                  <a class="nav-link" href="#">INSTRUCTORS</a>
+                <router-link :to="{ name: 'booking' }">
+                  <a class="nav-link" href="#">Areas Covered</a>
                 </router-link>
               </li>
               <li class="nav-item">
-                <router-link :to="{ name: 'course-recommender' }">
-                  <a class="nav-link" href="#">FAQ AND REVIEWS</a>
-                </router-link>
-              </li>
-              <li class="nav-item">
-                <router-link :to="{ name: 'course-recommender' }">
-                  <a class="nav-link" href="#">AREAS COVERED</a>
-                </router-link>
-              </li>
-              <li class="nav-item">
-                <router-link :to="{ name: 'course-recommender' }">
-                  <a class="nav-link" href="#">CONTACT</a>
+                <router-link :to="{ name: 'booking' }">
+                  <a class="nav-link" href="#">Contact</a>
                 </router-link>
               </li>
             </ul>

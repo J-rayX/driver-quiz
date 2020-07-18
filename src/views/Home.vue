@@ -26,11 +26,14 @@
           <div class="row d-flex pt-4">
             <div class="col-12 col-md-5 text-left justify-content-center align-self-center">
               <div class>
-                <h1 class="display-4 text-white mt-2">PASS YOUR DRIVING TEST IN JUST ONE WEEK</h1>
-                <p
-                  class="text-white text-left"
-                >7Days Driving School makes it easy and possible to learn how to drive and pass your driving test in 7 days</p>
-                <button class="text-left btn btn-light px-5 py-2 primary-btn">Start Now</button>
+                <h1 class="display-5 text-white mt-2">PASS YOUR DRIVING TEST IN JUST ONE WEEK</h1>
+                <p class="text-white text-left">
+                  7Days Driving School makes it easy and possible to learn how
+                  to drive and pass your driving test in 7 days
+                </p>
+                <router-link :to="{ name: 'booking' }">
+                  <button class="text-left btn btn-light px-5 py-2 primary-btn">Start Now</button>
+                </router-link>
               </div>
             </div>
             <div class="col-12 col-md-7 pt-5">
@@ -109,7 +112,9 @@
           <div class="text-center pb-5">
             <div class="mt-5">
               <h3>Need help choosing a course?</h3>
-              <button class="btn btn-light px-5 py-2 primary-btn">Use our Course Recommender</button>
+              <router-link :to="{ name: 'course-recommender' }">
+                <button class="btn btn-light px-5 py-2 primary-btn">Use our Course Recommender</button>
+              </router-link>
             </div>
           </div>
         </div>
@@ -294,7 +299,9 @@
                     ipsa, repellendus aut facilis quasi voluptas!
                   </p>
                   <!-- <a href="#" class="text-secondary text-decoration-none">Go somewhere</a> -->
-                  <button class="btn btn-dark px-20 py-22 primary-btn">Go somewhere</button>
+                  <router-link :to="{ name: 'booking' }">
+                    <button class="btn btn-dark px-20 py-22 primary-btn">Go somewhere</button>
+                  </router-link>
                 </div>
               </div>
             </div>
@@ -317,7 +324,9 @@
                     ipsa, repellendus aut facilis quasi voluptas!
                   </p>
                   <!-- <a href="#" class="text-secondary text-decoration-none">Go somewhere</a> -->
-                  <button class="btn btn-dark px-20 py-22 primary-btn">Go somewhere</button>
+                  <router-link :to="{ name: 'booking' }">
+                    <button class="btn btn-dark px-20 py-22 primary-btn">See more</button>
+                  </router-link>
                 </div>
               </div>
             </div>
@@ -336,7 +345,9 @@
                     ipsa, repellendus aut facilis quasi voluptas!
                   </p>
                   <!-- <a href="#" class="text-secondary text-decoration-none">Go somewhere</a> -->
-                  <button class="btn btn-dark px-20 py-22 primary-btn">Go somewhere</button>
+                  <router-link :to="{ name: 'booking' }">
+                    <button class="btn btn-dark px-20 py-22 primary-btn">See more</button>
+                  </router-link>
                 </div>
               </div>
             </div>
@@ -344,7 +355,9 @@
 
           <div class="text-center mt-5">
             <h3>Need help choosing a course?</h3>
-            <button class="btn btn-light px-5 py-2 primary-btn">Use our Course Recommender</button>
+            <router-link :to="{ name: 'course-recommender' }">
+              <button class="btn btn-light px-5 py-2 primary-btn">Use our Course Recommender</button>
+            </router-link>
           </div>
         </div>
       </section>
@@ -447,8 +460,8 @@
                         <p class="card-text">
                           Ali Ibrahim has been an excellent instructor. He has
                           your best interest throughout the experience. I did an
-                          intensive 7-day course and passed! 7Days Driving School
-                          really provided me goog oportunity.
+                          intensive 7-day course and passed! 7Days Driving
+                          School really provided me goog oportunity.
                         </p>
                         <!-- <a href="#" class="text-secondary text-decoration-none">Go somewhere</a> 
                         <p class="text-black-50">CEO at Google</p>-->
@@ -574,7 +587,7 @@
     <footer>
       <div class="container-fluid p-0">
         <div class="row text-left">
-          <div class="col-md-5 col-sm-5">
+          <div class="col-md-5 col-sm-5 mt-2">
             <a href>
               <h4 class="text-light">Areas we cover</h4>
             </a>
@@ -593,7 +606,7 @@
               <span class="text-muted">Company number: 9790469</span>
             </p>
           </div>
-          <div class="col-md-5 col-sm-12">
+          <div class="col-md-5 col-sm-12 mt-2">
             <a href>
               <h4 class="text-light">Practical Test Centres</h4>
             </a>
@@ -610,6 +623,8 @@
             <a>
               <h4 class="text-light">Newsletter</h4>
             </a>
+            <br />
+            <img src="../assets/logo-barklays-2.png" class="img-fluid" alt="Barclays Logo" />
             <!-- <p class="text-muted text-left">Stay Updated</p>
             <form class="form-inline">
               <div class="col pl-0">
@@ -629,7 +644,7 @@
               </div>
             </form>-->
           </div>
-          <div class="col-md-2 col-sm-12">
+          <div class="col-md-2 col-sm-12 mt-2">
             <h4 class="text-light">Let us be social</h4>
             <p class="text-muted"></p>
             <div class="column text-light">
