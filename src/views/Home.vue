@@ -24,17 +24,30 @@
       <section class="section-1 banner">
         <div class="container">
           <div class="row d-flex pt-4">
-            <div class="col-12 col-md-5 text-left justify-content-center align-self-center">
+            <div
+              class="col-12 col-md-5 text-left justify-content-center align-self-center"
+            >
               <div class>
-                <h1 class="display-4 text-white mt-2">PASS YOUR DRIVING TEST IN JUST ONE WEEK</h1>
-                <p
-                  class="text-white text-left"
-                >7Days Driving School makes it easy and possible to learn how to drive and pass your driving test in 7 days</p>
-                <button class="text-left btn btn-light px-5 py-2 primary-btn">Start Now</button>
+                <h1 class="display-5 text-white mt-2">
+                  PASS YOUR DRIVING TEST IN JUST ONE WEEK
+                </h1>
+                <p class="text-white text-left">
+                  7Days Driving School makes it easy and possible to learn how
+                  to drive and pass your driving test in 7 days
+                </p>
+                <router-link :to="{ name: 'booking' }">
+                  <button class="text-left btn btn-light px-5 py-2 primary-btn">
+                    Start Now
+                  </button>
+                </router-link>
               </div>
             </div>
             <div class="col-12 col-md-7 pt-5">
-              <img src="../assets/illustration.png" alt="cars" class="img-fluid" />
+              <img
+                src="../assets/illustration.png"
+                alt="cars"
+                class="img-fluid"
+              />
             </div>
           </div>
         </div>
@@ -98,18 +111,29 @@
 
                 <div class="content">
                   <h6>Book your Course</h6>
-                  <p>Complete your booking and get started learning how to drive</p>
+                  <p>
+                    Complete your booking and get started learning how to drive
+                  </p>
                 </div>
               </div>
             </div>
             <div class="col-12 col-md-7">
-              <img src="../assets/illustration.png" alt="cars" class="img-fluid" max-width="300px" />
+              <img
+                src="../assets/illustration.png"
+                alt="cars"
+                class="img-fluid"
+                max-width="300px"
+              />
             </div>
           </div>
           <div class="text-center pb-5">
             <div class="mt-5">
               <h3>Need help choosing a course?</h3>
-              <button class="btn btn-light px-5 py-2 primary-btn">Use our Course Recommender</button>
+              <router-link :to="{ name: 'course-recommender' }">
+                <button class="btn btn-light px-5 py-2 primary-btn">
+                  Use our Course Recommender
+                </button>
+              </router-link>
             </div>
           </div>
         </div>
@@ -271,9 +295,9 @@
       <section class="section-4">
         <div class="container">
           <h1 class="text-dark text-center">Our Courses</h1>
-          <p
-            class="text-secondary text-center"
-          >We offer a range of exciting courses for different skill levels</p>
+          <p class="text-secondary text-center">
+            We offer a range of exciting courses for different skill levels
+          </p>
 
           <div class="row">
             <div class="col-md-4 col-12 card-parent text-left">
@@ -294,7 +318,11 @@
                     ipsa, repellendus aut facilis quasi voluptas!
                   </p>
                   <!-- <a href="#" class="text-secondary text-decoration-none">Go somewhere</a> -->
-                  <button class="btn btn-dark px-20 py-22 primary-btn">Go somewhere</button>
+                  <router-link :to="{ name: 'booking' }">
+                    <button class="btn btn-dark px-20 py-22 primary-btn">
+                      Go somewhere
+                    </button>
+                  </router-link>
                 </div>
               </div>
             </div>
@@ -317,7 +345,11 @@
                     ipsa, repellendus aut facilis quasi voluptas!
                   </p>
                   <!-- <a href="#" class="text-secondary text-decoration-none">Go somewhere</a> -->
-                  <button class="btn btn-dark px-20 py-22 primary-btn">Go somewhere</button>
+                  <router-link :to="{ name: 'booking' }">
+                    <button class="btn btn-dark px-20 py-22 primary-btn">
+                      See more
+                    </button>
+                  </router-link>
                 </div>
               </div>
             </div>
@@ -325,7 +357,11 @@
             <div class="col-md-4 col-12 text-center card-parent">
               <div class="card mr-2 d-inline-block shadow">
                 <div class="card-img-top">
-                  <img src="../assets/UI-face-4.jpg" class="img-fluid border-radius p-4" alt />
+                  <img
+                    src="../assets/UI-face-4.jpg"
+                    class="img-fluid border-radius p-4"
+                    alt
+                  />
                 </div>
                 <div class="card-body text-left">
                   <h3 class="card-title">Advanced</h3>
@@ -336,7 +372,11 @@
                     ipsa, repellendus aut facilis quasi voluptas!
                   </p>
                   <!-- <a href="#" class="text-secondary text-decoration-none">Go somewhere</a> -->
-                  <button class="btn btn-dark px-20 py-22 primary-btn">Go somewhere</button>
+                  <router-link :to="{ name: 'booking' }">
+                    <button class="btn btn-dark px-20 py-22 primary-btn">
+                      See more
+                    </button>
+                  </router-link>
                 </div>
               </div>
             </div>
@@ -344,7 +384,11 @@
 
           <div class="text-center mt-5">
             <h3>Need help choosing a course?</h3>
-            <button class="btn btn-light px-5 py-2 primary-btn">Use our Course Recommender</button>
+            <router-link :to="{ name: 'course-recommender' }">
+              <button class="btn btn-light px-5 py-2 primary-btn">
+                Use our Course Recommender
+              </button>
+            </router-link>
           </div>
         </div>
       </section>
@@ -406,7 +450,9 @@
       <section class="section-6">
         <div class="container text-center">
           <h1 class="text-dark text-center">Our Customers</h1>
-          <p class="text-secondary text-center">Hear what our customers have to say</p>
+          <p class="text-secondary text-center">
+            Hear what our customers have to say
+          </p>
           <div class="row">
             <div class="col-md-4 col-12 mb-lg-0 card-parent text-center">
               <div class="card mr-2 d-inline-block shadow">
@@ -431,7 +477,11 @@
               </div>
             </div>
             <div class="col-md-4 col-12 text-center card-parent">
-              <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+              <div
+                id="carouselExampleControls"
+                class="carousel slide"
+                data-ride="carousel"
+              >
                 <div class="carousel-inner text-center">
                   <div class="carousel-item active">
                     <div class="card mr-2 d-inline-block shadow">
@@ -447,8 +497,8 @@
                         <p class="card-text">
                           Ali Ibrahim has been an excellent instructor. He has
                           your best interest throughout the experience. I did an
-                          intensive 7-day course and passed! 7Days Driving School
-                          really provided me goog oportunity.
+                          intensive 7-day course and passed! 7Days Driving
+                          School really provided me goog oportunity.
                         </p>
                         <!-- <a href="#" class="text-secondary text-decoration-none">Go somewhere</a> 
                         <p class="text-black-50">CEO at Google</p>-->
@@ -484,7 +534,11 @@
             <div class="col-md-4 col-12 text-center">
               <div class="card mr-2 d-inline-block shadow">
                 <div class="card-img-top">
-                  <img src="../assets/UI-face-2.jpg" class="img-fluid rounded-circle w-50 p-4" alt />
+                  <img
+                    src="../assets/UI-face-2.jpg"
+                    class="img-fluid rounded-circle w-50 p-4"
+                    alt
+                  />
                 </div>
                 <div class="card-body">
                   <h3 class="card-title">Olivia Louis</h3>
@@ -508,16 +562,24 @@
       <section class="section-7">
         <div class="container">
           <h1 class="text-dark text-center">Updates from our Blog</h1>
-          <p class="text-secondary text-center">Get informed on the latest from our blog</p>
+          <p class="text-secondary text-center">
+            Get informed on the latest from our blog
+          </p>
 
           <div class="row">
             <div class="col-md-4 col-12">
               <div class="card mr-2 d-inline-block shadow-sm">
                 <div class="card-img-top">
-                  <img src="../assets/UI-face-6.jpeg" class="img-fluid p-0" alt="Member" />
+                  <img
+                    src="../assets/UI-face-6.jpeg"
+                    class="img-fluid p-0"
+                    alt="Member"
+                  />
                 </div>
                 <div class="card-body text-left">
-                  <h3 class="card-title text-left">Our Pass Photo of the Week—Megan from Solihull!</h3>
+                  <h3 class="card-title text-left">
+                    Our Pass Photo of the Week—Megan from Solihull!
+                  </h3>
                   <p class="text-black-50 text-left">6th November, 2019</p>
                   <p class="card-text text-left">
                     Time to reveal our top pass photo of the week—it's Megan
@@ -531,10 +593,16 @@
             <div class="col-md-4 col-12 text-center">
               <div class="card mr-2 d-inline-block shadow-sm">
                 <div class="card-img-top">
-                  <img src="../assets/UI-face-3.jpg" class="img-fluid p-0" alt="Member" />
+                  <img
+                    src="../assets/UI-face-3.jpg"
+                    class="img-fluid p-0"
+                    alt="Member"
+                  />
                 </div>
                 <div class="card-body text-left">
-                  <h3 class="card-title text-left">Our Pass Photo of the Week—Megan from Solihull!</h3>
+                  <h3 class="card-title text-left">
+                    Our Pass Photo of the Week—Megan from Solihull!
+                  </h3>
                   <p class="text-black-50 text-left">6th November, 2019</p>
                   <p class="card-text text-left">
                     Time to reveal our top pass photo of the week—it's Megan
@@ -548,10 +616,16 @@
             <div class="col-md-4 col-12 text-center">
               <div class="card mr-2 d-inline-block shadow-sm">
                 <div class="card-img-top">
-                  <img src="../assets/UI-face-4.jpg" class="img-fluid p-0" alt />
+                  <img
+                    src="../assets/UI-face-4.jpg"
+                    class="img-fluid p-0"
+                    alt
+                  />
                 </div>
                 <div class="card-body text-left">
-                  <h3 class="card-title text-left">Our Pass Photo of the Week—Megan from Solihull!</h3>
+                  <h3 class="card-title text-left">
+                    Our Pass Photo of the Week—Megan from Solihull!
+                  </h3>
                   <p class="text-black-50 text-left">6th November, 2019</p>
                   <p class="card-text text-left">
                     Time to reveal our top pass photo of the week—it's Megan
@@ -565,95 +639,13 @@
           </div>
 
           <div class="text-center">
-            <button class="btn btn-light px-5 py-2 primary-btn">Read more from our Blog</button>
+            <button class="btn btn-light px-5 py-2 primary-btn">
+              Read more from our Blog
+            </button>
           </div>
         </div>
       </section>
     </main>
-
-    <footer>
-      <div class="container-fluid p-0">
-        <div class="row text-left">
-          <div class="col-md-5 col-sm-5">
-            <a href>
-              <h4 class="text-light">Areas we cover</h4>
-            </a>
-            <a href>
-              <h4 class="text-light">Contact us</h4>
-            </a>
-            <a href>
-              <h4 class="text-light">Terms and Conditions</h4>
-            </a>
-            <a href>
-              <h4 class="text-light">Privacy Policy</h4>
-            </a>
-            <p class="text-muted text-left">
-              7 DAYS DRIVING SCHOOL LTD
-              <br />
-              <span class="text-muted">Company number: 9790469</span>
-            </p>
-          </div>
-          <div class="col-md-5 col-sm-12">
-            <a href>
-              <h4 class="text-light">Practical Test Centres</h4>
-            </a>
-            <a href>
-              <h4 class="text-light">Instructors Needed</h4>
-            </a>
-            <a href>
-              <h4 class="text-light">Careers & Vacancies</h4>
-            </a>
-            <a href>
-              <h4 class="text-light">Help & Resources</h4>
-            </a>
-            <span></span>
-            <a>
-              <h4 class="text-light">Newsletter</h4>
-            </a>
-            <!-- <p class="text-muted text-left">Stay Updated</p>
-            <form class="form-inline">
-              <div class="col pl-0">
-                <div class="input-group pr-5 p-7">
-                  <input
-                    type="text"
-                    class="form-control bg-dark text-white col-md-6"
-                    id="inlineFormInputGroupUsername2"
-                    placeholder="Email"
-                  />
-                  <div class="input-group-prepend">
-                    <div class="input-group-text">
-                      <i class="fas fa-arrow-right"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </form>-->
-          </div>
-          <div class="col-md-2 col-sm-12">
-            <h4 class="text-light">Let us be social</h4>
-            <p class="text-muted"></p>
-            <div class="column text-light">
-              <i class="fab fa-facebook-f"></i>
-              <i class="fab fa-instagram"></i>
-              <i class="fab fa-twitter"></i>
-              <i class="fab fa-youtube"></i>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12 col-12 text-center copyright">
-            <p class="pt-4 text-muted">
-              Copyright ©2020 All rights reserved | Made with
-              <i
-                class="fa fa-heart pulse"
-                style="color: red;"
-              ></i> by
-              <span>JkayLight</span>
-            </p>
-          </div>
-        </div>
-      </div>
-    </footer>
 
     <!-- <Quiz /> -->
   </div>

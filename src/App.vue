@@ -3,20 +3,23 @@
     <header class="header">
       <div class="container-fluid p-0">
         <nav class="navbar navbar-expand-lg">
-          <a class="navbar-brand" href="#">
-            <!-- Nav-bar Icons -->
-            <!-- <i class="fas fa-book-reader fa-2x mx-3"></i> -->
-            <i>
-              <img
-                src="@/assets/logo.png"
-                alt="steering logo"
-                class="header-logo"
-                max-width="1%"
-              />
-            </i>
-            <!-- <img src="..//assets/logoo.png alt="Logo">  -->
-            7Days Driving School
-          </a>
+          <router-link :to="{ name: 'home' }">
+            <a class="navbar-brand active" href="#">
+              <!-- Nav-bar Icons -->
+              <!-- <i class="fas fa-book-reader fa-2x mx-3"></i> -->
+              <i>
+                <img
+                  src="@/assets/logo.png"
+                  alt="steering logo"
+                  class="header-logo img-fluid"
+                  max-width="1%"
+                />
+              </i>
+              <!-- <img src="..//assets/logoo.png alt="Logo">  -->
+              7Days Driving School
+              <span class="sr-only">(current)</span>
+            </a>
+          </router-link>
           <button
             class="navbar-toggler"
             type="button"
@@ -30,45 +33,37 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
             <div class="mr-auto"></div>
-            <ul class="navbar-nav">
-              <li class="nav-item active">
-                <router-link :to="{ name: 'home' }">
-                  <a class="nav-link" href="#">
-                    HOME
-                    <span class="sr-only">(current)</span>
-                  </a>
-                </router-link>
-              </li>
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0 text-left">
               <li class="nav-item">
                 <router-link :to="{ name: 'booking' }">
-                  <a class="nav-link" href="#">COURSES</a>
+                  <a class="nav-link" href="#">Courses</a>
                 </router-link>
               </li>
               <li class="nav-item">
                 <router-link :to="{ name: 'course-recommender' }">
                   <a class="nav-link" href="#"
-                    >COURSE-RECOMMENDER</a
+                    >Course Recommender</a
                   > </router-link
                 >|
               </li>
               <li class="nav-item">
                 <router-link :to="{ name: 'instructors' }">
-                  <a class="nav-link" href="#">INSTRUCTORS</a>
+                  <a class="nav-link" href="#">Instructors</a>
                 </router-link>
               </li>
               <li class="nav-item">
-                <router-link :to="{ name: 'course-recommender' }">
-                  <a class="nav-link" href="#">FAQ AND REVIEWS</a>
+                <router-link :to="{ name: 'booking' }">
+                  <a class="nav-link" href="#">FAQ & Reviews</a>
                 </router-link>
               </li>
               <li class="nav-item">
-                <router-link :to="{ name: 'course-recommender' }">
-                  <a class="nav-link" href="#">AREAS COVERED</a>
+                <router-link :to="{ name: 'booking' }">
+                  <a class="nav-link" href="#">Areas Covered</a>
                 </router-link>
               </li>
               <li class="nav-item">
-                <router-link :to="{ name: 'course-recommender' }">
-                  <a class="nav-link" href="#">CONTACT</a>
+                <router-link :to="{ name: 'booking' }">
+                  <a class="nav-link" href="#">Contact</a>
                 </router-link>
               </li>
             </ul>
@@ -79,6 +74,99 @@
 
     <!-- Router View is a canvas where the different parts of the app is displayed -->
     <router-view />
+
+    <footer>
+      <div class="container-fluid p-0">
+        <div class="row text-left">
+          <div class="col-md-5 col-sm-5 mt-2">
+            <a href>
+              <h4 class="text-light">Areas we cover</h4>
+            </a>
+            <a href>
+              <h4 class="text-light">Contact us</h4>
+            </a>
+            <a href>
+              <h4 class="text-light">Terms and Conditions</h4>
+            </a>
+            <a href>
+              <h4 class="text-light">Privacy Policy</h4>
+            </a>
+            <p class="text-muted text-left">
+              7 DAYS DRIVING SCHOOL LTD
+              <br />
+              <span class="text-muted">Company number: 9790469</span>
+            </p>
+          </div>
+          <div class="col-md-5 col-sm-12 mt-2">
+            <a href>
+              <h4 class="text-light">Practical Test Centres</h4>
+            </a>
+            <a href>
+              <h4 class="text-light">Instructors Needed</h4>
+            </a>
+            <a href>
+              <h4 class="text-light">Careers & Vacancies</h4>
+            </a>
+            <a href>
+              <h4 class="text-light">Help & Resources</h4>
+            </a>
+            <span></span>
+            <a>
+              <h4 class="text-light">Newsletter</h4>
+            </a>
+            <br />
+            <!-- <img
+                  src="@/assets/logo.png"
+                  alt="steering logo"
+                  class="header-logo img-fluid"
+                  max-width="1%"
+                /> -->
+            <img
+              src="@/assets/logo-barklays-2.png"
+              class="img-fluid"
+              alt="Barclays Logo"
+            />
+            <!-- <p class="text-muted text-left">Stay Updated</p>
+            <form class="form-inline">
+              <div class="col pl-0">
+                <div class="input-group pr-5 p-7">
+                  <input
+                    type="text"
+                    class="form-control bg-dark text-white col-md-6"
+                    id="inlineFormInputGroupUsername2"
+                    placeholder="Email"
+                  />
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">
+                      <i class="fas fa-arrow-right"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>-->
+          </div>
+          <div class="col-md-2 col-sm-12 mt-2">
+            <h4 class="text-light">Let us be social</h4>
+            <p class="text-muted"></p>
+            <div class="column text-light">
+              <i class="fab fa-facebook-f"></i>
+              <i class="fab fa-instagram"></i>
+              <i class="fab fa-twitter"></i>
+              <i class="fab fa-youtube"></i>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 col-12 text-center copyright">
+            <p class="pt-4 text-muted">
+              Copyright ©2020 All rights reserved | Made with
+              <i class="fa fa-heart pulse" style="color: red;"></i> by
+              <span>JkayLight</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
   </div>
   <!-- 
     <div id="nav">   
