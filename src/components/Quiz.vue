@@ -26,15 +26,12 @@
 
     <div v-if="finalStage">
       <div class="flex-container final-stage">
-        <span style="font-weight: 600; font-size: 24px; color:  #0a3592;"
-          >Enroll for {{ courseRecommended.desc }} course</span
-        >
+        <span
+          style="font-weight: 600; font-size: 24px; color:  #0a3592;"
+        >Enroll for {{ courseRecommended.desc }} course</span>
         <hr />
         <h5 style="font-weight: bold; text-align: center;">About the Course</h5>
-        <div
-          v-for="(feature, index) in courseRecommended.features"
-          :key="index"
-        >
+        <div v-for="(feature, index) in courseRecommended.features" :key="index">
           <span>{{ feature }}</span>
         </div>
         <hr />
@@ -165,10 +162,10 @@ export default {
     handleOption(e) {
       //  console.log('answer event ftw', e)
       this.options[this.currentQuestion] = e.option
-      if (e.option.transType === 'transManual') {
+      if (e.option.transType === 'Manual') {
         this.isManual = true
       }
-      if (e.option.transType === 'transAuto') {
+      if (e.option.transType === 'Auto') {
         this.isManual = false
       }
 
