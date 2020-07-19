@@ -1,105 +1,111 @@
 <template>
   <ValidationObserver v-slot="{ handleSubmit }">
-    <form v-on:submit.prevent="handleSubmit(submitAnswer)">
-      <div class="container flex-container question-box">
-        <strong>Question {{ question.id }}:</strong>
-        <br />
-        <strong>{{ question.desc }}</strong>
+    <div class="container mt-5 mb-5">
+      <div class="row">
+        <div class="col-md-12 col-12">
+          <div class="question-box">
+            <form v-on:submit.prevent="handleSubmit(submitAnswer)">
+              <strong>Question {{ question.id }}:</strong>
+              <br />
+              <strong>{{ question.desc }}</strong>
 
-        <!-- HTML Rendering of 2 Options Questions -->
-        <div v-if="question.typeOfQuestion === 'doubleOption'">
-          <div
-            v-for="(doubleAnswer, index) in question.options"
-            :key="index"
-            @click="selectAnswer(index)"
-          >
-            <label class="option" :for="'option' + index">
-              <span class="label">{{ doubleAnswer.desc }}</span>
-              <input
-                type="radio"
-                :id="'option' + index"
-                name="currentQuestion"
-                v-model="option"
-                :value="doubleAnswer"
-              />
-              <span class="checkmark"></span>
-            </label>
-            <br />
+              <!-- HTML Rendering of 2 Options Questions -->
+              <div v-if="question.typeOfQuestion === 'doubleOption'">
+                <div
+                  v-for="(doubleAnswer, index) in question.options"
+                  :key="index"
+                  @click="selectAnswer(index)"
+                >
+                  <label class="option" :for="'option' + index">
+                    <span class="label">{{ doubleAnswer.desc }}</span>
+                    <input
+                      type="radio"
+                      :id="'option' + index"
+                      name="currentQuestion"
+                      v-model="option"
+                      :value="doubleAnswer"
+                    />
+                    <span class="checkmark"></span>
+                  </label>
+                  <br />
+                </div>
+              </div>
+
+              <!-- HTML Rendering of 3 Options Questions -->
+              <div v-if="question.typeOfQuestion === 'tripleOption'">
+                <div
+                  v-for="(tripleAnswer, index) in question.options"
+                  :key="index"
+                  @click="selectAnswer(index)"
+                >
+                  <label class="option col-md-12 col-12" :for="'option' + index">
+                    <span class="label">{{ tripleAnswer.desc }}</span>
+                    <input
+                      type="radio"
+                      :id="'option' + index"
+                      name="currentQuestion"
+                      v-model="option"
+                      :value="tripleAnswer"
+                    />
+                    <span class="checkmark ml-2"></span>
+                  </label>
+                  <br />
+                </div>
+              </div>
+
+              <!-- HTML Rendering of 4 Options Questions -->
+              <div v-if="question.typeOfQuestion === 'quadOption'">
+                <div
+                  v-for="(quadAnswer, index) in question.options"
+                  :key="index"
+                  @click="selectAnswer(index)"
+                >
+                  <label class="option" :for="'option' + index">
+                    <span class="label">{{ quadAnswer.desc }}</span>
+                    <input
+                      type="radio"
+                      :id="'option' + index"
+                      name="currentQuestion"
+                      v-model="option"
+                      :value="quadAnswer"
+                    />
+                    <span class="checkmark"></span>
+                  </label>
+                  <br />
+                </div>
+              </div>
+
+              <!-- HTML Rendering of 5 Options Questions -->
+              <div v-if="question.typeOfQuestion === 'fiveOption'">
+                <div
+                  v-for="(fiveAnswer, index) in question.options"
+                  :key="index"
+                  @click="selectAnswer(index)"
+                >
+                  <label class="option" :for="'option' + index">
+                    <span class="label">{{ fiveAnswer.desc }}</span>
+                    <input
+                      type="radio"
+                      :id="'option' + index"
+                      name="currentQuestion"
+                      v-model="option"
+                      :value="fiveAnswer"
+                    />
+                    <span class="checkmark"></span>
+                  </label>
+                  <br />
+                </div>
+              </div>
+
+              <!-- <button :disabled="isOptionChosen" @click.prevent="submitAnswer()" type="submit">Next</button> -->
+              <button type="submit" :disabled="selectedIndex === null" class="col-md-12 col-12">Next</button>
+
+              <!-- <button @click="submitAnswer">Answer</button> -->
+            </form>
           </div>
         </div>
-
-        <!-- HTML Rendering of 3 Options Questions -->
-        <div v-if="question.typeOfQuestion === 'tripleOption'">
-          <div
-            v-for="(tripleAnswer, index) in question.options"
-            :key="index"
-            @click="selectAnswer(index)"
-          >
-            <label class="option" :for="'option' + index">
-              <span class="label">{{ tripleAnswer.desc }}</span>
-              <input
-                type="radio"
-                :id="'option' + index"
-                name="currentQuestion"
-                v-model="option"
-                :value="tripleAnswer"
-              />
-              <span class="checkmark"></span>
-            </label>
-            <br />
-          </div>
-        </div>
-
-        <!-- HTML Rendering of 4 Options Questions -->
-        <div v-if="question.typeOfQuestion === 'quadOption'">
-          <div
-            v-for="(quadAnswer, index) in question.options"
-            :key="index"
-            @click="selectAnswer(index)"
-          >
-            <label class="option" :for="'option' + index">
-              <span class="label">{{ quadAnswer.desc }}</span>
-              <input
-                type="radio"
-                :id="'option' + index"
-                name="currentQuestion"
-                v-model="option"
-                :value="quadAnswer"
-              />
-              <span class="checkmark"></span>
-            </label>
-            <br />
-          </div>
-        </div>
-
-        <!-- HTML Rendering of 5 Options Questions -->
-        <div v-if="question.typeOfQuestion === 'fiveOption'">
-          <div
-            v-for="(fiveAnswer, index) in question.options"
-            :key="index"
-            @click="selectAnswer(index)"
-          >
-            <label class="option" :for="'option' + index">
-              <span class="label">{{ fiveAnswer.desc }}</span>
-              <input
-                type="radio"
-                :id="'option' + index"
-                name="currentQuestion"
-                v-model="option"
-                :value="fiveAnswer"
-              />
-              <span class="checkmark"></span>
-            </label>
-            <br />
-          </div>
-        </div>
-
-        <!-- <button :disabled="isOptionChosen" @click.prevent="submitAnswer()" type="submit">Next</button> -->
-        <button type="submit" :disabled="selectedIndex === null">Next</button>
-
-        <!-- <button @click="submitAnswer">Answer</button> -->
       </div>
-    </form>
+    </div>
   </ValidationObserver>
 </template>
 
@@ -145,14 +151,14 @@ export default {
 <style scoped>
 .question-box {
   text-align: center;
-  margin: 0 auto;
-  float: center;
+
+  float: left;
   border: #2196f3 1px solid;
   border-radius: 8px;
   box-shadow: #ccc;
   height: auto;
-  width: auto;
-  padding: 24px;
+
+  padding: 1em;
   box-shadow: 0 4px 8px 0 rgba(184, 184, 184, 0.2),
     0 6px 16px 0 rgba(184, 184, 184, 0.2);
 }
@@ -160,17 +166,17 @@ export default {
 .option {
   display: block;
   position: relative;
-  margin: 30px auto;
+  margin: 1em auto;
   height: auto;
-  width: 350px;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  padding-left: 35px;
-  padding-right: 35px;
-  float: left;
-  margin-top: 24px;
+
+  padding-top: 1em;
+  padding-bottom: 1.3em;
+  /*padding-left: 35px;
+  padding-right: 35px; */
+  float: center;
+  /* margin-top: 24px;
   margin-right: 12px;
-  margin-bottom: 24px;
+  margin-bottom: 24px; */
 
   transition: all 0.2s linear;
   cursor: pointer;
@@ -181,7 +187,7 @@ export default {
   -ms-user-select: none;
   user-select: none;
 
-  font-size: 22px;
+  font-size: 16px;
 }
 .option:hover {
   transform: scale(1.01);
@@ -205,7 +211,7 @@ export default {
   position: absolute;
   top: 0;
   left: 0;
-  margin-right: 10px;
+  margin-right: 1px;
   margin-left: 20px;
   margin-top: 20px;
   height: 25px;

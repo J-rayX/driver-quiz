@@ -1,30 +1,31 @@
 /* eslint-disable prettier/prettier */
 <template>
   <b-container>
-    <div v-for="(course, index) in courses" :key="index">
-      <b-card
-        img-src="https://picsum.photos/600/300/?image=25"
-        img-alt="Image"
-        img-top
-        tag="article"
-        style="max-width: 20rem;"
-        class="mb-2"
-      >
-        <b-card-title>{{ course.desc }}</b-card-title>
-        <b-card-text>
-          <!--  <label class="option" :for="'option' + index"> -->
-          <span class="label">{{ course.courseType }}</span>
-          <br />
-          <span class="label">{{ course.transType }}</span>
-        </b-card-text>
-        <b-button href="#" @click="startBooking(index)" variant="primary"
-          >Book Now</b-button
-        >
-
+    <div class="container">
+      <div class="row">
+        <div v-for="(course, index) in courses" :key="index">
+          <div class="card col-md-4 col-12" style="width: 18rem;">
+            <img
+              class="card-img-top"
+              src="https://picsum.photos/600/300/?image=25"
+              alt="Card image cap"
+            />
+            <div class="card-body">
+              <h5 class="card-title">{{ course.desc }}</h5>
+              <p class="card-text">{{ course.courseType }}</p>
+              <span class="label">{{ course.transType }}</span>
+              <a
+                href="#"
+                class="btn btn-primary"
+                @click="startBooking(index)"
+                variant="primary"
+                >Book Now</a
+              >
+            </div>
+          </div>
+        </div>
         <!-- <a @click="$emit('goToPayment', feeToBePaid)">Pay</a> -->
-      </b-card>
-      <!-- </div>
-
+        <!-- </div>
     <div v-for="(course, index) in courses[1].options" :key="'A' + index">
       <b-card
         img-src="https://picsum.photos/600/300/?image=25"
@@ -43,7 +44,8 @@
         </b-card-text>
 
         <b-button href="#" variant="primary">Book Now</b-button>
-      </b-card>-->
+        </b-card>-->
+      </div>
     </div>
   </b-container>
 </template>

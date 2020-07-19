@@ -1,12 +1,16 @@
 <template class="body">
   <div class="container">
-    <div class="flex-container intro-stage" v-if="introStage">
-      <h1>We could help you find the best course for you</h1>
-      <p>
-        Our course recommender will suggest the most suitable course based on
-        your skills and preferences
-      </p>
-      <a @click="beginQuiz">Start</a>
+    <div class="container intro-stage mt-5 mb-5" v-if="introStage">
+      <div class="row d-flex">
+        <div class="col-md-12 col-12 justify-content-center align-self-center">
+          <h1>We could help you find the best course for you</h1>
+          <p>
+            Our course recommender will suggest the most suitable course based on
+            your skills and preferences
+          </p>
+          <a class="text-white" @click="beginQuiz">Start</a>
+        </div>
+      </div>
     </div>
 
     <!-- <div class="introStage">
@@ -25,32 +29,36 @@
     </div>
 
     <div v-if="finalStage">
-      <div class="flex-container final-stage">
-        <span style="font-weight: 600; font-size: 24px; color:  #0a3592;"
-          >Enroll for {{ courseRecommended.desc }} course</span
-        >
-        <hr />
-        <h5 style="font-weight: bold; text-align: center;">About the Course</h5>
-        <div
-          v-for="(feature, index) in courseRecommended.features"
-          :key="index"
-        >
-          <span>{{ feature }}</span>
+      <div class="container mt-5 mb-5">
+        <div class="row d-flex">
+          <div class="col-md-6 col-12 final-stage justify-content-center align-self-center">
+            <span
+              style="font-weight: 600; font-size: 24px; color:  #0a3592;"
+            >Enroll for {{ courseRecommended.desc }} course</span>
+            <hr />
+            <h5 style="font-weight: bold; text-align: center;">About the Course</h5>
+            <div v-for="(feature, index) in courseRecommended.features" :key="index">
+              <span>{{ feature }}</span>
+            </div>
+            <hr />
+            <h5 style="font-weight: bold; text-align: center;">Duration</h5>
+            <span>
+              Takes {{ courseRecommended.days }} and a total of
+              {{ courseRecommended.hours }}
+            </span>
+            <hr />
+            <h5 style="font-weight: bold;  text-align: center;">Cost</h5>
+            <span>&#163;{{ courseRecommended.fee }}</span>
+            <br />
+
+            <a>
+              <router-link :to="{ name: 'booking', params: { courseRecommended } }">Pay</router-link>
+            </a>
+            <!-- <a @click="$emit('goToPayment', feeToBePaid)">Pay</a> -->
+
+            <hr />
+          </div>
         </div>
-        <hr />
-        <h5 style="font-weight: bold; text-align: center;">Duration</h5>
-        <span>
-          Takes {{ courseRecommended.days }} and a total of
-          {{ courseRecommended.hours }}
-        </span>
-        <hr />
-        <h5 style="font-weight: bold;  text-align: center;">Cost</h5>
-        <span>&#163;{{ courseRecommended.fee }}</span>
-        <router-link :to="{ name: 'booking', params: { courseRecommended } }">
-          <a>Pay</a>
-          <!-- <a @click="$emit('goToPayment', feeToBePaid)">Pay</a> -->
-        </router-link>
-        <hr />
       </div>
     </div>
   </div>
@@ -165,10 +173,10 @@ export default {
     handleOption(e) {
       //  console.log('answer event ftw', e)
       this.options[this.currentQuestion] = e.option
-      if (e.option.transType === 'transManual') {
+      if (e.option.transType === 'Manual') {
         this.isManual = true
       }
-      if (e.option.transType === 'transAuto') {
+      if (e.option.transType === 'Auto') {
         this.isManual = false
       }
 
@@ -284,7 +292,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1 {
+/* h1 {
   font-size: 30px;
   font-weight: 600;
   line-height: 36px;
@@ -300,12 +308,8 @@ ul {
 li {
   display: inline-block;
   margin: 0 10px;
-}
-.container {
-  margin-top: 18%;
-  height: auto;
-  display: flex;
-}
+} */
+
 .intro-stage {
   text-align: center;
   margin: 0 auto;
@@ -313,8 +317,8 @@ li {
   border: #2196f3 1px solid;
   border-radius: 8px;
   box-shadow: #ccc;
-  height: auto;
-  width: auto;
+  /* height: auto;
+  width: auto; */
   padding: 24px;
   box-shadow: 0 4px 8px 0 rgba(184, 184, 184, 0.2),
     0 6px 16px 0 rgba(184, 184, 184, 0.2);
@@ -327,27 +331,27 @@ li {
   border: #2196f3 1px solid;
   border-radius: 8px;
   box-shadow: #ccc;
-  height: auto;
-  width: auto;
+  /* height: auto;
+  width: auto; */
   padding: 24px;
   box-shadow: 0 4px 8px 0 rgba(184, 184, 184, 0.2),
     0 6px 16px 0 rgba(184, 184, 184, 0.2);
 }
 
-a {
+.final-stage a {
   background-color: #0a3592;
-  border: none;
+  border: 3px green solid;
   color: white;
   padding: 16px 32px;
   text-align: center;
   font-size: 16px;
-  margin: 4px 2px;
-  opacity: 0.8;
+  /* margin: 4px 2px; */
+  /* opacity: 0.8; */
   transition: 0.3s;
   display: inline-block;
   text-decoration: none;
   cursor: pointer;
-  box-shadow: rgb(215, 232, 253) 0px 4px 10px 1px;
+  /* box-shadow: rgb(215, 232, 253) 0px 4px 10px 1px; */
 }
 a:hover {
   opacity: 1;

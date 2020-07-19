@@ -4,24 +4,24 @@
       <div class="container-fluid p-0">
         <nav class="navbar navbar-expand-lg">
           <router-link :to="{ name: 'home' }">
-            <a class="navbar-brand active" href="#">
+            <a class="navbar-brand active pl-0 pr-0" href="#">
               <!-- Nav-bar Icons -->
               <!-- <i class="fas fa-book-reader fa-2x mx-3"></i> -->
-              <i>
+              <i class="pl-0 m-0">
                 <img
                   src="@/assets/logo.png"
                   alt="steering logo"
-                  class="header-logo img-fluid"
-                  max-width="1%"
+                  width="14%" height="14%" class="d-inline-block align-top p-0"
+                  max-width=""
                 />
               </i>
               <!-- <img src="..//assets/logoo.png alt="Logo">  -->
-              7Days Driving School
+              <span class=" navbar-brand pl-0"> 7Days Driving School</span>
               <span class="sr-only">(current)</span>
             </a>
           </router-link>
           <button
-            class="navbar-toggler"
+            class="ml-0 navbar-toggler"
             type="button"
             data-toggle="collapse"
             data-target="#navbarNav"
@@ -41,10 +41,8 @@
               </li>
               <li class="nav-item">
                 <router-link :to="{ name: 'course-recommender' }">
-                  <a class="nav-link" href="#"
-                    >Course Recommender</a
-                  > </router-link
-                >|
+                  <a class="nav-link" href="#">Course Recommender</a>
+                </router-link>|
               </li>
               <li class="nav-item">
                 <router-link :to="{ name: 'instructors' }">
@@ -120,12 +118,8 @@
                   alt="steering logo"
                   class="header-logo img-fluid"
                   max-width="1%"
-                /> -->
-            <img
-              src="@/assets/logo-barklays-2.png"
-              class="img-fluid"
-              alt="Barclays Logo"
-            />
+            />-->
+            <img src="@/assets/logo-barklays-2.png" class="img-fluid" alt="Barclays Logo" />
             <!-- <p class="text-muted text-left">Stay Updated</p>
             <form class="form-inline">
               <div class="col pl-0">
@@ -160,7 +154,10 @@
           <div class="col-md-12 col-12 text-center copyright">
             <p class="pt-4 text-muted">
               Copyright ©2020 All rights reserved | Made with
-              <i class="fa fa-heart pulse" style="color: red;"></i> by
+              <i
+                class="fa fa-heart pulse"
+                style="color: red;"
+              ></i> by
               <span>JkayLight</span>
             </p>
           </div>
