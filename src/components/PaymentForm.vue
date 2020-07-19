@@ -140,7 +140,10 @@ export default {
       // console.log('na the payload be this so ', this.payload)
 
       // console.log('na the dt be this oo ' + this.dt)
-      let path = 'http://localhost:8000/api/v1/create-intent/'
+
+      let path =
+        'https://blooming-atoll-85720.herokuapp.com/api/v1/create-intent'
+      //  let path = 'http://localhost:8000/api/v1/create-intent/'
       //console.log('na the payload be this so ' + this.payload)
 
       const headers = {
@@ -193,7 +196,7 @@ export default {
                   //console.log('customer to add', this.customer)
                   axios
                     .post(
-                      'http://127.0.0.1:8000/api/v1/customers/',
+                      ' https://blooming-atoll-85720.herokuapp.com/api/v1/customers/',
                       this.customer
                     )
                     .then(response => {
