@@ -133,13 +133,20 @@
               <div class="col-12 col-md-6 pt-0"></div>
             </div>
           </div>
+      </div>
+        <div>
+          <div class="container">
+            <div class="row pt-5 pb-5">
+              <div class="col col-md-6 col-12  offset-md-3">
+                <PaymentOption
+                  :course="course"
+                  v-on:depositPayment="handleDepositPayment"
+                  v-on:fullPayment="handleFullPayment"
+                />
+              </div>
+            </div>
+          </div>
         </div>
-        <h3>Pay deposit or full</h3>
-        <PaymentOption
-          :course="course"
-          v-on:depositPayment="handleDepositPayment"
-          v-on:fullPayment="handleFullPayment"
-        />
         <!-- Still passing in Course object which is the course selected by customer -->
       </div>
 
