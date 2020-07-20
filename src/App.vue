@@ -54,17 +54,17 @@
                 </router-link>
               </li>
               <li class="nav-item">
-                <router-link :to="{ name: 'booking' }">
+                <router-link :to="{ name: 'faq' }">
                   <a class="nav-link" href="#">FAQ & Reviews</a>
                 </router-link>
               </li>
               <li class="nav-item">
-                <router-link :to="{ name: 'booking' }">
+                <router-link :to="{ name: 'areas' }">
                   <a class="nav-link" href="#">Areas Covered</a>
                 </router-link>
               </li>
               <li class="nav-item">
-                <router-link :to="{ name: 'booking' }">
+                <router-link :to="{ name: 'contact' }">
                   <a class="nav-link" href="#">Contact</a>
                 </router-link>
               </li>

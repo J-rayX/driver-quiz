@@ -174,7 +174,7 @@
         <div>
           <div class="container">
             <div class="row pt-5 pb-5">
-              <div class="col col-md-12 col-12  offset-md-3">
+              <div class="col col-md-12 col-12 p-0  offset-md-3">
                 <PaymentForm
                   :finalFee="finalFee"
                   :course="course"

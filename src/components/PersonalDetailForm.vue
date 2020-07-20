@@ -2,7 +2,8 @@
   <div class="form-stage">
     <form @submit="onSubmit">
       <div class="form-g">
-        <h3 class="text-dark">Kindly fill in the following details</h3> <hr>
+        <h3 class="text-dark">Kindly fill in the following details</h3>
+        <hr />
       </div>
       <div class="form-group">
         <label class="control-label col-sm-6" for="lastName">First name:</label>
@@ -155,7 +156,7 @@ export default {
   text-align: left;
   margin: 0 auto;
   float: center;
-  border: #2196f3 1px solid;
+  border: #123169 1px solid;
   border-radius: 8px;
   box-shadow: #ccc;
   /* height: auto;

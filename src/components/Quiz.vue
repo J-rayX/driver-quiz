@@ -329,7 +329,7 @@ li {
   text-align: center;
   margin: 0 auto;
   float: center;
-  border: #2196f3 1px solid;
+  border: #123169 1px solid;
   border-radius: 8px;
   box-shadow: #ccc;
   /* height: auto;
@@ -343,7 +343,7 @@ li {
   text-align: center;
   margin: 0 auto;
   float: center;
-  border: #2196f3 1px solid;
+  border: #123169 1px solid;
   border-radius: 8px;
   box-shadow: #ccc;
   /* height: auto;

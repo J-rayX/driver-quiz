@@ -88,5 +88,4 @@ p {
 } */
 
 /* Large devices (laptops/desktops, 992px and up) */
-
 </style>
