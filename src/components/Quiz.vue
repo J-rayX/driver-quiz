@@ -5,10 +5,15 @@
         <div class="col-md-12 col-12 justify-content-center align-self-center">
           <h1>We could help you find the best course for you</h1>
           <p>
-            Our course recommender will suggest the most suitable course based on
-            your skills and preferences
+            Our course recommender will suggest the most suitable course based
+            on your skills and preferences
           </p>
-          <a class="text-white" @click="beginQuiz">Start</a>
+          <button
+            class="text-white btn btn-dark primary-btn px-5 py-2"
+            @click="beginQuiz"
+          >
+            Start
+          </button>
         </div>
       </div>
     </div>
@@ -31,29 +36,39 @@
     <div v-if="finalStage">
       <div class="container mt-5 mb-5">
         <div class="row d-flex">
-          <div class="col-md-6 col-12 final-stage justify-content-center align-self-center">
-            <span
-              style="font-weight: 600; font-size: 24px; color:  #0a3592;"
-            >Enroll for {{ courseRecommended.desc }} course</span>
+          <div
+            class="col-md-6 col-12 final-stage justify-content-center align-self-center"
+          >
+            <span style="font-weight: 600; font-size: 24px; color:  #0a3592;"
+              >Enroll for {{ courseRecommended.desc }} course</span
+            >
             <hr />
-            <h5 style="font-weight: bold; text-align: center;">About the Course</h5>
-            <div v-for="(feature, index) in courseRecommended.features" :key="index">
+            <h5 style="font-weight: bold; text-align: center;">
+              About the Course
+            </h5>
+            <div
+              v-for="(feature, index) in courseRecommended.features"
+              :key="index"
+            >
               <span>{{ feature }}</span>
             </div>
             <hr />
             <h5 style="font-weight: bold; text-align: center;">Duration</h5>
             <span>
-              Takes {{ courseRecommended.days }} and a total of
-              {{ courseRecommended.hours }}
+              Takes {{ courseRecommended.days }} days and a total of
+              {{ courseRecommended.hours }} hours
             </span>
             <hr />
             <h5 style="font-weight: bold;  text-align: center;">Cost</h5>
-            <span>&#163;{{ courseRecommended.fee }}</span>
+            <span>&#163; {{ courseRecommended.fee }}</span>
             <br />
-
-            <a>
-              <router-link :to="{ name: 'booking', params: { courseRecommended } }">Pay</router-link>
-            </a>
+            <router-link
+              :to="{ name: 'booking', params: { courseRecommended } }"
+            >
+              <button class="text-white btn btn-dark primary-btn px-5 py-2">
+                Pay
+              </button>
+            </router-link>
             <!-- <a @click="$emit('goToPayment', feeToBePaid)">Pay</a> -->
 
             <hr />
@@ -338,31 +353,29 @@ li {
     0 6px 16px 0 rgba(184, 184, 184, 0.2);
 }
 
-.final-stage a {
-  background-color: #0a3592;
-  border: 3px green solid;
+button {
+  background-color: #123067;
   color: white;
   padding: 16px 32px;
   text-align: center;
   font-size: 16px;
-  /* margin: 4px 2px; */
-  /* opacity: 0.8; */
   transition: 0.3s;
   display: inline-block;
   text-decoration: none;
   cursor: pointer;
-  /* box-shadow: rgb(215, 232, 253) 0px 4px 10px 1px; */
+  box-shadow: rgb(215, 232, 253) 0px 4px 10px 1px;
 }
-a:hover {
-  opacity: 1;
+
+button:hover {
+  background-color: #0a3592;
 }
-a:active {
+button:active {
   background-color: #0a3592;
   box-shadow: 0 4px rgb(179, 179, 179);
   transform: translateY(4px);
 }
 hr {
-  border: 0.5px solid rgb(199, 199, 199);
+  border: 0.5px solid rgb(233, 233, 233);
   width: 90%;
   border-radius: 5px;
 }

@@ -1,18 +1,18 @@
 <template>
-  <div class="h-100 d-flex justify-content-center align-items-center">
-    <div class="container-fluid h-100">
-      <div class="row">
-        <div class="col-sm-6 course-details">
+  <div class="">
+   
+ 
+        <div class="col-md-6 col-10 course-details">
           <h5>Book the {{ course.desc }}</h5>
           <p>£{{ finalFee }}</p>
         </div>
-      </div>
 
-      <div class="row">
-        <div class="col-sm-6 course-details">
+
+   <div class="row pl-0">
+        <div class="pl-0 col-12 col-md-6 course-details">
           <form
             id="payment-form"
-            class="w-75 px-5 d-flex flex-column align-items-center"
+            class=" col-md-12 col-10 align-items-center"
           >
             <div id="card-element" ref="card" class="form-control m-2">
               <!-- A Stripe Element will be inserted here. -->
@@ -64,7 +64,7 @@
         </div>
       </div>
       </div>-->
-    </div>
+ 
   </div>
 </template>
 

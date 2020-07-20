@@ -1,16 +1,16 @@
 <template>
   <div>
-    <div class="card-deck">
+    <div class=" row card-deck">
       <div class="card">
         <div class="card-body">
           <h5 class="card-title">£ {{ course.deposit }}</h5>
-          <p class="card-text text-left">You can pay in deposit</p>
-          <b-button
+          <p class="card-text text-left">You can make a deposit now</p>
+          <button
             type="submit"
             @click="onClickDeposit"
-            class="btn btn--primary float-md-right"
+            class="btn btn-primary float-md-left"
             value="Deposit"
-            >Pay Deposit</b-button
+            >Pay Deposit</button
           >
         </div>
       </div>
@@ -18,12 +18,12 @@
         <div class="card-body">
           <h5 class="card-title">£ {{ course.fee }}</h5>
           <p class="card-text text-left">You can make full payment</p>
-          <b-button
+          <button
             type="submit"
             @click="onClickFull"
-            class="btn btn--primary float-md-right"
+            class="btn btn-primary float-md-left"
             value="Full"
-            >Pay Full</b-button
+            >Pay Full</button
           >
         </div>
       </div>
@@ -58,3 +58,31 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+button {
+  background-color: #123067;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  font-size: 16px;
+  transition: 0.3s;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0a3592;
+}
+button:active {
+  background-color: #0a3592;
+  box-shadow: 0 4px rgb(179, 179, 179);
+  transform: translateY(4px);
+}
+hr {
+  border: 0.5px solid rgb(233, 233, 233);
+  width: 90%;
+  border-radius: 5px;
+}
+</style>
