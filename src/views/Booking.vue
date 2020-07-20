@@ -133,7 +133,7 @@
               <div class="col-12 col-md-6 pt-0"></div>
             </div>
           </div>
-      </div>
+        </div>
         <div>
           <div class="container">
             <div class="row pt-5 pb-5">
@@ -151,12 +151,39 @@
       </div>
 
       <div v-if="paymentStage">
-        <h3>Enter card details and book</h3>
-        <PaymentForm
-          :finalFee="finalFee"
-          :course="course"
-          :personalDetailFormData="personalDetailFormData"
-        />
+        <div class="section-1 m-0">
+          <div class="container ">
+            <div class="row d-flex">
+              <div
+                class="col-12 col-md-6 text-left justify-content-center align-self-center"
+              >
+                <div class>
+                  <h2 class="display-5 text-white mt-0">
+                    Finally! Book...
+                  </h2>
+                  <p class="text-white text-left">
+                    You can now input your card details to pay for your course
+                  </p>
+                </div>
+              </div>
+              <div class="col-12 col-md-6 pt-0"></div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="container">
+            <div class="row pt-5 pb-5">
+              <div class="col col-md-12 col-12  offset-md-3">
+                <PaymentForm
+                  :finalFee="finalFee"
+                  :course="course"
+                  :personalDetailFormData="personalDetailFormData"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
