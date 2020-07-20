@@ -10,8 +10,9 @@
             @click="onClickDeposit"
             class="btn btn-primary float-md-left"
             value="Deposit"
-            >Pay Deposit</button
           >
+            Pay Deposit
+          </button>
         </div>
       </div>
       <div class="card form-stage">
@@ -23,8 +24,9 @@
             @click="onClickFull"
             class="btn btn-primary float-md-left"
             value="Full"
-            >Pay Full</button
           >
+            Pay Full
+          </button>
         </div>
       </div>
     </div>
@@ -60,7 +62,6 @@ export default {
 </script>
 
 <style scoped>
-
 .form-stage {
   text-align: center;
   margin: 0 auto;

@@ -5,24 +5,23 @@
       <p>£{{ finalFee }}</p>
     </div>
 
- 
-      <div class="p-0 col-11 col-md-6 course-details">
-        <form id="payment-form" class=" col-md-12 col-12 align-items-center">
-          <div id="card-element" ref="card" class="form-control m-2">
-            <!-- A Stripe Element will be inserted here. -->
-          </div>
-          <!-- We'll put the error messages in this element -->
-          <div id="card-errors" role="alert"></div>
-          <div class="row">
+    <div class="p-0 col-11 col-md-6 course-details">
+      <form id="payment-form" class=" col-md-12 col-12 align-items-center">
+        <div id="card-element" ref="card" class="form-control m-2">
+          <!-- A Stripe Element will be inserted here. -->
+        </div>
+        <!-- We'll put the error messages in this element -->
+        <div id="card-errors" role="alert"></div>
+        <div class="row">
           <input
             :disabled="lockSubmit"
             class="button btn btn-primary shadow-sm ml-4 mr-0 col-md-4 col-4 offset-md-3"
             type="submit"
             value="Pay"
             v-on:click.prevent="makePayment"
-          /></div>
-        </form>
-    
+          />
+        </div>
+      </form>
     </div>
     <!-- <div v-show="isModalVisible">
       <div class="modal" tabindex="-1" role="dialog">

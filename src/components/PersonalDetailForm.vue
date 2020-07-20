@@ -2,7 +2,8 @@
   <div class="form-stage">
     <form @submit="onSubmit">
       <div class="form-g">
-        <h3 class="text-dark">Kindly fill in the following details</h3> <hr>
+        <h3 class="text-dark">Kindly fill in the following details</h3>
+        <hr />
       </div>
       <div class="form-group">
         <label class="control-label col-sm-6" for="lastName">First name:</label>

@@ -380,9 +380,8 @@ x<template>
   </div>
 </template>
 
-
 <style scoped>
-p{
-    text-align: left;
+p {
+  text-align: left;
 }
 </style>
