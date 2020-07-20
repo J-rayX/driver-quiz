@@ -11,7 +11,9 @@
                 <img
                   src="@/assets/logo.png"
                   alt="steering logo"
-                  width="14%" height="14%" class="d-inline-block align-top p-0"
+                  width="14%"
+                  height="14%"
+                  class="d-inline-block align-top p-0"
                   max-width=""
                 />
               </i>
@@ -41,8 +43,10 @@
               </li>
               <li class="nav-item">
                 <router-link :to="{ name: 'course-recommender' }">
-                  <a class="nav-link" href="#">Course Recommender</a>
-                </router-link>|
+                  <a class="nav-link" href="#"
+                    >Course Recommender</a
+                  > </router-link
+                >|
               </li>
               <li class="nav-item">
                 <router-link :to="{ name: 'instructors' }">
@@ -119,7 +123,11 @@
                   class="header-logo img-fluid"
                   max-width="1%"
             />-->
-            <img src="@/assets/logo-barklays-2.png" class="img-fluid" alt="Barclays Logo" />
+            <img
+              src="@/assets/logo-barklays-2.png"
+              class="img-fluid"
+              alt="Barclays Logo"
+            />
             <!-- <p class="text-muted text-left">Stay Updated</p>
             <form class="form-inline">
               <div class="col pl-0">
@@ -154,10 +162,7 @@
           <div class="col-md-12 col-12 text-center copyright">
             <p class="pt-4 text-muted">
               Copyright ©2020 All rights reserved | Made with
-              <i
-                class="fa fa-heart pulse"
-                style="color: red;"
-              ></i> by
+              <i class="fa fa-heart pulse" style="color: red;"></i> by
               <span>JkayLight</span>
             </p>
           </div>

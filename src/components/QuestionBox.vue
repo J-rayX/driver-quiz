@@ -38,7 +38,10 @@
                   :key="index"
                   @click="selectAnswer(index)"
                 >
-                  <label class="option col-md-12 col-12" :for="'option' + index">
+                  <label
+                    class="option col-md-12 col-12"
+                    :for="'option' + index"
+                  >
                     <span class="label">{{ tripleAnswer.desc }}</span>
                     <input
                       type="radio"
@@ -98,7 +101,13 @@
               </div>
 
               <!-- <button :disabled="isOptionChosen" @click.prevent="submitAnswer()" type="submit">Next</button> -->
-              <button type="submit" :disabled="selectedIndex === null" class="col-md-12 col-12">Next</button>
+              <button
+                type="submit"
+                :disabled="selectedIndex === null"
+                class="col-md-12 col-12"
+              >
+                Next
+              </button>
 
               <!-- <button @click="submitAnswer">Answer</button> -->
             </form>

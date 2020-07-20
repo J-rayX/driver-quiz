@@ -1,49 +1,55 @@
 <template>
-  <div class="booking">
-    <h1>Course Booking View</h1>
-    <!-- <span>{{ course }}</span> -->
+  <div class="container">
+    <div class="row">
+      <div class="booking">
+        <h1>Course Booking View</h1>
+        <!-- <span>{{ course }}</span> -->
 
-    <div v-if="courseListStage">
-      <h3>Click to select any of the Listed courses one by one</h3>
-      <Courses v-on:course="handleCourseChosen" />
-      <!-- listening to select course chosen by customer then passed & saved into the this.course Object-->
-    </div>
+        <div v-if="courseListStage">
+          <h3>Click to select any of the Listed courses one by one</h3>
+          <Courses v-on:course="handleCourseChosen" />
+          <!-- listening to select course chosen by customer then passed & saved into the this.course Object-->
+        </div>
 
-    <div v-if="personalDetailStage">
-      <h3>Form to enter personal details while displaying the chosen course</h3>
-      <PersonalDetailForm v-on:form="handleDetailForm" />
-    </div>
+        <div v-if="personalDetailStage">
+          <h3>
+            Form to enter personal details while displaying the chosen course
+          </h3>
+          <PersonalDetailForm v-on:form="handleDetailForm" />
+        </div>
 
-    <div v-if="confirmationStage">
-      <h3>Check details filled in previous view form</h3>
-      <ConfirmDetail
-        :personalDetailFormData="personalDetailFormData"
-        :courseListStage="false"
-        :course="course"
-        v-on:goBackToCourseList="confirmCourse"
-        v-on:goBackToPersonalDetail="confirmDetail"
-        v-on:courseToBePaidFor="handleConfirmedData"
-      />
-      <!-- Passed in this.course Object and details inputed by customer in previous stage then wait to recieve any changes made  -->
-    </div>
+        <div v-if="confirmationStage">
+          <h3>Check details filled in previous view form</h3>
+          <ConfirmDetail
+            :personalDetailFormData="personalDetailFormData"
+            :courseListStage="false"
+            :course="course"
+            v-on:goBackToCourseList="confirmCourse"
+            v-on:goBackToPersonalDetail="confirmDetail"
+            v-on:courseToBePaidFor="handleConfirmedData"
+          />
+          <!-- Passed in this.course Object and details inputed by customer in previous stage then wait to recieve any changes made  -->
+        </div>
 
-    <div v-if="paymentOptionStage">
-      <h3>Pay deposit or full</h3>
-      <PaymentOption
-        :course="course"
-        v-on:depositPayment="handleDepositPayment"
-        v-on:fullPayment="handleFullPayment"
-      />
-      <!-- Still passing in Course object which is the course selected by customer -->
-    </div>
+        <div v-if="paymentOptionStage">
+          <h3>Pay deposit or full</h3>
+          <PaymentOption
+            :course="course"
+            v-on:depositPayment="handleDepositPayment"
+            v-on:fullPayment="handleFullPayment"
+          />
+          <!-- Still passing in Course object which is the course selected by customer -->
+        </div>
 
-    <div v-if="paymentStage">
-      <h3>Enter card details and book</h3>
-      <PaymentForm
-        :finalFee="finalFee"
-        :course="course"
-        :personalDetailFormData="personalDetailFormData"
-      />
+        <div v-if="paymentStage">
+          <h3>Enter card details and book</h3>
+          <PaymentForm
+            :finalFee="finalFee"
+            :course="course"
+            :personalDetailFormData="personalDetailFormData"
+          />
+        </div>
+      </div>
     </div>
   </div>
 </template>
