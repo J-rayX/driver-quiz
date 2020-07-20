@@ -1,62 +1,87 @@
 <template>
-  <div class="">
+  <div class="form-stage">
     <form @submit="onSubmit">
-    
+      <div class="form-g">
+        <h3 class="text-dark">Kindly fill in the following details</h3> <hr>
+      </div>
       <div class="form-group">
         <label class="control-label col-sm-6" for="lastName">First name:</label>
-        <div class="col-sm-10">
-          <input type="text" placeholder="Enter first name" class="form-control" v-model="form.firstName" required />
-        </div>
-      </div>      
-
-       <div class="form-group">
-        <label class="control-label col-sm-6" for="lastName">Last name:</label>
-        <div class="col-sm-10">
-          <input type="text" placeholder="Enter last name" class="form-control" v-model="form.lastName" required />
+        <div class="col-sm-12">
+          <input
+            type="text"
+            placeholder="Enter first name"
+            class="form-control"
+            v-model="form.firstName"
+            required
+          />
         </div>
       </div>
-
-      <!-- <div class="form-group" description="We'll never share your email with anyone else.">
-      <label class="control-label col-sm-6" for="email">Maya Email:</label>
-      <div class="col-sm-10">
-        <input type="email" id="email" placeholder="Enter maya email" name="email">
-      </div>
-    </div> -->
 
       <div class="form-group">
-        <label class="control-label col-sm-6" for="email">Email:</label>
-        <div class="col-sm-10">
-          <input type="email" placeholder="Enter email" class="form-control" v-model="form.email" required />
+        <label class="control-label col-sm-6" for="lastName">Last name:</label>
+        <div class="col-sm-12">
+          <input
+            type="text"
+            placeholder="Enter last name"
+            class="form-control"
+            v-model="form.lastName"
+            required
+          />
         </div>
       </div>
 
-       <div class="form-group">
-        <label class="control-label col-sm-6" for="phone">Phone:</label>
-        <div class="col-sm-10">
-          <input type="phone" placeholder="Enter phone number" class="form-control" v-model="form.phone" required />
+      <div class="form-group">
+        <label class="control-label col-sm-12" for="email">Email:</label>
+        <div class="col-sm-12">
+          <input
+            type="email"
+            placeholder="Enter email"
+            class="form-control"
+            v-model="form.email"
+            description="We'll never share your email with anyone else."
+            required
+          />
         </div>
       </div>
 
-      <div
-        class="form-group"
-        id="input-group-5"
-        label="Date to Start:"
-        label-for="input-5"
-      >
-        <b-form-datepicker
-          id="datepicker"
-          v-model="form.dateToStart"
-          class="mb-2"
-          required
-        ></b-form-datepicker>
+      <div class="form-group">
+        <label class="control-label col-sm-12" for="phone">Phone:</label>
+        <div class="col-sm-12">
+          <input
+            type="phone"
+            placeholder="Enter phone number"
+            class="form-control"
+            v-model="form.phone"
+            required
+          />
+        </div>
       </div>
 
-      
+      <div class="form-group">
+        <label class="control-label col-sm-6" for="phone"
+          >Preferred Starting Date:</label
+        >
+        <div class="col-sm-12">
+          <input
+            type="date"
+            class="form-control"
+            name="date"
+            v-model="form.dateToStart"
+            required
+          />
+        </div>
+      </div>
 
       <div class="form-group">
         <label class="control-label col-sm-6" for="lastName">Post code:</label>
-        <div class="col-sm-10">
-          <input type="text" placeholder="Enter last name" class="form-control" v-model="form.postCode" required />
+        <div class="col-sm-12">
+          <input
+            type="text"
+            placeholder="Enter last name"
+            class="form-control"
+            v-model="form.postCode"
+            required
+          />
         </div>
       </div>
 
@@ -69,13 +94,20 @@
       </div> -->
 
       <div class="form-group">
-      <div class="col-sm-offset-2 col-sm-10">
-        <div class="checkbox">
-          <label><input type="checkbox" v-model="form.checked"  value="form.contactMe" name="contactMe"> You may contact me about the Couse I have chosen</label>
+        <div class="col-sm-offset-2 col-sm-12">
+          <div class="checkbox">
+            <label
+              ><input
+                type="checkbox"
+                v-model="form.checked"
+                value="form.contactMe"
+                name="contactMe"
+              />
+              You may contact me about the course I have chosen</label
+            >
+          </div>
         </div>
       </div>
-    </div>
-
 
       <button
         class="text-white btn btn-dark primary-btn px-5 py-2"
@@ -119,6 +151,20 @@ export default {
 }
 </script>
 <style scoped>
+.form-stage {
+  text-align: left;
+  margin: 0 auto;
+  float: center;
+  border: #2196f3 1px solid;
+  border-radius: 8px;
+  box-shadow: #ccc;
+  /* height: auto;
+  width: auto; */
+  padding: 24px;
+  box-shadow: 0 4px 8px 0 rgba(184, 184, 184, 0.2),
+    0 6px 16px 0 rgba(184, 184, 184, 0.2);
+}
+
 button {
   background-color: #123067;
 
