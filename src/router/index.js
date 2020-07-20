@@ -6,6 +6,10 @@ import Booking from '../views/Booking.vue'
 import NotFound from '../views/NotFound.vue'
 import SuccessPayment from '../components/SuccessPayment.vue'
 import Instructors from '../views/Instructors.vue'
+import FaqAndReviews from '../views/FaqAndReviews.vue'
+import AreasCovered from '../views/AreasCovered.vue'
+import Contact from '../views/Contact.vue'
+
 // import Courses from '../views/booking/Courses.vue'
 // import EmptyRouterView from '../views/booking/EmptyRouterView.vue'
 // import PersonalDetailForm from '../views/booking/PersonalDetailForm.vue'
@@ -50,6 +54,24 @@ const routes = [
     path: '/instructors',
     name: 'instructors',
     component: Instructors,
+    props: true
+  },
+  {
+    path: '/faq',
+    name: 'faq',
+    component: FaqAndReviews,
+    props: true
+  },
+  {
+    path: '/areas',
+    name: 'areas',
+    component: AreasCovered,
+    props: true
+  },
+  {
+    path: '/contact',
+    name: 'contact',
+    component: Contact,
     props: true
   },
   // {

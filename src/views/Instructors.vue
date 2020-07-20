@@ -1,29 +1,32 @@
 <template>
   <div>
     <main>
-      <section id="top_banner" class="banner">
-        <div class="container text-center">
-          <div class="row">
-            <div class="col-md-7 col-sm-12 text-white text-left">
-              <h1>Meet our Instructors</h1>
-              <p>
-                We have qualified expert driving tutors who will train you and
-                help you get certified
-              </p>
-              <button class="btn btn-light px-5 py-2 primary-btn">
-                Start Now
-              </button>
+      <div class="section-1 m-0">
+        <div class="container ">
+          <div class="row d-flex">
+            <div
+              class="col-12 col-md-6 text-left justify-content-center align-self-center"
+            >
+              <div class="">
+                <h2 class="display-5 text-white mt-0">
+                  Our Instuctors
+                </h2>
+                <p class="text-white text-left">
+                  Our Expert instructors aren't just well trained and certified,
+                  they have an utmost sense of customer service.
+                </p>
+              </div>
             </div>
-            <div class="col-md-5 col-sm-12 h-25 text-center">
+            <div class="col-12 col-md-6 pt-0">
               <img
                 src="../assets/illustration.png"
                 alt="cars"
-                class="header-img"
+                class="img-fluid"
               />
             </div>
           </div>
         </div>
-      </section>
+      </div>
 
       <!------------- Section-1 ------------->
       <section class="area">
@@ -131,7 +134,7 @@
                     impedit aperiam in quidem ratione voluptatem
                   </p>
                   <a href="#" class="text-decoration-none"
-                    >Manual Transmission</a
+                    >Automatic Transmission</a
                   >
                 </div>
               </div>

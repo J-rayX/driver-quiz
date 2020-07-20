@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class=" row card-deck">
-      <div class="card">
+      <div class="card form-stage">
         <div class="card-body">
           <h5 class="card-title">£ {{ course.deposit }}</h5>
           <p class="card-text text-left">You can make a deposit now</p>
@@ -14,7 +14,7 @@
           >
         </div>
       </div>
-      <div class="card">
+      <div class="card form-stage">
         <div class="card-body">
           <h5 class="card-title">£ {{ course.fee }}</h5>
           <p class="card-text text-left">You can make full payment</p>
@@ -60,6 +60,20 @@ export default {
 </script>
 
 <style scoped>
+
+.form-stage {
+  text-align: center;
+  margin: 0 auto;
+  float: center;
+  border: #123169 1px solid;
+  border-radius: 8px;
+  box-shadow: #ccc;
+  /* height: auto;
+  width: auto; */
+  padding: 24px;
+  box-shadow: 0 4px 8px 0 rgba(184, 184, 184, 0.2),
+    0 6px 16px 0 rgba(184, 184, 184, 0.2);
+}
 button {
   background-color: #123067;
   color: white;
