@@ -355,12 +355,10 @@ li {
 
 button {
   background-color: #123067;
-
   color: white;
   padding: 16px 32px;
   text-align: center;
   font-size: 16px;
-
   transition: 0.3s;
   display: inline-block;
   text-decoration: none;
@@ -368,10 +366,10 @@ button {
   box-shadow: rgb(215, 232, 253) 0px 4px 10px 1px;
 }
 
-b:hover {
+button:hover {
   background-color: #0a3592;
 }
-a:active {
+button:active {
   background-color: #0a3592;
   box-shadow: 0 4px rgb(179, 179, 179);
   transform: translateY(4px);
