@@ -55,7 +55,6 @@
                     Kindly enter your personal details. We promise to never
                     share the info you are trusting us with.
                   </p>
-                 
                 </div>
               </div>
               <div class="col-12 col-md-6 pt-0"></div>
@@ -66,9 +65,7 @@
         <div>
           <div class="container">
             <div class="row pt-5 pb-5">
-              <div
-                class="col col-md-6 col-12  offset-md-3"
-              >
+              <div class="col col-md-6 col-12  offset-md-3">
                 <PersonalDetailForm v-on:form="handleDetailForm" />
               </div>
             </div>
@@ -77,19 +74,66 @@
       </div>
 
       <div v-if="confirmationStage">
-        <h3>Check details filled in previous view form</h3>
-        <ConfirmDetail
-          :personalDetailFormData="personalDetailFormData"
-          :courseListStage="false"
-          :course="course"
-          v-on:goBackToCourseList="confirmCourse"
-          v-on:goBackToPersonalDetail="confirmDetail"
-          v-on:courseToBePaidFor="handleConfirmedData"
-        />
+        <div class="section-1 m-0">
+          <div class="container ">
+            <div class="row d-flex">
+              <div
+                class="col-12 col-md-6 text-left justify-content-center align-self-center"
+              >
+                <div class>
+                  <h2 class="display-5 text-white mt-0">
+                    Just a minute!
+                  </h2>
+                  <p class="text-white text-left">
+                    Kindly check the details filled in previous view form
+                  </p>
+                </div>
+              </div>
+              <div class="col-12 col-md-6 pt-0"></div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="container">
+            <div class="row pt-5 pb-5">
+              <div class="col col-md-6 col-12  offset-md-3">
+                <ConfirmDetail
+                  :personalDetailFormData="personalDetailFormData"
+                  :courseListStage="false"
+                  :course="course"
+                  v-on:goBackToCourseList="confirmCourse"
+                  v-on:goBackToPersonalDetail="confirmDetail"
+                  v-on:courseToBePaidFor="handleConfirmedData"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
         <!-- Passed in this.course Object and details inputed by customer in previous stage then wait to recieve any changes made  -->
       </div>
 
       <div v-if="paymentOptionStage">
+        <div class="section-1 m-0">
+          <div class="container ">
+            <div class="row d-flex">
+              <div
+                class="col-12 col-md-6 text-left justify-content-center align-self-center"
+              >
+                <div class>
+                  <h2 class="display-5 text-white mt-0">
+                    Select how you want to pay
+                  </h2>
+                  <p class="text-white text-left">
+                    We have two payment options. You can either pay a deposit of
+                    the course fee or pay in full
+                  </p>
+                </div>
+              </div>
+              <div class="col-12 col-md-6 pt-0"></div>
+            </div>
+          </div>
+        </div>
         <h3>Pay deposit or full</h3>
         <PaymentOption
           :course="course"

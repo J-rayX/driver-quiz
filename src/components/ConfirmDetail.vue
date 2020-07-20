@@ -1,82 +1,72 @@
 <template>
   <div>
-    <b-form @submit="onSubmit">
-      <div class="card card--form-container">
+    <form @submit="onSubmit">
+      <div class="card p-2">
         <h2>Confirmation</h2>
-
         <hr />
+        <div class="">
+          <h4 class="float-left">Your Details</h4>
 
-        <div class="d-block">
-          <h3 class="d-inline float-left">Your Details</h3>
           <router-link :to="{ name: 'booking', params: { course } }">
-            <a @click="changeDetail" class="link--basic d-inline float-right"
-              >Edit</a
-            >
+            <a @click="changeDetail" class="float-right link text-bold">Edit</a>
           </router-link>
         </div>
-
+        <hr />
         <div class="form-group mt-30">
-          <div class="row row--details">
-            <h4 class="col-12 col-md-3 col-xl-2">Name</h4>
-            <span id="name_summary" class="col-12 col-md-9 col-xl-10">
+          <div class="row">
+            <h5 class="col-6 col-md-3">Name</h5>
+            <span class="col-6 col-md-9">
               {{ personalDetailFormHold.firstName }}
               {{ personalDetailFormHold.lastName }}
             </span>
           </div>
-          <div class="row row--details">
-            <h4 class="col-12 col-md-3 col-xl-2">Postcode</h4>
-            <span id="postcode_summary" class="col-12 col-md-9 col-xl-10">{{
+          <div class="row ">
+            <h5 class="col-6 col-md-3">Postcode</h5>
+            <span class="col-6 col-md-9">{{
               personalDetailFormHold.postCode
             }}</span>
           </div>
-          <div class="row row--details">
-            <h4 class="col-12 col-md-3 col-xl-2">Email</h4>
+          <div class="row ">
+            <h5 class="col-6 col-md-3 ">Email</h5>
             <span
               id="email_summary"
-              class="col-12 col-md-9 col-xl-10"
+              class="col-6 col-md-9"
               style="word-break:break-word"
               >{{ personalDetailFormHold.email }}</span
             >
           </div>
-          <div class="row row--details">
-            <h4 class="control-label col-12 col-md-3 col-xl-2">Phone</h4>
-            <span id="phone_summary" class="col-12 col-md-9 col-xl-10">{{
+          <div class="row ">
+            <h5 class="control-label col-6 col-md-3">Phone</h5>
+            <span id="phone_summary" class="col-6 col-md-9 ">{{
               personalDetailFormHold.phone
             }}</span>
           </div>
-          <div class="row row--details">
-            <h4 class="col-12 col-md-3 col-xl-2">Complete By</h4>
-            <span id="date_summary" class="col-12 col-md-9 col-xl-10">{{
+          <div class="row ">
+            <h5 class="col-6 col-md-3">Start By</h5>
+            <span id="date_summary" class="col-6 col-md-9">{{
               personalDetailFormHold.dateToStart
             }}</span>
           </div>
         </div>
       </div>
 
-      <div class="card card--form-container">
+      <div class="card mt-4 p-2">
         <div class="d-block card-heading">
           <h3 class="d-inline float-left">
             <span class="heading-word-break">Your Course</span> Breakdown
           </h3>
-          <!-- <router-link :to="{ name: 'courses'}"> -->
-          <button
-            @click="changeCourse"
-            class="link--basic d-inline float-right"
-          >
-            Change
-          </button>
-          <!-- </router-link> -->
         </div>
+        <hr />
 
-        <div class="row--breakdown first">
-          <div class="breakdown-description float-left">{{ course.desc }}</div>
-          <div class="breakdown-fee float-right">£{{ course.fee }}</div>
+        <div class="row ">
+          <div class="col-8 col-md-8 float-left">{{ course.desc }}</div>
+          <div class="col-4 col-md-4 float-right">£{{ course.fee }}</div>
 
           <div class="alert-spacer"></div>
           <hr />
 
-          <div class="breakdown-description float-left">Transmission:</div>
-          <div class="breakdown-value float-right">{{ course.transType }}</div>
+          <div class="col-8 col-md-8 float-left">Transmission:</div>
+          <div class="col-4 col-md-4 float-right">{{ course.transType }}</div>
         </div>
 
         <div class="alert-spacer"></div>
@@ -84,20 +74,30 @@
 
         <div class="alert alert-success text-center">
           <span class="prefix">NOTE:</span>
-          Only £{{ course.deposit }} deposit required
+          Only £ {{ course.deposit }} deposit is required
         </div>
 
-        <div class="col-12 col-md-6 order-first order-md-2">
-          <b-button
+        <div class="">
+          <!-- <router-link :to="{ name: 'courses'}"> -->
+          <button
+            @click="changeCourse"
+            class="btn btn-secondary float-left p-3"
+          >
+            Change Course
+          </button>
+          <!-- </router-link> -->
+
+          <button
             type="submit"
             @click="onSubmit"
-            class="btn btn--primary float-md-right"
+            class=" btn btn-primary float-right"
             value="Next"
-            >Next</b-button
           >
+            Next
+          </button>
         </div>
       </div>
-    </b-form>
+    </form>
   </div>
 </template>
 
@@ -136,3 +136,31 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+button {
+  /* background-color: #123067; */
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  font-size: 16px;
+  transition: 0.3s;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+button:hover {
+  /* background-color: #0a3592; */
+}
+button:active {
+  /* background-color: #0a3592; */
+  box-shadow: 0 4px rgb(179, 179, 179);
+  transform: translateY(4px);
+}
+hr {
+  border: 0.5px solid rgb(233, 233, 233);
+  width: 90%;
+  border-radius: 5px;
+}
+</style>
