@@ -151,10 +151,20 @@
             <h4 class="text-light">Let us be social</h4>
             <p class="text-muted"></p>
             <div class="column text-light">
-              <i class="fab fa-facebook-f"></i>
-              <i class="fab fa-instagram"></i>
-              <i class="fab fa-twitter"></i>
-              <i class="fab fa-youtube"></i>
+              <a
+                class="mr-2"
+                href="https://web.facebook.com/7daysdriving/?_rdc=1&_rdr"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a
+                class="mr-2"
+                href="https://www.youtube.com/channel/UCB5fyBgPDCcmQ3oIgAhJ1OQ"
+                ><i class="fab fa-youtube"></i
+              ></a>
+              <a class="mr-2" href="https://twitter.com/7daysdriving?lang=en">
+                <i class="fab fa-twitter"></i
+              ></a>
+              <a class="mr-2" href="#"><i class="fab fa-instagram"></i></a>
             </div>
           </div>
         </div>
