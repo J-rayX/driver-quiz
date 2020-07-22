@@ -14,11 +14,11 @@
                   width="14%"
                   height="14%"
                   class="d-inline-block align-top p-0"
-                  max-width=""
+                  max-width
                 />
               </i>
               <!-- <img src="..//assets/logoo.png alt="Logo">  -->
-              <span class=" navbar-brand pl-0"> 7Days Driving School</span>
+              <span class="navbar-brand pl-1">7Days Driving</span>
               <span class="sr-only">(current)</span>
             </a>
           </router-link>
@@ -43,10 +43,8 @@
               </li>
               <li class="nav-item">
                 <router-link :to="{ name: 'course-recommender' }">
-                  <a class="nav-link" href="#"
-                    >Course Recommender</a
-                  > </router-link
-                >|
+                  <a class="nav-link" href="#">Course Recommender</a>
+                </router-link>
               </li>
               <li class="nav-item">
                 <router-link :to="{ name: 'instructors' }">
@@ -154,17 +152,21 @@
               <a
                 class="mr-2"
                 href="https://web.facebook.com/7daysdriving/?_rdc=1&_rdr"
-                ><i class="fab fa-facebook-f"></i
-              ></a>
+              >
+                <i class="fab fa-facebook-f"></i>
+              </a>
               <a
                 class="mr-2"
                 href="https://www.youtube.com/channel/UCB5fyBgPDCcmQ3oIgAhJ1OQ"
-                ><i class="fab fa-youtube"></i
-              ></a>
+              >
+                <i class="fab fa-youtube"></i>
+              </a>
               <a class="mr-2" href="https://twitter.com/7daysdriving?lang=en">
-                <i class="fab fa-twitter"></i
-              ></a>
-              <a class="mr-2" href="#"><i class="fab fa-instagram"></i></a>
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a class="mr-2" href="#">
+                <i class="fab fa-instagram"></i>
+              </a>
             </div>
           </div>
         </div>
