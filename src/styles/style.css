@@ -675,7 +675,7 @@ textarea:focus {
 footer {
   background: rgba(0, 0, 0, 0.815);
   overflow-x: hidden;
-  margin-top: 0;
+  margin-top: auto;
   padding: 14vmin 18vmin;
 }
 
