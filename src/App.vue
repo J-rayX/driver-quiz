@@ -121,7 +121,11 @@
                   class="header-logo img-fluid"
                   max-width="1%"
             />-->
-            <img src="@/assets/logo-barklays-2.png" class="img-fluid" alt="Barclays Logo" />
+            <img
+              src="@/assets/logo-barklays-2.png"
+              class="img-fluid"
+              alt="Barclays Logo"
+            />
             <!-- <p class="text-muted text-left">Stay Updated</p>
             <form class="form-inline">
               <div class="col pl-0">
@@ -145,10 +149,16 @@
             <h4 class="text-light">Let us be social</h4>
             <p class="text-muted"></p>
             <div class="column text-light">
-              <a class="mr-2" href="https://web.facebook.com/7daysdriving/?_rdc=1&_rdr">
+              <a
+                class="mr-2"
+                href="https://web.facebook.com/7daysdriving/?_rdc=1&_rdr"
+              >
                 <i class="fab fa-facebook-f"></i>
               </a>
-              <a class="mr-2" href="https://www.youtube.com/channel/UCB5fyBgPDCcmQ3oIgAhJ1OQ">
+              <a
+                class="mr-2"
+                href="https://www.youtube.com/channel/UCB5fyBgPDCcmQ3oIgAhJ1OQ"
+              >
                 <i class="fab fa-youtube"></i>
               </a>
               <a class="mr-2" href="https://twitter.com/7daysdriving?lang=en">
@@ -164,10 +174,7 @@
           <div class="col-md-12 col-12 text-center copyright">
             <p class="pt-4 text-muted">
               Copyright ©2020 All rights reserved | Made with
-              <i
-                class="fa fa-heart pulse"
-                style="color: red;"
-              ></i> by
+              <i class="fa fa-heart pulse" style="color: red;"></i> by
               <span>JkayLight</span>
             </p>
           </div>

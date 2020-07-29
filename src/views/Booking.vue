@@ -1,10 +1,10 @@
 <template>
   <div>
-    <div class="m-0 ">
+    <div class="m-0">
       <div v-if="courseListStage">
         <!-- Section-1 BANNER -->
         <section class="section-1 m-0">
-          <div class="container ">
+          <div class="container">
             <div class="row d-flex">
               <div
                 class="col-12 col-md-6 text-left justify-content-center align-self-center"
@@ -32,7 +32,7 @@
         </section>
 
         <div class="container">
-          <div class="row ">
+          <div class="row">
             <Courses v-on:course="handleCourseChosen"></Courses>
           </div>
         </div>
@@ -42,7 +42,7 @@
 
       <div v-if="personalDetailStage">
         <div class="section-1 m-0">
-          <div class="container ">
+          <div class="container">
             <div class="row d-flex">
               <div
                 class="col-12 col-md-6 text-left justify-content-center align-self-center"
@@ -65,7 +65,7 @@
         <div>
           <div class="container">
             <div class="row pt-5 pb-5">
-              <div class="col col-md-6 col-12  offset-md-3">
+              <div class="col col-md-6 col-12 offset-md-3">
                 <PersonalDetailForm v-on:form="handleDetailForm" />
               </div>
             </div>
@@ -75,15 +75,13 @@
 
       <div v-if="confirmationStage">
         <div class="section-1 m-0">
-          <div class="container ">
+          <div class="container">
             <div class="row d-flex">
               <div
                 class="col-12 col-md-6 text-left justify-content-center align-self-center"
               >
                 <div class>
-                  <h2 class="display-5 text-white mt-0">
-                    Just a minute!
-                  </h2>
+                  <h2 class="display-5 text-white mt-0">Just a minute!</h2>
                   <p class="text-white text-left">
                     Kindly check the details filled in previous view form
                   </p>
@@ -97,7 +95,7 @@
         <div>
           <div class="container">
             <div class="row pt-5 pb-5">
-              <div class="col col-md-6 col-12  offset-md-3">
+              <div class="col col-md-6 col-12 offset-md-3">
                 <ConfirmDetail
                   :personalDetailFormData="personalDetailFormData"
                   :courseListStage="false"
@@ -115,7 +113,7 @@
 
       <div v-if="paymentOptionStage">
         <div class="section-1 m-0">
-          <div class="container ">
+          <div class="container">
             <div class="row d-flex">
               <div
                 class="col-12 col-md-6 text-left justify-content-center align-self-center"
@@ -137,7 +135,7 @@
         <div>
           <div class="container">
             <div class="row pt-5 pb-5">
-              <div class="col col-md-6 col-12  offset-md-3">
+              <div class="col col-md-6 col-12 offset-md-3">
                 <PaymentOption
                   :course="course"
                   v-on:depositPayment="handleDepositPayment"
@@ -152,15 +150,13 @@
 
       <div v-if="paymentStage">
         <div class="section-1 m-0">
-          <div class="container ">
+          <div class="container">
             <div class="row d-flex">
               <div
                 class="col-12 col-md-6 text-left justify-content-center align-self-center"
               >
                 <div class>
-                  <h2 class="display-5 text-white mt-0">
-                    Finally! Book...
-                  </h2>
+                  <h2 class="display-5 text-white mt-0">Finally! Book...</h2>
                   <p class="text-white text-left">
                     You can now input your card details to pay for your course
                   </p>
@@ -173,8 +169,10 @@
 
         <div>
           <div class="container">
-            <div class="row pt-5 pb-5">
-              <div class="col col-md-12 col-12 p-0  offset-md-3">
+            <div class="row d-flex pt-5 pb-5">
+              <div
+                class="col col-md-6 col-12 p-0 offset-md-3 justify-content-center align-self-center"
+              >
                 <PaymentForm
                   :finalFee="finalFee"
                   :course="course"

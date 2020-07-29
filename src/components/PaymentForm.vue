@@ -1,27 +1,31 @@
 <template>
   <div class="form-stage">
-    <div class="col-md-6 col-10 course-details">
-      <h5>Book the {{ course.desc }}</h5>
-      <p>£{{ finalFee }}</p>
+    <div class="row">
+      <div class="col-md-12 col-12 course-details">
+        <h5>Book the {{ course.desc }}</h5>
+        <p>£{{ finalFee }}</p>
+      </div>
     </div>
 
-    <div class="p-0 col-11 col-md-6 course-details">
-      <form id="payment-form" class=" col-md-12 col-12 align-items-center">
-        <div id="card-element" ref="card" class="form-control m-2">
-          <!-- A Stripe Element will be inserted here. -->
-        </div>
-        <!-- We'll put the error messages in this element -->
-        <div id="card-errors" role="alert"></div>
-        <div class="row">
-          <input
-            :disabled="lockSubmit"
-            class="button btn btn-primary shadow-sm ml-4 mr-0 col-md-4 col-4 offset-md-3"
-            type="submit"
-            value="Pay"
-            v-on:click.prevent="makePayment"
-          />
-        </div>
-      </form>
+    <div class="row">
+      <div class=" col-12 col-md-12 course-details ">
+        <form id="payment-form" class=" col-md-12 col-12 align-items-center">
+          <div id="card-element" ref="card" class="form-control">
+            <!-- A Stripe Element will be inserted here. -->
+          </div>
+          <!-- We'll put the error messages in this element -->
+          <div id="card-errors" role="alert"></div>
+          <div class="row">
+            <input
+              :disabled="lockSubmit"
+              class="button btn btn-primary text-center shadow-sm col-md-8 offset-md-2 col-4 mt-2"
+              type="submit"
+              value="Pay"
+              v-on:click.prevent="makePayment"
+            />
+          </div>
+        </form>
+      </div>
     </div>
     <!-- <div v-show="isModalVisible">
       <div class="modal" tabindex="-1" role="dialog">
