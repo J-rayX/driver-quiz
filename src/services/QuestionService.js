@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const apiCLient = axios.create({
-  baseURL: 'https://blooming-atoll-85720.herokuapp.com',
+  baseURL: 'https://drivng-backend.herokuapp.com/',
   // baseURL: 'http://127.0.0.1:8000',
   withCredentials: false,
   headers: {
