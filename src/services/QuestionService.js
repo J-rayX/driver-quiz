@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const apiCLient = axios.create({
-  baseURL: 'https://drivng-backend.herokuapp.com/',
+  baseURL: 'https://drivng-school.herokuapp.com/',
   // baseURL: 'http://127.0.0.1:8000',
   withCredentials: false,
   headers: {
